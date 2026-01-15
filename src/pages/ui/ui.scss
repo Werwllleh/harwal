@@ -1,4 +1,20 @@
 @use '../../app/scss/variables.scss' as *;
 
 // ui
-.ui {}
+.page-ui {
+
+  .button-click {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2rem;
+    background-color: #3b5998;
+    border-radius: 1.2rem;
+    color: #fff;
+    font-size: 1.6rem;
+    max-width: 25rem;
+    width: 100%;
+  }
+}
+
+

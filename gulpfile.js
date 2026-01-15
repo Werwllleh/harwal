@@ -108,8 +108,9 @@ import dartSass from 'sass';
 import gulpSass from 'gulp-sass';
 import rename from 'gulp-rename';
 import concat from 'gulp-concat';
+import insert from 'gulp-insert';
 import browserSyncPkg from 'browser-sync';
-import { deleteAsync } from 'del';
+import {deleteAsync} from 'del';
 
 const sass = gulpSass(dartSass);
 const browserSync = browserSyncPkg.create();
@@ -130,7 +131,7 @@ export const cleanDist = () => {
 /* ================= public ================= */
 
 export const copy = () =>
-  gulp.src('src/public/**/*', { encoding: false })
+  gulp.src('src/public/**/*', {encoding: false})
     .pipe(gulp.dest('dist'));
 
 /* ================= pug ================= */
@@ -143,8 +144,9 @@ export const html = () =>
         basedir: path.join(process.cwd(), 'src'),
       })
     )
-    .pipe(rename({ dirname: '', extname: '.html' }))
-    .pipe(gulp.dest('dist'));
+    .pipe(rename({dirname: '', extname: '.html'}))
+    .pipe(gulp.dest('dist'))
+    .pipe(browserSync.stream());
 
 /* ================= styles ================= */
 
@@ -153,7 +155,8 @@ export const styles = () =>
     .pipe(sass().on('error', sass.logError))
     .pipe(rename('style.css'))
     .pipe(gulp.dest('dist/css'))
-    .pipe(browserSync.stream({ match: '**/*.css' }));
+    // .pipe(browserSync.stream({match: '**/*.css'}));
+    .pipe(browserSync.stream());
 
 
 /* ================= scripts ================= */
@@ -166,7 +169,14 @@ export const scripts = () =>
     'src/pages/**/*.js',
   ])
     .pipe(concat('common.js'))
-    .pipe(gulp.dest('dist/js'));
+    .pipe(insert.prepend(
+      `document.addEventListener('DOMContentLoaded', function () {\n`
+    ))
+    .pipe(insert.append(
+      `\n});`
+    ))
+    .pipe(gulp.dest('dist/js'))
+    .pipe(browserSync.stream());
 
 /* ================= serve ================= */
 
@@ -180,12 +190,26 @@ export const serve = () => {
     open: false
   });
 
-  gulp.watch('src/**/*.pug', html);
-  gulp.watch('src/**/*.scss', styles);
-  gulp.watch('src/**/*.js', scripts);
+  gulp.watch([
+    'src/app/**/*.pug',
+    'src/components/**/*.pug',
+    'src/blocks/**/*.pug',
+    'src/pages/**/*.pug'
+  ], html);
+  gulp.watch([
+    'src/app/**/*.scss',
+    'src/components/**/*.scss',
+    'src/blocks/**/*.scss',
+    'src/pages/**/*.scss'
+  ], styles);
+  gulp.watch([
+    'src/app/**/*.js',
+    'src/components/**/*.js',
+    'src/blocks/**/*.js',
+    'src/pages/**/*.js'
+  ], scripts);
   gulp.watch('src/public/**/*', copy);
 
-  // sprite + data
   gulp.watch(
     ['src/sprite/sprite.svg', 'src/data/**/*'],
     gulp.series(html, reload)

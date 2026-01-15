@@ -5,10 +5,10 @@ append vars
   - description = "Описание Ui"
 
 append content
-  +regPage('ui', true, true)
-  //- регистрация
-  //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
-  //- +regBlock('block-name', true, true)
-  main.ui
-    .container
-      h1 Страница Ui
+    +regPage('ui', true, true)
+    //- регистрация
+    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+    //- +regBlock('block-name', true, true)
+    .page-ui
+        .container
+            button(type="button").button-click Клик
