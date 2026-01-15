@@ -1,0 +1,8 @@
+@use '../../app/scss/variables.scss' as *;
+@use '../../app/scss/mixins.scss' as *;
+
+// footer
+.footer {
+  padding-block: 30px;
+  background-color: $light-grey;
+}

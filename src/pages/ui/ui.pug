@@ -1,0 +1,14 @@
+extends ../../app/pug/layouts/base.pug
+
+append vars
+  - title = "Ui"
+  - description = "Описание Ui"
+
+append content
+  +regPage('ui', true, true)
+  //- регистрация
+  //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+  //- +regBlock('block-name', true, true)
+  main.ui
+    .container
+      h1 Страница Ui

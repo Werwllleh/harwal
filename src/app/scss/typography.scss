@@ -1,0 +1,115 @@
+@use './variables.scss' as *;
+@use './mixins.scss' as *;
+
+body {
+  font-family: $font-family;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+button, input, textarea {
+  font-family: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-family;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: $black;
+}
+
+.h1 {
+  font-size: 34px;
+  line-height: 1;
+
+  @include tablet {
+    font-size: 54px;
+  }
+
+  @include desktop {
+    font-size: 70px;
+  }
+}
+
+.h2 {
+  font-size: 30px;
+  line-height: 1.1;
+
+  @include tablet {
+    font-size: 44px;
+  }
+
+  @include desktop {
+    font-size: 54px;
+  }
+
+}
+
+.h3 {
+  font-size: 24px;
+  line-height: 1.1;
+
+  @include tablet {
+    font-size: 34px;
+  }
+
+  @include desktop {
+    font-size: 44px;
+  }
+}
+
+.h4 {
+  font-size: 22px;
+  line-height: 1.1;
+
+  @include tablet {
+    font-size: 26px;
+  }
+
+  @include desktop {
+    font-size: 34px;
+  }
+}
+
+.h5 {
+  font-size: 20px;
+  line-height: 1.1;
+
+  @include tablet {
+    font-size: 22px;
+  }
+
+  @include desktop {
+    font-size: 26px;
+  }
+}
+
+.h6 {
+  font-size: 20px;
+  line-height: 1.1;
+}
+
+.text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.4;
+  color: $text;
+
+  @include tablet {
+    font-size: 18px;
+  }
+
+  @include semiDesktop {
+    font-size: 20px;
+  }
+
+  span, a {
+    color: $blue;
+  }
+
+  & + & {
+    margin-top: 15px;
+  }
+}
+

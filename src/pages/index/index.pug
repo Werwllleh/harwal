@@ -1,0 +1,21 @@
+extends ../../app/pug/layouts/base.pug
+
+append vars
+  - title = "Разводящая страница"
+  - description = ""
+
+append content
+    +regPage('index', true, true)
+    //- регистрация
+    //- +regLib('lib-name/lib.js', 'lib-name/lib.css')
+
+
+    main.page.page-index
+        .page__container.container
+            .page__content
+                h1.h1 Список страниц
+                ul.page-index__list
+                    li
+                        a(href="./ui.html", target="_blank") UI
+                    li
+                        a(href="./main.html", target="_blank") Главная

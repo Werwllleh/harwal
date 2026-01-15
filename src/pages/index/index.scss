@@ -1,0 +1,53 @@
+@use '../../app/scss/variables.scss' as *;
+
+// index
+.page-index {
+
+  .page__content {
+    padding-top: 50px;
+  }
+
+  h1 {
+    margin-bottom: 40px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    li {
+
+      a {
+        position: relative;
+        display: inline-flex;
+        font-weight: 500;
+        font-size: 24px;
+        color: $text;
+        padding-bottom: 5px;
+
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          height: 2px;
+          width: 100%;
+          background-color: $blue;
+          transform: scaleX(0);
+          transform-origin: right bottom;
+          transition: transform $transition-default;
+        }
+
+        &:hover {
+          color: $blue;
+
+          &::before {
+            transform: scaleX(1);
+            transform-origin: left bottom;
+          }
+        }
+      }
+    }
+  }
+}

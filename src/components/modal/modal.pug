@@ -1,0 +1,33 @@
+mixin modal(id, content)
+    //- регистрация
+    //- +regLib('lib-name/lib.js', 'lib-name/lib.css')
+    //- +regComponent('component-name', true, true)
+    +regBlock('modal-form', true, true)
+    +regBlock('modal-city', true, true)
+    //modal
+    .modal(class="modal-" + id)&attributes(attributes)
+        .modal__window
+            button.modal__close(type="button", aria-label="Закрыть")
+                +svg('close').modal__close-icon
+            .modal__content
+                case content
+                    when 'modal1'
+                        include content/modal1
+                    when 'modal2'
+                        include content/modal2
+                    when 'success'
+                        include content/success
+                    when 'consultation'
+                        +modalForm('consultation', 'Обсудить проект', 'Оставьте заявку и получите индивидуальное решение по вашей задаче с этапами и сроками производства')
+                    when 'analysis'
+                        +modalForm('analysis', 'Получите бесплатно анализ бизнес-процессов', 'Проведем бесплатно анализ бизес-процессов, выявим узкие места и разработаем кастомное решение для улучшения показтелей')
+                    when 'team'
+                        +modalForm('team', 'Ищите опытную команду интеграторов', 'Проанализируем задачи, составим тех. задание и предложим решение.')
+                    when 'live-demo'
+                        +modalForm('live-demo', 'Live-демонстрация портала', 'Продемонстрируем работу портала в реальном времени, ответим на все вопросы')
+                    when 'tender'
+                        +modalForm('tender', 'Пригласить на участие в тендере')
+                    when 'case'
+                        +modalForm('case', 'Пришлем информацию с кейсами по вашей отрасли')
+                    when 'city'
+                        +modalCity()

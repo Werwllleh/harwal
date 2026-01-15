@@ -1,0 +1,203 @@
+@use './variables.scss' as *;
+@use './mixins.scss' as *;
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    transition: color $transition-default;
+}
+
+a, a:link, a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+/* Common */
+
+aside, nav, footer, header, section, main {
+    display: block;
+}
+
+/*h1, h2, h3, h4, h5, h6, p {
+    font-size: inherit;
+    font-weight: inherit;
+}*/
+
+ul, ul li {
+    list-style: none;
+}
+
+img {
+    vertical-align: top;
+}
+
+img, svg {
+    max-width: 100%;
+    height: auto;
+}
+
+svg {
+    transition: color $transition-default, transform $transition-default;
+}
+
+address {
+    font-style: normal;
+}
+
+/* Form */
+
+input, textarea, button, select {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+input::-ms-clear {
+    display: none;
+}
+
+button, input[type="submit"] {
+    display: inline-block;
+    box-shadow: none;
+    background-color: transparent;
+    background: none;
+    cursor: pointer;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+input:focus, input:active,
+button:focus, button:active {
+    outline: none;
+}
+
+button::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+
+label {
+    cursor: pointer;
+}
+
+legend {
+    display: block;
+}
+
+html {
+    background-color: $white;
+    overflow-x: clip;
+
+    &.block {
+        overflow: hidden;
+    }
+}
+
+body, html {
+    scroll-behavior: smooth;
+}
+
+body {
+    display: flex !important;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: clip;
+    min-width: 375px;
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+    -webkit-font-smoothing: antialiased;
+    //background-color: $white;
+}
+
+.page {
+    flex: 1;
+
+    &__breadcrumbs {
+        .breadcrumbs {
+            margin-bottom: 40px;
+        }
+    }
+
+    &__content {
+        padding-top: 15px;
+        padding-bottom: 56px;
+
+        @include mobile {
+            padding-top: 25px;
+            padding-bottom: 140px;
+        }
+    }
+
+    &__back-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 14px;
+
+        .icon {
+            flex: 0 0 13px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 13px;
+            height: 11px;
+            color: $grey-blue;
+            transform: rotate(90deg);
+            transition: color $transition-default;
+        }
+
+        span {
+            font-weight: 450;
+            font-size: 16px;
+            line-height: 1;
+            color: $grey-blue;
+            transform: translateX(0);
+            transition: transform $transition-default, color $transition-default;
+        }
+
+        &:hover {
+            span {
+                color: $blue;
+                transform: translateX(-10px);
+            }
+
+            .icon {
+                color: $blue;
+            }
+
+        }
+    }
+}
+
+.hide {
+    display: none !important;
+}
+
+.overlay {
+    position: fixed;
+    z-index: 50;
+    inset: 0;
+    background-color: $black;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity $transition-default, visibility $transition-default;
+
+    &.active {
+        opacity: 0.12;
+        visibility: visible;
+    }
+}

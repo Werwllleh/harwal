@@ -1,0 +1,40 @@
+@use '../variables.scss' as *;
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    line-height: 1;
+    border: 1px solid;
+    border-radius: 6px;
+    color: #fff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color $transition-default, border-color $transition-default, color $transition-default;
+
+    &--color-blue {
+        background-color: $blue;
+        border-color: $blue;
+        color: #fff;
+
+        &:hover {
+            background-color: $red;
+            border-color: $red;
+        }
+    }
+
+    &--size-md {
+        padding: 10px 20px;
+        font-size: 18px;
+    }
+
+    &__icon {
+        display: block;
+        width: 24px;
+        height: 24px;
+    }
+}
