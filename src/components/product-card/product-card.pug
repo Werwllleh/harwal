@@ -1,0 +1,12 @@
+mixin productCard(text, img)
+
+    //product-card
+    .product-card&attributes(attributes)
+        .product-card__body
+            .product-card__top
+                p.product-card__name= text
+                span.product-card__icon
+                    +svg("arrow-right")
+            .product-card__bottom
+                img(src=`./images/product-card-images/${img}`, alt=`Фото ${text}`).product-card__image
+        a(href="#").product-card__link

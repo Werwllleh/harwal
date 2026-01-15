@@ -1,35 +1,33 @@
 @use '../variables.scss' as *;
 
-.button {
-    display: inline-flex;
+.btn {
+    display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    line-height: 1;
-    border: 1px solid;
-    border-radius: 6px;
-    color: #fff;
+    gap: 1rem;
     white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis;
     text-align: center;
-    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 3.2rem;
+    backdrop-filter: blur(1.2rem);
+    box-shadow: inset 0 0 3.2rem .8rem rgba(255, 255, 255, 0.05);
+    font-weight: 600;
+    font-size: 1.6rem;
+    letter-spacing: -0.02em;
+    padding-block: 1.7rem;
+    padding-inline: 2rem;
+    min-width: 20rem;
     transition: background-color $transition-default, border-color $transition-default, color $transition-default;
 
-    &--color-blue {
-        background-color: $blue;
-        border-color: $blue;
+    &.primary {
+        background: $color-blue;
         color: #fff;
-
-        &:hover {
-            background-color: $red;
-            border-color: $red;
-        }
     }
 
-    &--size-md {
-        padding: 10px 20px;
-        font-size: 18px;
+    &.secondary {
+        background: #fff;
+        color: $color-idfsl;
     }
 
     &__icon {

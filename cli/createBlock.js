@@ -29,7 +29,7 @@ const createBlock = (blockName) => {
   fs.mkdirSync(dir, {recursive: true});
 
   // Содержимое для pug файла
-  const pugContent = `mixin ${kebabToCamel(blockName)}()\n  //- регистрация\n  //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')\n  //- +regComponent('component-name', true, true)\n\n  //${blockName}\n  .${blockName}&attributes(attributes)\n    h2 Блок ${blockName}`;
+  const pugContent = `mixin ${kebabToCamel(blockName)}()\n\n  //${blockName}\n  .${blockName}&attributes(attributes)\n    h2 Блок ${blockName}`;
 
   // Содержимое для scss файла
   const scssContent = `@use '../../app/scss/variables.scss' as *;\n@use '../../app/scss/mixins.scss' as *;\n\n// ${blockName}\n.${blockName} {}`;

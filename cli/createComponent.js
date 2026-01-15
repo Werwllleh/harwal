@@ -26,7 +26,7 @@ const createComponent = (componentName) => {
   fs.mkdirSync(dir, { recursive: true });
 
   // Содержимое для pug файла
-  const pugContent = `mixin ${kebabToCamel(componentName)}()\n  //- регистрация\n  //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')\n  //- +regComponent('component-name', true, true)\n\n  //${componentName}\n  .${componentName}&attributes(attributes)\n    p Компонент ${componentName}`;
+  const pugContent = `mixin ${kebabToCamel(componentName)}()\n\n  //${componentName}\n  .${componentName}&attributes(attributes)\n    p Компонент ${componentName}`;
 
   // Содержимое для scss файла
   const scssContent = `@use '../../app/scss/variables.scss' as *;\n@use '../../app/scss/mixins.scss' as *;\n\n// ${componentName}\n.${componentName} {}`;

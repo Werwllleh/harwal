@@ -2,18 +2,19 @@
 
 // ui
 .page-ui {
+  flex: 1;
+  padding-block: 3rem;
+  background-color: #c2b3ff;
+
+  &__elements {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
 
   .button-click {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem 2rem;
-    background-color: #3b5998;
-    border-radius: 1.2rem;
-    color: #fff;
-    font-size: 1.6rem;
-    max-width: 25rem;
-    width: 100%;
+
   }
 }
 

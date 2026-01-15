@@ -5,10 +5,13 @@ append vars
   - description = "Описание Ui"
 
 append content
-    +regPage('ui', true, true)
-    //- регистрация
-    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
-    //- +regBlock('block-name', true, true)
+
     .page-ui
         .container
-            button(type="button").button-click Клик
+            .page-ui__elements
+                button(type="button").btn.primary Оставить заявку
+                button(type="button").btn.secondary Оставить заявку
+                +buttonInfo()
+                +buttonInfo()
+                +productCard('Алюминиевые оконные системы', '1.webp')
+

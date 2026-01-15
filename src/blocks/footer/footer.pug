@@ -1,8 +1,99 @@
 mixin footer()
-  //- регистрация
-  //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
-  //- +regComponent('component-name', true, true)
 
-  //footer
-  .footer&attributes(attributes)
-    h2 Блок footer
+    //footer
+    .footer&attributes(attributes)
+        .footer__container.container
+            .footer__body
+                .footer__top
+                    .footer__top--groups
+                        .footer__group.nav
+                            nav.footer__nav
+                                .footer__nav--group
+                                    .footer__nav--category
+                                        a(href="#") Продукция
+                                        span.footer__nav--icon
+                                            +svg("arrow-collapse")
+                                    .footer__nav--items
+                                        ul.footer__nav--list
+                                            li
+                                                a(href="#") Алюминиевые светопрозрачные конструкции
+                                            li
+                                                a(href="#") Металлические конструкции
+                                            li
+                                                a(href="#") Обработка стекла
+                                            li
+                                                a(href="#") Огнестойкие панели
+
+                                .footer__nav--group
+                                    .footer__nav--category
+                                        a(href="#") Услуги
+                                        span.footer__nav--icon
+                                            +svg("arrow-collapse")
+                                    .footer__nav--items
+                                        ul.footer__nav--list
+                                            li
+                                                a(href="#") Проектирование
+                                            li
+                                                a(href="#") Производство
+                                            li
+                                                a(href="#") Монтаж
+                                            li
+                                                a(href="#") Гарантийное обслуживание
+                                            li
+                                                a(href="#") Частным клиентам
+                                            li
+                                                a(href="#") Партнерам
+
+                                .footer__nav--group
+                                    .footer__nav--category
+                                        a(href="#") О нас
+                                        span.footer__nav--icon
+                                            +svg("arrow-collapse")
+                                    .footer__nav--items
+                                        ul.footer__nav--list
+                                            li
+                                                a(href="#") О компании
+                                            li
+                                                a(href="#") Новости
+                                            li
+                                                a(href="#") Современный завод
+                                            li
+                                                a(href="#") Экология
+                                            li
+                                                a(href="#") Контроль качества
+                                            li
+                                                a(href="#") Рекламная поддержка
+
+                                .footer__nav--group
+                                    .footer__nav--category
+                                        a(href="#") Проекты
+                                .footer__nav--group
+                                    .footer__nav--category
+                                        a(href="#") Контакты
+                        .footer__group.contacts
+                            .contacts-block
+                                p.contacts-block__title Контакты
+                                ul.contacts-block__contacts
+                                    li
+                                        span Телефон
+                                        a(href="tel:+74954090050") +7 (495) 409-00-50
+                                    li
+                                        span Email
+                                        a(href="mailto:info@harwal.ru") info@harwal.ru
+                                button(type="button").btn.secondary.contacts-block__button-request Оставить заявку
+
+                        .footer__group.socials
+                            .socials-block
+                                p.socials-block__title Мы на связи
+                                ul.socials-block__list
+                                    li
+                                        a(href="#").phone
+                                            +svg("phone")
+                                    li
+                                        a(href="#").telegram
+                                            +svg("telegram")
+                                    li
+                                        a(href="#").youtube
+                                            +svg("youtube")
+                .footer__bottom
+

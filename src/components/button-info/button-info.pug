@@ -1,0 +1,15 @@
+mixin buttonInfo()
+    //- регистрация
+    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+    //- +regComponent('component-name', true, true)
+
+    //button-info
+    .button-info&attributes(attributes)
+        button(type="button").button-info__button
+            +svg("i")
+        .button-info__description
+            span Фотография с
+            |
+            |
+            a(href="#") сайта
+

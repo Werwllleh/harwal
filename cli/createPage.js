@@ -26,7 +26,7 @@ const createPage = (pageName) => {
   fs.mkdirSync(dir, { recursive: true });
 
   // Содержимое для pug файла
-  const pugContent = `extends ../../app/pug/layouts/base.pug\n\nappend vars\n  - title = "${pageName.charAt(0).toUpperCase() + pageName.slice(1)}"\n  - description = "Описание ${pageName.charAt(0).toUpperCase() + pageName.slice(1)}"\n\nappend content\n  //- +regBlock('block-name', true, true)\n\n  .page-${pageName}\n    .container\n      h1 Страница ${pageName.charAt(0).toUpperCase() + pageName.slice(1)}`;
+  const pugContent = `extends ../../app/pug/layouts/base.pug\n\nappend vars\n  - title = "${pageName.charAt(0).toUpperCase() + pageName.slice(1)}"\n  - description = "Описание ${pageName.charAt(0).toUpperCase() + pageName.slice(1)}"\n\nappend content\n\n  .page-${pageName}\n    .container\n      h1 Страница ${pageName.charAt(0).toUpperCase() + pageName.slice(1)}`;
 
   // Содержимое для scss файла
   const scssContent = `@use '../../app/scss/variables.scss' as *;\n@use '../../app/scss/mixins.scss' as *;\n\n// ${pageName}\n.${pageName} {}`;
