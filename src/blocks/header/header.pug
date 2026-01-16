@@ -1,5 +1,60 @@
 mixin header()
 
     //header
-    .header&attributes(attributes)
-        h2 Блок header
+    header.header&attributes(attributes)
+        .header__container.container
+            .header__body
+                a(href="/").header__logo
+                    +svg("harwal-logo")
+                nav.header__nav
+                    ul.header__nav--list
+                        li
+                            a(href="/") Главная
+                        li
+                            a(href="/products") Продукция
+                        li
+                            a(href="/projects") Проекты
+                        li
+                            a(href="/services") Услуги
+                        li
+                            a(href="/about") О нас
+                        li
+                            a(href="/contacts") Контакты
+                .header__info
+                    .header-contacts
+                        .header-contacts__preview
+                            a(href="tel:+74954090050").header-contacts__preview--phone
+                                span
+                                | +7 (495) 409-00-50
+                            a(href="mailto:info@harwal.ru").header-contacts__preview--mail info@harwal.ru
+                        .header-contacts__detail
+                            .header-contacts__detail--body
+                                ul.header-contacts__detail--items
+                                    li.header-contacts__detail--item
+                                        .header-contacts__detail--address
+                                            ul
+                                                li
+                                                    span Главный офис и завод
+                                                    a(href="https://yandex.ru/maps/-/CLhBEVjJ" target="_blank" rel="noopener noreferrer") Московская область, Солнечногорск, Бутырский тупик, 2а
+                                                li
+                                                    span Телефон
+                                                    a(href="tel:+74954090050") +7 (495) 409-00-50
+                                                li
+                                                    span Email
+                                                    a(href="mailto:info@harwal.ru") info@harwal.ru
+                                    li.header-contacts__detail--item
+                                        .header-contacts__detail--address
+                                            ul
+                                                li
+                                                    span Московский офис
+                                                    a(href="https://yandex.ru/maps/-/CLhBIR89" target="_blank" rel="noopener noreferrer") Москва, Шарикоподшипниковская, д1 ,БЦ «Прогресс Плаза»
+                                                li
+                                                    span Телефон
+                                                    a(href="tel:+74950551333") +7 (495) 055-13-33
+                                                li
+                                                    span Email
+                                                    a(href="mailto:info@harwal.ru") info@harwal.ru
+
+
+                    button(type="button", data-modal="request").btn.transparent.header__button-request Оставить заявку
+

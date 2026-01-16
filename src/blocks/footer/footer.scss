@@ -3,9 +3,14 @@
 
 // footer
 .footer {
-  padding-block: 8rem 5rem;
+  padding-block: 3rem;
   background-color: #1b1b1b;
-  border-radius: 3.2rem 3.2rem 0 0;
+  border-radius: 1.6rem 1.6rem 0 0;
+
+  @include semiDesktop {
+    border-radius: 3.2rem 3.2rem 0 0;
+    padding-block: 8rem 5rem;
+  }
 
   &__container {
   }
@@ -49,8 +54,13 @@
 
     &.nav {
       grid-area: nav;
-      padding-block: 5.2rem;
-      padding-inline: 3rem;
+      padding-block: 2.5rem;
+      padding-inline: 1.8rem;
+
+      @include mobile {
+        padding-block: 5.2rem;
+        padding-inline: 3rem;
+      }
 
       @include w1250 {
         padding-block: 5.2rem;
@@ -60,8 +70,13 @@
 
     &.contacts {
       grid-area: contacts;
-      padding-block: 5.2rem 3.7rem;
-      padding-inline: 3rem;
+      padding-block: 2.5rem;
+      padding-inline: 1.8rem;
+
+      @include mobile {
+        padding-block: 5.2rem 3.7rem;
+        padding-inline: 3rem;
+      }
 
       @include w1250 {
         padding-inline: 4rem 5.6rem;
@@ -70,8 +85,13 @@
 
     &.socials {
       grid-area: socials;
-      padding-block: 3.8rem;
-      padding-inline: 3rem;
+      padding-block: 2.5rem;
+      padding-inline: 1.8rem;
+
+      @include mobile {
+        padding-block: 3.8rem;
+        padding-inline: 3rem;
+      }
 
       @include w1250 {
         padding-inline: 4rem 5.6rem;
@@ -82,7 +102,11 @@
   &__nav {
     display: grid;
     grid-template-columns: 100%;
-    gap: 4rem 2.5rem;
+    gap: 2.6rem 0;
+
+    @include mobile {
+      gap: 4rem 2.5rem;
+    }
 
     @include semiDesktop {
       gap: 4.8rem 4.4rem;
@@ -118,10 +142,33 @@
       gap: 1.5rem;
 
       a {
+        position: relative;
         font-weight: 600;
-        font-size: 2.8rem;
+        font-size: 1.4rem;
         letter-spacing: -0.02em;
         color: #fff;
+
+        @include mobile {
+          font-size: 2.8rem;
+        }
+
+        &::before {
+          content: '';
+          position: absolute;
+          bottom: -4px;
+          left: 0;
+          width: 100%;
+          height: 2px;
+          background-color: $white;
+          opacity: 0;
+          transition: opacity $transition;
+        }
+
+        &:hover {
+          &::before {
+            opacity: 1;
+          }
+        }
       }
     }
 
@@ -173,15 +220,28 @@
       li {
 
         &:not(:first-child) {
-          margin-top: 1rem;
+          margin-top: 1.4rem;
+
+          @include mobile {
+            margin-top: 1rem;
+          }
         }
 
         a {
           font-weight: 400;
-          font-size: 1.6rem;
-          line-height: 1.5;
+          font-size: 1.2rem;
+          line-height: 1;
           letter-spacing: -0.02em;
           color: #7d8288;
+
+          @include mobile {
+            font-size: 1.6rem;
+            line-height: 1.5;
+          }
+
+          &:hover {
+            color: $white;
+          }
         }
       }
     }
@@ -191,17 +251,27 @@
 
     &__title {
       font-weight: 600;
-      font-size: 2.8rem;
+      font-size: 1.4rem;
       letter-spacing: -0.02em;
       color: #fff;
+
+      @include mobile {
+        font-size: 2.8rem;
+      }
     }
 
     &__contacts {
-      margin-top: 1.7rem;
+      margin-top: 2rem;
       display: flex;
       align-items: flex-start;
-      flex-wrap: wrap;
+      flex-direction: column;
       gap: 1.4rem 5rem;
+
+      @include mobile {
+        margin-top: 1.7rem;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
 
       li {
         display: flex;
@@ -209,10 +279,15 @@
 
         span {
           font-weight: 400;
-          font-size: 1.4rem;
-          line-height: 2;
+          font-size: 1.2rem;
+          line-height: 1.25;
           letter-spacing: -0.02em;
           color: #7d8288;
+
+          @include mobile {
+            line-height: 2;
+            font-size: 1.4rem;
+          }
         }
 
         a {
@@ -228,16 +303,25 @@
     }
 
     &__button-request {
-      margin-top: 2.6rem;
+      margin-top: 1.7rem;
+
+      @include mobile {
+        margin-top: 2.6rem;
+      }
     }
   }
 
   .socials-block {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: 1.8rem 2rem;
+
+    @include mobile {
+      align-items: center;
+      flex-direction: row;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
 
     &__title {
       font-weight: 600;
@@ -290,7 +374,46 @@
           svg {
             color: $white;
           }
+
+          &:hover {
+            background-color: $white;
+
+            svg {
+              color: $color-blue;
+            }
+          }
         }
+      }
+    }
+  }
+
+  &__bottom {
+    margin-top: 3.8rem;
+    padding-inline: 5.5rem;
+
+    &--items {
+      display: flex;
+      align-items: center;
+      gap: 0 3.4rem;
+    }
+
+    &--rights {
+      font-weight: 400;
+      font-size: 1.6rem;
+      line-height: 1.5;
+      letter-spacing: -0.02em;
+      color: #7d8288;
+    }
+
+    &--policy {
+      font-weight: 400;
+      font-size: 1.6rem;
+      line-height: 1.5;
+      letter-spacing: -0.02em;
+      color: #7d8288;
+
+      &:hover {
+        color: $white;
       }
     }
   }

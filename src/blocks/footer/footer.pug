@@ -1,7 +1,7 @@
 mixin footer()
 
     //footer
-    .footer&attributes(attributes)
+    footer.footer&attributes(attributes)
         .footer__container.container
             .footer__body
                 .footer__top
@@ -96,4 +96,8 @@ mixin footer()
                                         a(href="#").youtube
                                             +svg("youtube")
                 .footer__bottom
+                    .footer__bottom--items
+                        span.footer__bottom--rights
+                            | © 2025 Harwal Enterprises
+                        a(href="#", target="_blank").footer__bottom--policy Политика конфиденциальности
 
