@@ -1,0 +1,65 @@
+@use '../../app/scss/variables.scss' as *;
+@use '../../app/scss/mixins.scss' as *;
+
+// modal-consultation
+.modal-consultation-inner {
+
+  &__body {
+    padding-block: 5rem;
+  }
+
+  &__top {
+    padding-inline: 4.5rem 1.7rem;
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 3.6rem;
+    line-height: 1.11111;
+    letter-spacing: -0.02em;
+    color: $color-idfsl;
+  }
+
+  &__text {
+    margin-top: 1.8rem;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    letter-spacing: -0.02em;
+    color: $color;
+  }
+
+  &__bottom {
+    position: relative;
+    margin-top: 2.8rem;
+    padding-top: 2.2rem;
+    overflow: hidden;
+    border-top: 1px solid rgba(181, 214, 255, 0.2);
+
+    &--inner {
+      padding-inline: 4.5rem 1.7rem;
+    }
+
+    p {
+      font-weight: 400;
+      font-size: 1.6rem;
+      line-height: 1.5;
+      letter-spacing: -0.02em;
+      color: $color;
+    }
+
+    a {
+      margin-top: 1.4rem;
+      display: block;
+      font-weight: 600;
+      font-size: 2.8rem;
+      line-height: 1.42857;
+      letter-spacing: -0.02em;
+      color: $color-idfsl;
+
+      &:hover {
+        color: $color-blue;
+      }
+    }
+  }
+}

@@ -388,30 +388,40 @@
   }
 
   &__bottom {
-    margin-top: 3.8rem;
-    padding-inline: 5.5rem;
+    margin-top: 1.6rem;
+
+    @include tablet {
+      margin-top: 3.8rem;
+      padding-inline: 5.5rem;
+    }
 
     &--items {
       display: flex;
-      align-items: center;
+      flex-direction: column;
       gap: 0 3.4rem;
+
+      @include tablet {
+        flex-direction: row;
+        align-items: center;
+      }
     }
 
-    &--rights {
+    &--rights,
+    &--policy {
       font-weight: 400;
-      font-size: 1.6rem;
-      line-height: 1.5;
+      font-size: 1.2rem;
+      line-height: 2;
       letter-spacing: -0.02em;
       color: #7d8288;
+      white-space: nowrap;
+
+      @include tablet {
+        font-size: 1.6rem;
+        line-height: 1.5;
+      }
     }
 
     &--policy {
-      font-weight: 400;
-      font-size: 1.6rem;
-      line-height: 1.5;
-      letter-spacing: -0.02em;
-      color: #7d8288;
-
       &:hover {
         color: $white;
       }

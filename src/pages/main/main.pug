@@ -5,8 +5,120 @@ append vars
   - description = "Описание Main"
 
 append content
-    //- +regBlock('block-name', true, true)
-
-    .page-main
-        .container
-            h1 Страница Main
+    .page__main
+        section.main
+            .main__container.container
+                .main__body
+                    .main__info
+                        h1.h1.main__title Современный завод России для стеклообработки
+                        h2.main__descriprion Наше производство позволяет нам за короткое время выполнять крупные заказы по обработке, декорированную и изготовлению всевозможных изделий из стекла.
+            .main__bg
+                img(src="./images/main-bg.webp")
+        section.products
+            .products__container.container
+                h4.h4.section-title
+                    | Продукция нашего завода
+                    a(href="#") Вся продукция
+                        +svg("arrow-right-link")
+                .products-list
+                    +productCard('Алюминиевые оконные системы', '1.webp')
+                    +productCard('Алюминиевые дверные системы', '2.webp')
+                    +productCard('Стеклянная кровля', '3.webp')
+                    +productCard('Фасадное остекление', '4.webp')
+                    +productCard('Стеклопакеты', '5.webp')
+                    +productCard('Стемалит и Эмалит', '6.webp')
+                    +productCard('Triplex', '7.webp')
+                    +productCard('Зенитные фонари', '8.webp')
+                    +productCard('Зимние сады', '9.webp')
+        section.services
+            .services__container.container
+                .services__body
+                    .services__info
+                        h4.h4.services__title Услуги
+                        p Мы&nbsp;соблюдаем условия договоров&sbquo; что позволяет клиентам получать грамотный проект в&nbsp;оговоренные сроки
+                    ul.services__links
+                        li
+                            a(href="#").active
+                                | Резка и обработка кромки
+                                +svg('arrow-right-link')
+                        li
+                            a(href="#")
+                                | Оклейка стекол пленкой
+                                +svg('arrow-right-link')
+                        li
+                            a(href="#")
+                                | Закалка
+                                +svg('arrow-right-link')
+                        li
+                            a(href="#")
+                                | Сверление, зенковка и фрезеровка
+                                +svg('arrow-right-link')
+                        li
+                            a(href="#")
+                                | Оклейка стекол пленкой
+                                +svg('arrow-right-link')
+                        li
+                            a(href="#")
+                                | Закалка
+                                +svg('arrow-right-link')
+                        li
+                            a(href="#")
+                                | Сверление, зенковка
+                                +svg('arrow-right-link')
+                    .services__content
+                        .services__item.active
+                            .services__item--image
+                                img(src="/images/services-content-img.webp")
+                            p.services__item--text
+                                | Резка и обработка кромки стекла — это процесс придания стеклу нужной формы и безопасных, эстетичных краев.
+                            .services__item--price
+                                span Стоимость работ
+                                p от 30 до 250 руб / п.м.
+                        .services__item
+                            .services__item--image
+                                img(src="/images/services-content-img.webp")
+                            p.services__item--text
+                                | Резка и обработка кромки стекла — это процесс придания стеклу нужной формы и безопасных, эстетичных краев.
+                            .services__item--price
+                                span Стоимость работ
+                                p от 30 до 251 руб / п.м.
+                        .services__item
+                            .services__item--image
+                                img(src="/images/services-content-img.webp")
+                            p.services__item--text
+                                | Резка и обработка кромки стекла — это процесс придания стеклу нужной формы и безопасных, эстетичных краев.
+                            .services__item--price
+                                span Стоимость работ
+                                p от 30 до 252 руб / п.м.
+                        .services__item
+                            .services__item--image
+                                img(src="/images/services-content-img.webp")
+                            p.services__item--text
+                                | Резка и обработка кромки стекла — это процесс придания стеклу нужной формы и безопасных, эстетичных краев.
+                            .services__item--price
+                                span Стоимость работ
+                                p от 30 до 253 руб / п.м.
+                        .services__item
+                            .services__item--image
+                                img(src="/images/services-content-img.webp")
+                            p.services__item--text
+                                | Резка и обработка кромки стекла — это процесс придания стеклу нужной формы и безопасных, эстетичных краев.
+                            .services__item--price
+                                span Стоимость работ
+                                p от 30 до 254 руб / п.м.
+                        .services__item
+                            .services__item--image
+                                img(src="/images/services-content-img.webp")
+                            p.services__item--text
+                                | Резка и обработка кромки стекла — это процесс придания стеклу нужной формы и безопасных, эстетичных краев.
+                            .services__item--price
+                                span Стоимость работ
+                                p от 30 до 255 руб / п.м.
+                        .services__item
+                            .services__item--image
+                                img(src="/images/services-content-img.webp")
+                            p.services__item--text
+                                | Резка и обработка кромки стекла — это процесс придания стеклу нужной формы и безопасных, эстетичных краев.
+                            .services__item--price
+                                span Стоимость работ
+                                p от 30 до 256 руб / п.м.

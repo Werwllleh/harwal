@@ -53,19 +53,15 @@ function getScrollbarWidth() {
 
 function blockWrap(status) {
   const wrap = document.querySelector('html');
-  const headerMessage = document.querySelector('.header__message');
 
   if (status) {
     // wrap.style.overflow = 'hidden';
     wrap.classList.add('block');
     wrap.style.marginRight = getScrollbarWidth() + 'px';
-
-    headerMessage.style.left = `-${getScrollbarWidth()}px`;
   } else {
     // wrap.style.overflow = '';
     wrap.classList.remove('block');
     wrap.style.marginRight = '';
-    headerMessage.style.left = '';
   }
 }
 

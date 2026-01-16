@@ -2,4 +2,407 @@
 @use '../../app/scss/mixins.scss' as *;
 
 // main
-.main {}
+.page__main {
+
+  .section-title {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem 3rem;
+
+    @include mobile {
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: flex-end;
+      //flex-direction: row;
+    }
+
+    a {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 0 1rem;
+      font-weight: 600;
+      font-size: 1.6rem;
+      line-height: 1.625;
+      letter-spacing: -0.02em;
+      color: $color-blue;
+      white-space: nowrap;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -.1rem;
+        width: 100%;
+        height: .2rem;
+        background-color: $color-blue;
+        opacity: 0;
+        transition: opacity $transition;
+      }
+
+      &:hover {
+        &::before {
+          opacity: 1;
+        }
+      }
+
+      svg {
+        flex: 0 0 auto;
+        width: 2.7rem;
+        height: 1.4rem;
+      }
+    }
+  }
+
+  .main {
+    margin-top: -8rem;
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 10.5rem;
+
+    @include mobile {
+      margin-top: -10rem;
+    }
+
+    @include desktop {
+      margin-top: -11.6rem;
+    }
+
+    @include bph(1080.1) {
+      min-height: 90rem;
+    }
+
+    &__container {
+    }
+
+    &__body {
+    }
+
+    &__info {
+    }
+
+    &__title {
+      color: $white;
+      max-width: 92rem;
+      font-size: 2.8rem;
+
+      @include mobile {
+        font-size: 4.5rem;
+      }
+
+      @include tablet {
+        font-size: 6rem;
+      }
+
+      @include semiDesktop {
+        font-size: 7.2rem;
+      }
+    }
+
+    &__descriprion {
+      margin-top: 2.6rem;
+      font-weight: 400;
+      font-size: 1.4rem;
+      line-height: 1.4;
+      letter-spacing: -0.02em;
+      color: #fff;
+      max-width: 88rem;
+
+      @include tablet {
+        font-size: 1.6rem;
+      }
+
+      @include semiDesktop {
+        font-size: 2rem;
+      }
+    }
+
+    &__bg {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+
+      &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        box-shadow: inset 0 0 60px 8px #a5aec4;
+        background: rgba(217, 217, 217, 0.01);
+        opacity: 0.8;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+  }
+
+  .products {
+    margin-top: 5.6rem;
+
+    @include tablet {
+      margin-top: 16rem;
+    }
+
+    &__container {
+    }
+
+    .products-list {
+      margin-top: 2.4rem;
+
+      @include tablet {
+        margin-top: 5.6rem;
+      }
+    }
+  }
+
+  .services {
+    backdrop-filter: blur(1.2rem);
+    box-shadow: inset 0 0 3.2rem 0 rgba(233, 243, 255, 0.2);
+    padding-block: 4rem;
+    border: 1px solid rgba(181, 214, 255, 0.2);
+    border-radius: 3.2rem;
+    margin-top: 5.6rem;
+    background: rgba(189, 218, 250, 0.1);
+
+    @include tablet {
+      margin-inline: 2.5rem;
+      padding-block: 8rem;
+    }
+
+    @include semiDesktop {
+      margin-top: 16rem;
+    }
+
+    @include w1250 {
+      margin-inline: 6rem;
+      padding-block: 14.4rem;
+    }
+
+    &__container {
+    }
+
+    &__body {
+      display: grid;
+      grid-template-columns: 100%;
+      grid-template-areas: "info"
+                           "links";
+      gap: 2.6rem 0;
+
+
+      @include tablet {
+        grid-template-columns: repeat(2, auto);
+        grid-template-areas: "info links";
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 4rem 3rem;
+      }
+
+
+      @include desktop {
+        grid-template-columns: repeat(3, auto);
+        grid-template-areas: none;
+        gap: 0 4rem;
+      }
+    }
+
+    &__info {
+      grid-area: info;
+
+      @include desktop {
+        grid-area: auto;
+      }
+
+      p {
+        margin-top: 1.2rem;
+        font-weight: 400;
+        font-size: 1.4rem;
+        line-height: 1.42857;
+        letter-spacing: -0.02em;
+        color: $color;
+        max-width: 60rem;
+
+        @include tablet {
+          margin-top: 3.2rem;
+          font-size: 1.6rem;
+          line-height: 1.5;
+        }
+
+        @include desktop {
+          max-width: 25rem;
+        }
+
+        @include w1250 {
+          max-width: 30rem;
+        }
+      }
+    }
+
+    &__title {
+
+    }
+
+    &__links {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem 0;
+      grid-area: links;
+
+      @include tablet {
+        gap: 2.8rem 0;
+      }
+
+      @include desktop {
+        grid-area: auto;
+        max-width: 50rem;
+      }
+
+      li {
+
+        a {
+          display: inline-flex;
+          align-items: center;
+          gap: 0 1.6rem;
+          font-weight: 600;
+          font-size: 1.8rem;
+          letter-spacing: -0.02em;
+          color: $color;
+
+          @include tablet {
+            font-size: 2rem;
+          }
+
+          @include semiDesktop {
+            font-size: 2.4rem;
+          }
+
+          @include w1250 {
+            font-size: 2.8rem;
+          }
+
+          svg {
+            height: 1.5rem;
+            width: 2.5rem;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateX(-1rem);
+          }
+
+          &.active,
+          &:hover {
+            color: $color-blue;
+
+            svg {
+              opacity: 1;
+              visibility: visible;
+              transform: translateX(0);
+            }
+          }
+        }
+      }
+    }
+
+    &__content {
+      display: none;
+
+      @include desktop {
+        display: block;
+        position: relative;
+        width: 100%;
+        max-width: 25rem;
+      }
+
+      @include w1250 {
+        max-width: 32.4rem;
+      }
+    }
+
+    &__item {
+      position: absolute;
+      top: 0;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity $transition, visibility $transition, transform $transition;
+
+      &.active {
+        position: relative;
+        opacity: 1;
+        visibility: visible;
+      }
+
+      &--image {
+        position: relative;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 1.6rem;
+        overflow: hidden;
+
+        &::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          box-shadow: inset 0 0 44px 0 rgba(255, 255, 255, 0.45);
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          max-height: 22rem;
+        }
+      }
+
+      &--text {
+        margin-top: 3rem;
+        font-weight: 400;
+        font-size: 1.6rem;
+        line-height: 1.5;
+        letter-spacing: -0.02em;
+        color: $color;
+      }
+
+      &--price {
+        margin-top: 3rem;
+
+        span {
+          font-weight: 400;
+          font-size: 1.6rem;
+          line-height: 1.5;
+          letter-spacing: -0.02em;
+          color: $color;
+        }
+
+        p {
+          margin-top: .4rem;
+          font-weight: 600;
+          font-size: 2rem;
+          letter-spacing: -0.02em;
+          color: $color-blue;
+        }
+      }
+    }
+  }
+}
+
+
+.products-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: stretch;
+  gap: .8rem;
+
+  @include mobile {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  @include semiDesktop {
+    grid-template-columns: repeat(auto-fill, minmax(40rem, 3fr));
+    gap: 3rem;
+  }
+}

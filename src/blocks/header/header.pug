@@ -9,17 +9,17 @@ mixin header()
                 nav.header__nav
                     ul.header__nav--list
                         li
-                            a(href="/") Главная
+                            a(href="/main.html") Главная
                         li
-                            a(href="/products") Продукция
+                            a(href="/products.html") Продукция
                         li
-                            a(href="/projects") Проекты
+                            a(href="/projects.html") Проекты
                         li
-                            a(href="/services") Услуги
+                            a(href="/services.html") Услуги
                         li
-                            a(href="/about") О нас
+                            a(href="/about.html") О нас
                         li
-                            a(href="/contacts") Контакты
+                            a(href="/contacts.html") Контакты
                 .header__info
                     .header-contacts
                         .header-contacts__preview
@@ -57,4 +57,6 @@ mixin header()
 
 
                     button(type="button", data-modal="request").btn.transparent.header__button-request Оставить заявку
-
+                button.header__burger
+                    span
+                    span

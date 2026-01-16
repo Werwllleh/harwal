@@ -53,3 +53,15 @@
 		@content;
 	}
 }
+
+@mixin bpw($bp: 0) {
+	@media (min-width: $bp + 'px') {
+		@content;
+	}
+}
+
+@mixin bph($bp: 0) {
+	@media (min-height: $bp + 'px') {
+		@content;
+	}
+}

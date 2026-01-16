@@ -2,8 +2,10 @@
 
 // ui
 .page-ui {
+  margin-top: -15rem;
+  padding-top: 20rem;
+  padding-bottom: 20rem;
   flex: 1;
-  padding-block: 3rem;
   background-color: #c2b3ff;
 
   &__elements {

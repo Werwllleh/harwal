@@ -17,4 +17,11 @@ if (header) {
     });
   }
 
+  const burgerButton = header.querySelector('.header__burger');
+  if (burgerButton) {
+    burgerButton.addEventListener('click', () => {
+      burgerButton.classList.toggle('active');
+    })
+  }
+
 }

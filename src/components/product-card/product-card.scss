@@ -7,14 +7,18 @@
   box-shadow: inset 0 0 32px 0 rgba(233, 243, 255, 0.7);
   background-color: rgba(189, 218, 250, 0.1);
   border: 2px solid rgba(181, 214, 255, 0.2);
-  border-radius: 3.2rem;
-  padding: 3.2rem;
-  max-width: 44.2rem;
+  border-radius: 1.6rem;
+  padding: 2.1rem 1.5rem 1.5rem 1.5rem;
+  //max-width: 44.2rem;
   position: relative;
   transition: background-color $transition, border-color $transition;
 
-  &:hover {
+  @include semiDesktop {
+    padding: 3.2rem;
+    border-radius: 3.2rem;
+  }
 
+  &:hover {
     border-color: rgba(200, 218, 240, 0.5);
     background-color: rgba(189, 218, 250, 0.15);
 
@@ -32,39 +36,66 @@
   &__body {
     display: flex;
     flex-direction: column;
-    gap: 3.2rem 0;
+    justify-content: space-between;
+    gap: 1.6rem 0;
+    height: 100%;
+
+    @include tablet {
+      gap: 3.2rem 0;
+    }
   }
 
   &__top {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    gap: 0 1.5rem;
+
+    @include tablet {
+      align-items: flex-start;
+    }
   }
 
   &__name {
     font-weight: 600;
-    font-size: 2.8rem;
+    font-size: 1.6rem;
     line-height: 1.14;
     letter-spacing: -0.02em;
     color: $color-idfsl;
-    max-width: 25rem;
-    margin-left: .8rem;
+
+    @include tablet {
+      font-size: 2.8rem;
+      margin-left: .8rem;
+      max-width: 25rem;
+    }
   }
 
   &__icon {
+    flex: 0 0 auto;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 100%;
     border: 2px solid rgba(181, 214, 255, 0.2);
     backdrop-filter: blur(12px);
-    width: 5.8rem;
-    height: 5.8rem;
+    width: 4rem;
+    height: 4rem;
     transition: all $transition;
 
+    @include tablet {
+      width: 5.8rem;
+      height: 5.8rem;
+    }
+
     svg {
-      width: 1.5rem;
-      height: 1.5rem;
+      width: 1.3rem;
+      height: 1.3rem;
       color: #b7cde7;
+
+      @include tablet {
+        width: 1.5rem;
+        height: 1.5rem;
+      }
     }
   }
 
@@ -75,8 +106,12 @@
   &__image {
     border-radius: 0 0 1.6rem 1.6rem;
     width: 100%;
-    max-height: 20.7rem;
+    max-height: 10rem;
     object-fit: cover;
+
+    @include mobile {
+      max-height: 20.7rem;
+    }
   }
 
   &__link {
