@@ -1,0 +1,143 @@
+@use '../../app/scss/variables.scss' as *;
+@use '../../app/scss/mixins.scss' as *;
+
+// news-card
+.news-card {
+  position: relative;
+
+  &:hover {
+
+    .news-card__image img {
+      transform: scale(1.05);
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__image {
+    display: flex;
+    border-radius: 3.2rem 3.2rem 0 0;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 12rem;
+      object-fit: cover;
+      object-position: bottom;
+      pointer-events: none;
+      transition: transform $transition;
+
+      @include mobile {
+        height: 22rem;
+      }
+    }
+  }
+
+  &__footer {
+    padding-top: 1.6rem;
+
+    @include tablet {
+      padding-top: 2.2rem;
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 1.6rem;
+    line-height: 1.44444;
+    letter-spacing: -0.02em;
+    color: $color-idfsl;
+
+    @include tablet {
+      font-size: 1.8rem;
+    }
+  }
+
+  &__info {
+    margin-top: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0 2.6rem;
+  }
+
+  &__date {
+    display: flex;
+    align-items: center;
+    gap: 0 1rem;
+
+    span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      svg {
+        width: 1.6rem;
+        height: 1.6rem;
+        color: $color;
+
+        @include tablet {
+          width: 1.8rem;
+          height: 1.8rem;
+        }
+      }
+    }
+
+    p {
+      font-weight: 400;
+      font-size: 1.4rem;
+      line-height: 1.43;
+      letter-spacing: -0.02em;
+      color: $color;
+
+      @include tablet {
+        font-size: 1.6rem;
+        line-height: 1.75;
+      }
+    }
+  }
+
+  &__views {
+    display: flex;
+    align-items: center;
+    gap: 0 1rem;
+
+    span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      svg {
+        width: 1.6rem;
+        height: 1.3rem;
+        color: $color;
+
+        @include tablet {
+          width: 1.8rem;
+          height: 1.4rem;
+        }
+      }
+    }
+
+    p {
+      font-weight: 400;
+      font-size: 1.4rem;
+      line-height: 1.43;
+      letter-spacing: -0.02em;
+      color: $color;
+
+      @include tablet {
+        font-size: 1.6rem;
+        line-height: 1.75;
+      }
+    }
+  }
+
+  &__link {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+}

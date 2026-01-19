@@ -1,4 +1,5 @@
 @use '../variables.scss' as *;
+@use '../mixins.scss' as *;
 
 .btn {
     display: flex;
@@ -13,7 +14,7 @@
     backdrop-filter: blur(1.2rem);
     box-shadow: inset 0 0 3.2rem .8rem rgba(255, 255, 255, 0.05);
     font-weight: 600;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     letter-spacing: -0.02em;
     padding-block: 1.7rem;
     padding-inline: 2rem;
@@ -49,5 +50,9 @@
         display: block;
         width: 24px;
         height: 24px;
+    }
+
+    @include tablet {
+        font-size: 1.6rem;
     }
 }

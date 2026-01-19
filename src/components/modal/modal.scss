@@ -14,7 +14,8 @@
 	height: 100%;
 	overflow-y: auto;
 	overflow-x: hidden;
-	background-color: rgba($black, .12);
+	//background-color: rgba($black, .12);
+	background: linear-gradient(225deg, rgba(122, 139, 180, 0.3) 0%, rgba(139, 154, 187, 0.3) 17.66%, rgba(143, 158, 189, 0.3) 28.04%, rgba(80, 104, 142, 0.3) 100%), rgba(0, 0, 0, 0.3);
 	transition: opacity $transition-default;
 
 	&--show {

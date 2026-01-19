@@ -1,0 +1,19 @@
+mixin newsCard(title, img)
+
+    //news-card
+    .news-card&attributes(attributes)
+        .news-card__body
+            .news-card__image
+                img(src=`./images/projects/${img}`, alt=title)
+            .news-card__footer
+                p.news-card__title= title
+                .news-card__info
+                    .news-card__date
+                        span
+                            +svg("clock")
+                        p 15 октября 2021
+                    .news-card__views
+                        span
+                            +svg("eye")
+                        p 3048
+        a(href="#").news-card__link

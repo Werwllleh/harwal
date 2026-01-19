@@ -1,0 +1,17 @@
+mixin bannerForm(type)
+
+    //banner-form
+    .banner-form&attributes(attributes)
+        .banner-form__body
+            .banner-form__image
+                img(src="#", alt="")
+            .banner-form__content
+                if type === 1
+                    h4.h4.banner-form__title Есть идеи, но&nbsp;не&nbsp;знаете, с&nbsp;чего начать?
+                    p.banner-form__description Обсудим задачи, найдем оптимальное решение и&nbsp;запланируем работы. Будем на&nbsp;связи!
+                if type === 2
+                    h4.h4.banner-form__title У&nbsp;вас есть претензии к&nbsp;качеству продукции?
+                    p.banner-form__description Если у&nbsp;вас есть претензии к&nbsp;качеству нашей продукции, оставьте заявку и&nbsp;отдел контроля качества свяжется с&nbsp;вами в&nbsp;ближайшее время.
+                .banner-form__form
+                    +form()
+

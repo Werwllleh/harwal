@@ -1,0 +1,30 @@
+mixin form()
+
+    +regLibrary(false, 'input-mask/input-mask.js')
+
+    //form
+    form.form&attributes(attributes)
+        fieldset.form__fieldset
+            .form__body
+                .form__field
+                    label.input-field&attributes(attributes)
+                        input(name="name", type="text", inputmode="tel", autocomplete="on", required="required", data-input="name")
+                        span.input-field__placeholder
+                            | Имя
+                            |
+                            span *
+                        span(data-input-error="name").input-field__error
+                            | Некорректное имя
+                .form__field
+                    label.input-field
+                        input(name="phone", type="text", inputmode="tel", autocomplete="on", required="required", data-input="phone").input--phone
+                        span.input-field__placeholder
+                            | Телефон
+                            |
+                            span *
+                        span(data-input-error="phone").input-field__error
+                            | Некорректный номер
+                .form__field
+                    button(type="submit").btn.primary Оставить заявку
+                .form__field
+
