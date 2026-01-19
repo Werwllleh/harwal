@@ -1,0 +1,15 @@
+mixin projectCard(title, img, site)
+
+    //project-card
+    .project-card&attributes(attributes)
+        if site
+            .project-card__site
+                +buttonInfo()
+        .project-card__body
+            .project-card__image
+                img(src=`./images/projects/${img}`, alt=title)
+            .project-card__info
+                p.project-card__name= title
+                p.project-card__location Москва, 2020
+        a(href="#").project-card__link
+

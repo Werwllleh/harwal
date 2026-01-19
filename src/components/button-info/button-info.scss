@@ -49,12 +49,11 @@
   }
 
   &__description {
+    display: none;
     position: absolute;
     transform: scaleX(0);
-    transform-origin: left top;
     opacity: 0;
     visibility: hidden;
-    left: 3rem;
     border: 1px solid rgba(181, 214, 255, 0.2);
     border-radius: 3.2rem;
     backdrop-filter: blur(2px);

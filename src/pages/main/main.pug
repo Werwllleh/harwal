@@ -176,4 +176,15 @@ append content
                             span
                                 img(src="./images/become-partner/bp-5.webp", alt="")
                             p Ведет бизнес в&nbsp;40&nbsp;странах по&nbsp;всему Ближнему Востоку, Африке, Европе и&nbsp;США.
+        section.projects
+            .projects__container.container
+                h4.h4.section-title
+                    | 483 проекта, реализованных по всему миру
+                    a(href="#") Все проекты
+                        +svg("arrow-right-link")
+                .projects__list
+                    +projectCard('Жилой комплекс Лефорт', '1.webp')
+                    +projectCard('Жилой комплекс ILOVE', '2.webp', true)
+                    +projectCard('Жилой комплекс ЖК Форест', '3.webp', true)
+                    +projectCard('Жилой комплекс Грин Парк', '4.webp', true)
 

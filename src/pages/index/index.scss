@@ -1,7 +1,19 @@
 @use '../../app/scss/variables.scss' as *;
+@use '../../app/scss/mixins.scss' as *;
 
 // index
 .page-index {
+  margin-top: -8rem;
+  padding-block: 15rem;
+  background-color: #cdddff;
+
+  @include mobile {
+    margin-top: -10rem;
+  }
+
+  @include desktop {
+    margin-top: -11.6rem;
+  }
 
   .page__content {
     padding-top: 50px;

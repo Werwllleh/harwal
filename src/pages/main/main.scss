@@ -171,6 +171,18 @@
       margin-top: 16rem;
     }
   }
+
+  .projects {
+    margin-top: 5.6rem;
+
+    @include tablet {
+      margin-top: 16rem;
+    }
+
+    &__list {
+      margin-top: 6.4rem;
+    }
+  }
 }
 
 .products-list {
@@ -606,6 +618,28 @@
            font-weight: 600;
          }
       }
+    }
+  }
+}
+
+.projects {
+
+  &__container {}
+
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: stretch;
+    gap: 1rem;
+
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+
+    @include semiDesktop {
+      grid-template-columns: repeat(auto-fill, minmax(30rem, 4fr));
+      gap: 3rem;
     }
   }
 }
