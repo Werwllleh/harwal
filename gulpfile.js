@@ -111,11 +111,20 @@ import concat from 'gulp-concat';
 import insert from 'gulp-insert';
 import browserSyncPkg from 'browser-sync';
 import {deleteAsync} from 'del';
+import { exec } from 'child_process';
 
 const sass = gulpSass(dartSass);
 const browserSync = browserSyncPkg.create();
 
 /* ================= helpers ================= */
+
+const run = cmd =>
+  new Promise((res, rej) =>
+    exec(cmd, (err, stdout, stderr) => {
+      if (err) return rej(stderr || err);
+      res(stdout);
+    })
+  );
 
 const reload = done => {
   browserSync.reload();
@@ -227,6 +236,14 @@ export const build = gulp.series(
 
 export default gulp.series(build, serve);
 
-/*export const deploy = () =>
-  gulp.src('./dist/!**!/!*')
-    .pipe(ghPages({ branch: 'dist' }));*/
+// ===== deploy =====
+export const deploy = gulp.series(build, async () => {
+  // форс-пуш dist в ветку dist
+  await run(`
+    git checkout --orphan dist || git checkout dist
+    git --work-tree dist add --all
+    git --work-tree dist commit -m "Deploy $(date '+%Y-%m-%d %H:%M:%S')" || echo "No changes to commit"
+    git push origin HEAD:dist --force
+    git checkout -
+  `);
+});
