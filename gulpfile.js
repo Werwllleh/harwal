@@ -111,7 +111,6 @@ import concat from 'gulp-concat';
 import insert from 'gulp-insert';
 import browserSyncPkg from 'browser-sync';
 import {deleteAsync} from 'del';
-import ghPages from 'gulp-gh-pages';
 
 const sass = gulpSass(dartSass);
 const browserSync = browserSyncPkg.create();
@@ -231,14 +230,3 @@ export default gulp.series(build, serve);
 /*export const deploy = () =>
   gulp.src('./dist/!**!/!*')
     .pipe(ghPages({ branch: 'dist' }));*/
-
-/*export const deploy = () =>
-  gulp.src('./dist/!**!/!*')
-    .pipe(ghPages({ branch: 'dist' }));*/
-
-export const deploy = () =>
-  gulp.src('./dist/**/*')
-    .pipe(ghPages({
-      branch: 'dist',
-      pull: false
-    }));
