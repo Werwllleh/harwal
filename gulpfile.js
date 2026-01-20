@@ -235,15 +235,3 @@ export const build = gulp.series(
 );
 
 export default gulp.series(build, serve);
-
-// ===== deploy =====
-export const deploy = gulp.series(build, async () => {
-  // форс-пуш dist в ветку dist
-  await run(`
-    git checkout --orphan dist || git checkout dist
-    git --work-tree dist add --all
-    git --work-tree dist commit -m "Deploy $(date '+%Y-%m-%d %H:%M:%S')" || echo "No changes to commit"
-    git push origin HEAD:dist --force
-    git checkout -
-  `);
-});
