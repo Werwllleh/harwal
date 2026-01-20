@@ -6,6 +6,7 @@
   position: relative;
   padding-block: 30px;
   z-index: 1;
+  transition: background-color $transition, opacity $transition, visibility $transition, transform $transition;
   //background-color: $light-grey;
 
   &__container {
@@ -16,6 +17,8 @@
     align-items: center;
     justify-content: space-between;
     gap: 0 2rem;
+    z-index: 3;
+    position: relative;
   }
 
   &__logo {
@@ -27,6 +30,7 @@
       max-width: 12.4rem;
       width: 100%;
       max-height: 2rem;
+      color: $white;
 
       @include tablet {
         max-width: 20.6rem;
@@ -248,6 +252,8 @@
       border-radius: 3rem;
       transition:
               top .3s .15s ease-in-out,
+              background-color $transition,
+              opacity $transition,
               transform .3s ease-in-out;
 
       &:nth-child(1) {
@@ -276,6 +282,113 @@
       }
     }
   }
+}
+
+.header-mobile {
+  position: fixed;
+  top: 0;
+  right: 0;
+  transform: translateX(100%);
+  background-color: $white;
+  height: 100vh;
+  width: 100%;
+  visibility: hidden;
+  pointer-events: none;
+  transition: visibility $transition, transform $transition;
+  z-index: 2;
+
+  &__inner {
+    margin-top: 9rem;
+    height: calc(100% - 9rem);
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+    overflow-y: auto;
+  }
+
+  &__body {
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 2.2rem 0;
+
+    .address {
+      font-weight: 400;
+      font-size: 1.4rem;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+      color: $color;
+      max-width: 25rem;
+    }
+
+    .phone {
+      font-weight: 600;
+      font-size: 1.6rem;
+      letter-spacing: -0.02em;
+      color: $color-idfsl;
+    }
+  }
+
+  &__nav {
+    margin-top: 4.8rem;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem 0;
+
+      li {
+
+        a {
+          font-weight: 600;
+          font-size: 2.2rem;
+          letter-spacing: -0.02em;
+          color: $color-idfsl;
+        }
+      }
+    }
+  }
+}
+
+/*.header.scrolled {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  transform: translateY(-200%);
+  opacity: 0;
+  visibility: hidden;
+  background-color: $white;
+  z-index: 2;
+
+  &.scrolled-show {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+}*/
+
+.header.mobile-active {
+
+  .header__logo svg {
+    color: $color-blue;
+  }
+
+  .header__burger span {
+    background-color: #b7cde7;
+    opacity: 1;
+  }
+
+  .header-contacts__preview a {
+    color: $color-idfsl;
+  }
+
+  .header-mobile {
+    transform: translateX(0);
+    visibility: visible;
+    pointer-events: all;
+  }
+
 }
 
 @keyframes glow {

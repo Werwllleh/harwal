@@ -6,8 +6,8 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  max-width: max-content;
   margin-bottom: 2rem;
+  width: 100%;
 
   input {
     border: 2px solid rgba(181, 214, 255, 0.2);
@@ -21,6 +21,7 @@
     line-height: 1.75;
     letter-spacing: -0.02em;
     color: $color-idfsl;
+    width: 100%;
     transition: border-color $transition;
 
     &[required=""] + .input-field__placeholder {

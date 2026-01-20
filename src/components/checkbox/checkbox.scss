@@ -1,8 +1,10 @@
 @use '../../app/scss/variables.scss' as *;
+@use '../../app/scss/mixins.scss' as *;
 
 // checkbox
 .checkbox {
     display: inline-flex;
+    min-height: 2.7rem;
 
     &__input {
         display: none;
@@ -10,45 +12,64 @@
 
     &__label {
         position: relative;
-        padding-left: 28px;
-        font-size: 15px;
-        line-height: 22px;
-        color: #626A76;
+        padding-left: 4.2rem;
+        font-weight: 400;
+        font-size: 1.2rem;
+        line-height: 1.33333;
+        letter-spacing: -0.02em;
+        color: $color;
         cursor: pointer;
         user-select: none;
         transition: color $transition-default;
 
+        @include tablet {
+            font-size: 1.4rem;
+            line-height: 1.43;
+        }
+
+        a {
+            color: inherit;
+        }
+
         &::before {
             position: absolute;
             left: 0;
-            top: 1px;
-            width: 20px;
-            height: 20px;
-            border-radius: 4px;
+            top: 0;
+            bottom: 0;
+            margin: auto 0;
+            width: 2.6rem;
+            height: 2.6rem;
             display: block;
             background-color: #fff;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.401 2.9996L12.9861 4.58475L5.57126 11.9996L1 7.42844L2.58509 5.8433L5.57126 8.82937L11.401 2.9996Z' fill='white'/%3E%3C/svg%3E");
-            background-position: center;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 13 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 3.46948L5.18818 7.65766L11.8458 1.00007' stroke='white' stroke-width='2' stroke-linecap='round' /%3E%3C/svg%3E");
+            background-position: 50% 60%;
             background-repeat: no-repeat;
-            background-size: 14px 14px;
-            border: 1px solid rgba(#626A76, .24);
+            background-size: 1.3rem 1rem;
+            border: 2px solid rgba(181, 214, 255, 0.2);
+            border-radius: 0.8rem;
             content: "";
             transition: border-color $transition-default, background-color $transition-default;
         }
 
         &:hover {
-            color: $color-black;
+
+            a {
+                color: $color-blue;
+            }
 
             &::before {
-                border-color: $blue;
+                border-color: rgba(181, 214, 255, 0.5);
             }
         }
 
         .checkbox__input:checked+&,
         .checkbox__input:checked+&:hover {
             &::before {
-                background-color: $blue;
-                color: $color-black;
+                background-color: $color-blue;
+                border-color: $color-blue;
+            }
+            a {
+                color: $color-blue;
             }
         }
     }

@@ -25,6 +25,14 @@ mixin form()
                         span(data-input-error="phone").input-field__error
                             | Некорректный номер
                 .form__field
-                    button(type="submit").btn.primary Оставить заявку
+                    button(type="submit").btn.primary.form__submit Оставить заявку
                 .form__field
+                    label.checkbox
+                        input.checkbox__input(type="checkbox", name="agree", value="agree", required=true)
+                        span.checkbox__label
+                            | Я согласен(а) с 
+                            |
+                            a(href="#" target="_blank") политикой обработки персональных данных
+                            |
+                            | в соответствии с Федеральным законом № 152-ФЗ
 
