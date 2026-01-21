@@ -12,11 +12,14 @@
 	flex-direction: column;
 	width: 100%;
 	height: 100%;
-	overflow-y: auto;
+	overflow-y: hidden;
 	overflow-x: hidden;
-	//background-color: rgba($black, .12);
 	background: linear-gradient(225deg, rgba(122, 139, 180, 0.3) 0%, rgba(139, 154, 187, 0.3) 17.66%, rgba(143, 158, 189, 0.3) 28.04%, rgba(80, 104, 142, 0.3) 100%), rgba(0, 0, 0, 0.3);
 	transition: opacity $transition-default;
+
+	@include mobile {
+		overflow-y: auto;
+	}
 
 	&--show {
 		opacity: 1;
@@ -28,14 +31,15 @@
 		position: relative;
 		width: 100%;
 		height: 100%;
-		max-width: calc(100% - 30px);
 		background-color: #fff;
-		border-radius: 2rem 0 0 2rem;
+		overflow-y: auto;
 		margin-left: auto;
-		transition: opacity $transition-default, transform $transition-default;
+		transition: opacity $transition-default, transform $transition-default, border-radius $transition-default;
 
-		@include desktop {
+		@include mobile {
 			max-width: 44.5rem;
+			border-radius: 2rem 0 0 2rem;
+			overflow-y: hidden;
 		}
 
 		.modal--show & {

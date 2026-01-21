@@ -9,24 +9,64 @@
   }
 
   &__top {
-    padding-inline: 4.5rem 1.7rem;
+    padding-inline: 2rem;
+
+    @include mobile {
+      padding-inline: 4.5rem 1.7rem;
+    }
   }
 
   &__title {
     font-weight: 600;
-    font-size: 3.6rem;
+    font-size: 2.4rem;
     line-height: 1.11111;
     letter-spacing: -0.02em;
     color: $color-idfsl;
+
+    @include tablet {
+      font-size: 3.6rem;
+    }
   }
 
   &__text {
     margin-top: 1.8rem;
     font-weight: 400;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     line-height: 1.5;
     letter-spacing: -0.02em;
     color: $color;
+
+    @include tablet {
+      font-size: 1.6rem;
+    }
+  }
+
+  &__form {
+    margin-top: 2.4rem;
+
+    .form {
+      &__body {
+        display: flex;
+        flex-direction: column;
+        gap: 1.75rem 0;
+      }
+
+      &__field {
+        .checkbox__label {
+          a {
+            color: $color-blue;
+          }
+        }
+
+        .input-field__error {
+          font-size: 1.2rem;
+        }
+      }
+
+      &__submit {
+        width: 100%;
+      }
+    }
   }
 
   &__bottom {
@@ -37,25 +77,38 @@
     border-top: 1px solid rgba(181, 214, 255, 0.2);
 
     &--inner {
-      padding-inline: 4.5rem 1.7rem;
+      padding-inline: 2rem;
+
+      @include mobile {
+        padding-inline: 4.5rem 1.7rem;
+      }
     }
 
     p {
       font-weight: 400;
-      font-size: 1.6rem;
+      font-size: 1.4rem;
       line-height: 1.5;
       letter-spacing: -0.02em;
       color: $color;
+
+      @include tablet {
+        font-size: 1.6rem;
+      }
     }
 
     a {
       margin-top: 1.4rem;
       display: block;
       font-weight: 600;
-      font-size: 2.8rem;
+      font-size: 2.2rem;
       line-height: 1.42857;
       letter-spacing: -0.02em;
       color: $color-idfsl;
+      white-space: nowrap;
+
+      @include tablet {
+        font-size: 2.8rem;
+      }
 
       &:hover {
         color: $color-blue;

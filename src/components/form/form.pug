@@ -1,4 +1,4 @@
-mixin form()
+mixin form(type)
 
     +regLibrary(false, 'input-mask/input-mask.js')
 
@@ -29,10 +29,16 @@ mixin form()
                 .form__field
                     label.checkbox
                         input.checkbox__input(type="checkbox", name="agree", value="agree", required=true)
-                        span.checkbox__label
-                            | Я согласен(а) с 
-                            |
-                            a(href="#" target="_blank") политикой обработки персональных данных
-                            |
-                            | в соответствии с Федеральным законом № 152-ФЗ
+                        if type === 'modal'
+                            span.checkbox__label
+                                | Я согласен(а) с 
+                                |
+                                a(href="#" target="_blank") политикой обработки персональных данных
+                        else
+                            span.checkbox__label
+                                | Я согласен(а) с 
+                                |
+                                a(href="#" target="_blank") политикой обработки персональных данных
+                                |
+                                | в соответствии с Федеральным законом № 152-ФЗ
 
