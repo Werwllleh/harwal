@@ -33,99 +33,10 @@
     @include desktop {
       margin-top: 14.5rem;
     }
-
-    ul {
-      display: grid;
-      grid-template-columns: 100%;
-      align-items: stretch;
-      gap: 1rem;
-
-      @include mobile {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      @include desktop {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 3rem;
-      }
-
-      li {
-        position: relative;
-        border-radius: 3.2rem;
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
-        gap: 1.4rem 0;
-        justify-content: space-between;
-        padding: 2rem 2.5rem 2.5rem 2.5rem;
-        background: linear-gradient(225deg, #7a8bb4 0%, #8b9abb 17.66%, #8f9ebd 28.04%, #50688e 100%);
-
-        @include tablet {
-          min-height: 28rem;
-          padding: 3rem 3.8rem 4.2rem 3.8rem;
-        }
-
-        @include desktop {
-          min-height: 37.8rem;
-        }
-
-        &::before {
-          content: '';
-          position: absolute;
-          width: 100%;
-          height: 100%;
-          top: 0;
-          left: 0;
-          box-shadow: inset 0 0 2.8rem .8rem #a5aec4;
-          background: rgba(217, 217, 217, 0.01);
-          opacity: 0.8;
-          pointer-events: none;
-        }
-
-        img {
-          width: 6.4rem;
-          height: 6.4rem;
-
-          @include tablet {
-            width: 10rem;
-            height: 10rem;
-          }
-
-          @include desktop {
-            width: 15.2rem;
-            height: 15.2rem;
-          }
-        }
-
-        p {
-          font-weight: 500;
-          font-size: 1.4rem;
-          line-height: 1.43;
-          letter-spacing: -0.02em;
-          color: $white;
-          max-width: 35.5rem;
-
-          @include tablet {
-            font-size: 1.6rem;
-          }
-
-          @include desktop {
-            font-size: 1.8rem;
-            line-height: 1.55556;
-          }
-
-          b {
-            font-weight: 700;
-          }
-        }
-      }
-    }
   }
 
   .about-company-history {
     margin-top: 5.6rem;
-    padding-block: 4rem;
-    border-radius: 3.2rem;
 
     @include tablet {
       margin-top: 10rem;
@@ -135,306 +46,10 @@
       margin-top: 14.5rem;
     }
 
-    &::before {
-      border-radius: 3.2rem;
-    }
-
-    @include tablet {
-      margin-inline: 2.5rem;
-      padding-block: 8rem 8rem;
-    }
-
-    @include w1250 {
-      margin-inline: 6rem;
-      padding-block: 12rem 14rem;
-    }
-
-    &__container {
-    }
-
-    &__body {
-    }
-
-    &__title {
-      color: $white;
-    }
-
-    &__items {
-      margin-top: 2.4rem;
-      display: grid;
-      grid-template-columns: 100%;
-      align-items: stretch;
-      gap: 1rem;
-
-      @include tablet {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 2rem;
-      }
-
-      @include desktop {
-        margin-top: 4rem;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-
-      @include w1250 {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 3rem;
-      }
-
-      li {
-        border: 2px solid rgba(181, 214, 255, 0.2);
-        border-radius: 0.8rem;
-        padding-block: 2.3rem;
-        padding-inline: 1.8rem;
-        display: flex;
-        flex-direction: column;
-        gap: 1.2rem 0;
-
-        @include tablet {
-          border-radius: 3.2rem;
-          min-height: 36.8rem;
-          padding-block: 4rem;
-          padding-inline: 3.4rem;
-          gap: 1.6rem 0;
-        }
-
-        &:first-child {
-
-          @include w1250 {
-            grid-area: 1/1/1/3;
-          }
-        }
-
-        &:last-child {
-
-          @include w1250 {
-            grid-area: 2 / 3 / 2 / 5;
-          }
-        }
-
-        &:first-child,
-        &:last-child {
-          background-color: $white;
-
-          @include w1250 {
-            padding-inline: 4rem;
-          }
-
-          span {
-            color: $color-idfsl;
-            font-weight: 600;
-
-            @include w1250 {
-              font-size: 7.2rem;
-            }
-          }
-
-          p {
-            color: $color-idfsl;
-          }
-        }
-
-        &.picture {
-          padding: 0;
-          display: none;
-
-          @include desktop {
-            display: block;
-          }
-
-          img {
-            border-radius: 3.2rem;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            pointer-events: none;
-          }
-        }
-
-        span {
-          font-weight: 600;
-          font-size: 3.2rem;
-          letter-spacing: -0.02em;
-          color: $white;
-
-          @include tablet {
-            font-size: 4rem;
-          }
-        }
-
-        p {
-          font-weight: 400;
-          font-size: 1.4rem;
-          line-height: 1.4;
-          letter-spacing: -0.02em;
-          color: $white;
-
-          @include tablet {
-            font-size: 1.6rem;
-            line-height: 1.5;
-          }
-        }
-
-        img {
-
-        }
-      }
-    }
   }
 
   .about-company-description {
     margin-top: 3rem;
-    padding-block: 4rem;
-    border: 2px solid rgba(181, 214, 255, 0.2);
-    border-radius: 3.2rem;
-    backdrop-filter: blur(12px);
-    box-shadow: inset 0 0 32px 0 rgba(233, 243, 255, 0.7);
-    background: rgba(189, 218, 250, 0.1);
-
-    @include tablet {
-      margin-inline: 2.5rem;
-      padding-inline: 2rem;
-    }
-
-    @include desktop {
-      padding-block: 11.6rem;
-      margin-inline: 6rem;
-    }
-
-    &__container {}
-
-    &__body {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 2.7rem 5rem;
-
-      @include tablet {
-        flex-direction: row;
-        align-items: flex-end;
-        justify-content: space-between;
-      }
-
-      @include semiDesktop {
-        align-items: center;
-      }
-    }
-
-    &__info {
-      max-width: 67.8rem;
-      width: 100%;
-    }
-
-    &__title {
-
-      @media (min-width: 768.1px) and (max-width: $breakpoint-w1250) {
-        font-size: 3.2rem;
-      }
-    }
-
-    &__text {
-      margin-top: 1.4rem;
-
-      @include tablet {
-        margin-top: 2rem;
-      }
-
-      @include semiDesktop {
-        margin-top: 4rem;
-      }
-
-      p {
-        font-weight: 400;
-        font-size: 1.4rem;
-        line-height: 1.43;
-        letter-spacing: -0.02em;
-        color: $color-idfsl;
-
-        @include tablet {
-          font-size: 1.6rem;
-        }
-
-        @include desktop {
-          font-size: 1.8rem;
-          line-height: 1.55556;
-        }
-      }
-
-      p + p {
-        margin-top: 1.6rem;
-
-        @include desktop {
-          margin-top: 2rem;
-        }
-      }
-    }
-
-    &__images {
-      flex: 0 0 auto;
-      display: flex;
-      align-items: center;
-
-      img {
-        flex: 0 1 auto;
-        border: 2px solid rgba(181, 214, 255, 0.2);
-        border-radius: 1.5rem;
-        object-fit: cover;
-        height: 24.2rem;
-        width: auto;
-        max-width: 21.3rem;
-        transform: rotate(3deg);
-
-        @include semiDesktop {
-          height: 36rem;
-          max-width: 30rem;
-          border-radius: 3.2rem;
-        }
-
-        @include w1250 {
-          height: 40rem;
-          max-width: 34rem;
-        }
-
-        @include laptop {
-          height: 51.9rem;
-          max-width: 45.7rem;
-        }
-      }
-
-      span {
-        flex: 0 0 auto;
-        z-index: -1;
-        display: block;
-        box-shadow: inset 0 0 28px 8px #a5aec4;
-        background: rgba(217, 217, 217, 0.01);
-        border: 2px solid rgba(182, 207, 237, 0.5);
-        border-radius: 1.5rem;
-        transform: rotate(-5deg);
-        background: linear-gradient(225deg, #7a8bb4 0%, #8b9abb 17.66%, #8f9ebd 28.04%, #50688e 100%);
-        opacity: 0.8;
-        width: 16.3rem;
-        height: 18.6rem;
-        margin-left: -12rem;
-
-        @include semiDesktop {
-          width: 26rem;
-          height: 30rem;
-          border-radius: 3.2rem;
-          margin-left: -20rem;
-        }
-
-        @include w1250 {
-          width: 30rem;
-          height: 34rem;
-          margin-left: -24rem;
-        }
-
-        @include laptop {
-          width: 36rem;
-          height: 40rem;
-        }
-      }
-    }
   }
 
   .about-company-cooperation {
@@ -447,129 +62,527 @@
     @include desktop {
       margin-top: 16rem;
     }
+  }
+}
 
-    &__container {}
+.about-company-adv {
 
-    &__heading {
-      font-weight: 600;
-      font-size: 1.4rem;
-      letter-spacing: -0.02em;
-      color: $color;
+  ul {
+    display: grid;
+    grid-template-columns: 100%;
+    align-items: stretch;
+    gap: 1rem;
 
-      @include tablet {
-        font-size: 2rem;
-      }
-
-      @include desktop {
-        font-size: 2.8rem;
-      }
+    @include mobile {
+      grid-template-columns: repeat(2, 1fr);
     }
 
-    &__title {
-      margin-top: 1.6rem;
-
-      @include tablet {
-        margin-top: 2.8rem;
-      }
-
-      @include desktop {
-        margin-top: 4.2rem;
-      }
-
-      b {
-        color: $color-blue;
-      }
+    @include desktop {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3rem;
     }
 
-    &__body {
-      margin-top: 2.8rem;
-      display: grid;
-      grid-template-columns: 100%;
-      gap: 5rem 4rem;
+    li {
+      position: relative;
+      border-radius: 3.2rem;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      gap: 1.4rem 0;
+      justify-content: space-between;
+      padding: 2rem 2.5rem 2.5rem 2.5rem;
+      background: linear-gradient(225deg, #7a8bb4 0%, #8b9abb 17.66%, #8f9ebd 28.04%, #50688e 100%);
 
       @include tablet {
-        margin-top: 3.5rem;
-        grid-template-columns: repeat(2, 1fr);
-        justify-content: space-between;
-        align-items: stretch;
+        min-height: 28rem;
+        padding: 3rem 3.8rem 4.2rem 3.8rem;
       }
 
       @include desktop {
-        margin-top: 5.6rem;
-        grid-template-columns: auto auto;
+        min-height: 37.8rem;
       }
 
-      &--left {}
-      &--right {
-        display: none;
+      &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        box-shadow: inset 0 0 2.8rem .8rem #a5aec4;
+        background: rgba(217, 217, 217, 0.01);
+        opacity: 0.8;
+        pointer-events: none;
+      }
+
+      img {
+        width: 6.4rem;
+        height: 6.4rem;
 
         @include tablet {
-          display: block;
+          width: 10rem;
+          height: 10rem;
+        }
+
+        @include desktop {
+          width: 15.2rem;
+          height: 15.2rem;
         }
       }
-    }
-
-    &__text {
-      max-width: 67.8rem;
 
       p {
-        font-weight: 400;
+        font-weight: 500;
         font-size: 1.4rem;
-        line-height: 1.42857;;
+        line-height: 1.43;
         letter-spacing: -0.02em;
-        color: $color-idfsl;
+        color: $white;
+        max-width: 35.5rem;
 
         @include tablet {
           font-size: 1.6rem;
-          line-height: 1.55556;
         }
 
         @include desktop {
           font-size: 1.8rem;
+          line-height: 1.55556;
         }
-      }
 
-      p + p {
-        margin-top: 1.6rem;
-
-        @include desktop {
-          margin-top: 2rem;
+        b {
+          font-weight: 700;
         }
       }
     }
+  }
+}
 
-    &__button {
-      margin-top: 2.4rem;
+.about-company-history {
+  padding-block: 4rem;
+  border-radius: 3.2rem;
 
-      button {
-        width: 100%;
+  &::before {
+    border-radius: 3.2rem;
+  }
 
-        @include mobile {
-          width: auto;
+  @include tablet {
+    margin-inline: 2.5rem;
+    padding-block: 8rem 8rem;
+  }
+
+  @include w1250 {
+    margin-inline: 6rem;
+    padding-block: 12rem 14rem;
+  }
+
+  &__container {
+  }
+
+  &__body {
+  }
+
+  &__title {
+    color: $white;
+  }
+
+  &__items {
+    margin-top: 2.4rem;
+    display: grid;
+    grid-template-columns: 100%;
+    align-items: stretch;
+    gap: 1rem;
+
+    @include tablet {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 2rem;
+    }
+
+    @include desktop {
+      margin-top: 4rem;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    @include w1250 {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 3rem;
+    }
+
+    li {
+      border: 2px solid rgba(181, 214, 255, 0.2);
+      border-radius: 0.8rem;
+      padding-block: 2.3rem;
+      padding-inline: 1.8rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem 0;
+
+      @include tablet {
+        border-radius: 3.2rem;
+        min-height: 36.8rem;
+        padding-block: 4rem;
+        padding-inline: 3.4rem;
+        gap: 1.6rem 0;
+      }
+
+      &:first-child {
+
+        @include w1250 {
+          grid-area: 1/1/1/3;
         }
+      }
+
+      &:last-child {
+
+        @include w1250 {
+          grid-area: 2 / 3 / 2 / 5;
+        }
+      }
+
+      &:first-child,
+      &:last-child {
+        background-color: $white;
+
+        @include w1250 {
+          padding-inline: 4rem;
+        }
+
+        span {
+          color: $color-idfsl;
+          font-weight: 600;
+
+          @include w1250 {
+            font-size: 7.2rem;
+          }
+        }
+
+        p {
+          color: $color-idfsl;
+        }
+      }
+
+      &.picture {
+        padding: 0;
+        display: none;
+
+        @include desktop {
+          display: block;
+        }
+
+        img {
+          border-radius: 3.2rem;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          pointer-events: none;
+        }
+      }
+
+      span {
+        font-weight: 600;
+        font-size: 3.2rem;
+        letter-spacing: -0.02em;
+        color: $white;
+
+        @include tablet {
+          font-size: 4rem;
+        }
+      }
+
+      p {
+        font-weight: 400;
+        font-size: 1.4rem;
+        line-height: 1.4;
+        letter-spacing: -0.02em;
+        color: $white;
+
+        @include tablet {
+          font-size: 1.6rem;
+          line-height: 1.5;
+        }
+      }
+
+      img {
+
+      }
+    }
+  }
+}
+
+.about-company-description {
+  padding-block: 4rem;
+  border: 2px solid rgba(181, 214, 255, 0.2);
+  border-radius: 3.2rem;
+  backdrop-filter: blur(12px);
+  box-shadow: inset 0 0 32px 0 rgba(233, 243, 255, 0.7);
+  background: rgba(189, 218, 250, 0.1);
+
+  @include tablet {
+    margin-inline: 2.5rem;
+    padding-inline: 2rem;
+  }
+
+  @include desktop {
+    padding-block: 11.6rem;
+    margin-inline: 6rem;
+  }
+
+  &__container {}
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.7rem 5rem;
+
+    @include tablet {
+      flex-direction: row;
+      align-items: flex-end;
+      justify-content: space-between;
+    }
+
+    @include semiDesktop {
+      align-items: center;
+    }
+  }
+
+  &__info {
+    max-width: 67.8rem;
+    width: 100%;
+  }
+
+  &__title {
+
+    @media (min-width: 768.1px) and (max-width: $breakpoint-w1250) {
+      font-size: 3.2rem;
+    }
+  }
+
+  &__text {
+    margin-top: 1.4rem;
+
+    @include tablet {
+      margin-top: 2rem;
+    }
+
+    @include semiDesktop {
+      margin-top: 4rem;
+    }
+
+    p {
+      font-weight: 400;
+      font-size: 1.4rem;
+      line-height: 1.43;
+      letter-spacing: -0.02em;
+      color: $color-idfsl;
+
+      @include tablet {
+        font-size: 1.6rem;
       }
 
       @include desktop {
-        margin-top: 5rem;
+        font-size: 1.8rem;
+        line-height: 1.55556;
       }
     }
 
-    &__image {
+    p + p {
+      margin-top: 1.6rem;
+
+      @include desktop {
+        margin-top: 2rem;
+      }
+    }
+  }
+
+  &__images {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+
+    img {
+      flex: 0 1 auto;
       border: 2px solid rgba(181, 214, 255, 0.2);
-      border-radius: 3.2rem;
-      max-width: 56rem;
-      max-height: 45.8rem;
-      min-height: 30rem;
+      border-radius: 1.5rem;
+      object-fit: cover;
+      height: 24.2rem;
+      width: auto;
+      max-width: 21.3rem;
+      transform: rotate(3deg);
+
+      @include semiDesktop {
+        height: 36rem;
+        max-width: 30rem;
+        border-radius: 3.2rem;
+      }
+
+      @include w1250 {
+        height: 40rem;
+        max-width: 34rem;
+      }
+
+      @include laptop {
+        height: 51.9rem;
+        max-width: 45.7rem;
+      }
+    }
+
+    span {
+      flex: 0 0 auto;
+      z-index: -1;
+      display: block;
+      box-shadow: inset 0 0 28px 8px #a5aec4;
+      background: rgba(217, 217, 217, 0.01);
+      border: 2px solid rgba(182, 207, 237, 0.5);
+      border-radius: 1.5rem;
+      transform: rotate(-5deg);
+      background: linear-gradient(225deg, #7a8bb4 0%, #8b9abb 17.66%, #8f9ebd 28.04%, #50688e 100%);
+      opacity: 0.8;
+      width: 16.3rem;
+      height: 18.6rem;
+      margin-left: -12rem;
+
+      @include semiDesktop {
+        width: 26rem;
+        height: 30rem;
+        border-radius: 3.2rem;
+        margin-left: -20rem;
+      }
+
+      @include w1250 {
+        width: 30rem;
+        height: 34rem;
+        margin-left: -24rem;
+      }
+
+      @include laptop {
+        width: 36rem;
+        height: 40rem;
+      }
+    }
+  }
+}
+
+.about-company-cooperation {
+
+  &__container {}
+
+  &__heading {
+    font-weight: 600;
+    font-size: 1.4rem;
+    letter-spacing: -0.02em;
+    color: $color;
+
+    @include tablet {
+      font-size: 2rem;
+    }
+
+    @include desktop {
+      font-size: 2.8rem;
+    }
+  }
+
+  &__title {
+    margin-top: 1.6rem;
+
+    @include tablet {
+      margin-top: 2.8rem;
+    }
+
+    @include desktop {
+      margin-top: 4.2rem;
+    }
+
+    b {
+      color: $color-blue;
+    }
+  }
+
+  &__body {
+    margin-top: 2.8rem;
+    display: grid;
+    grid-template-columns: 100%;
+    gap: 5rem 4rem;
+
+    @include tablet {
+      margin-top: 3.5rem;
+      grid-template-columns: repeat(2, 1fr);
+      justify-content: space-between;
+      align-items: stretch;
+    }
+
+    @include desktop {
+      margin-top: 5.6rem;
+      grid-template-columns: auto auto;
+    }
+
+    &--left {}
+    &--right {
+      display: none;
+
+      @include tablet {
+        display: block;
+      }
+    }
+  }
+
+  &__text {
+    max-width: 67.8rem;
+
+    p {
+      font-weight: 400;
+      font-size: 1.4rem;
+      line-height: 1.42857;;
+      letter-spacing: -0.02em;
+      color: $color-idfsl;
+
+      @include tablet {
+        font-size: 1.6rem;
+        line-height: 1.55556;
+      }
+
+      @include desktop {
+        font-size: 1.8rem;
+      }
+    }
+
+    p + p {
+      margin-top: 1.6rem;
+
+      @include desktop {
+        margin-top: 2rem;
+      }
+    }
+  }
+
+  &__button {
+    margin-top: 2.4rem;
+
+    button {
+      width: 100%;
+
+      @include mobile {
+        width: auto;
+      }
+    }
+
+    @include desktop {
+      margin-top: 5rem;
+    }
+  }
+
+  &__image {
+    border: 2px solid rgba(181, 214, 255, 0.2);
+    border-radius: 3.2rem;
+    max-width: 56rem;
+    max-height: 45.8rem;
+    min-height: 30rem;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    img {
       width: 100%;
       height: 100%;
-      overflow: hidden;
-
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        pointer-events: none;
-      }
+      object-fit: cover;
+      pointer-events: none;
     }
   }
 }
