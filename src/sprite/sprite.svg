@@ -125,4 +125,7 @@
         <path d="M9 9.88721C10.6569 9.88721 12 8.54406 12 6.88721C12 5.23035 10.6569 3.88721 9 3.88721C7.34315 3.88721 6 5.23035 6 6.88721C6 8.54406 7.34315 9.88721 9 9.88721Z"
               fill="currentColor"/>
     </symbol>
+    <symbol viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg" id="arrow-crumbs">
+        <path d="M0.707085 10L0 9.29292L4.29292 5L0 0.707085L0.707085 0L5.70708 5L0.707085 10Z" fill="currentColor" />
+    </symbol>
 </svg>

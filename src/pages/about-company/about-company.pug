@@ -1,0 +1,77 @@
+extends ../../app/pug/layouts/secondary.pug
+
+append vars
+  - title = "About-company"
+  - description = "Описание About-company"
+
+append content
+
+    .page__header
+        .page__breadcrumbs
+            .container
+                +breadcrumbs(['Главная', 'О компании'])
+        .page__title
+            .container
+                p О нашей компании
+        .page__header--bg
+            img(src="./images/header-bg.webp", alt="")
+    .page__content
+        .about-company
+            section.about-company-title
+                .container
+                    h1.h1
+                        | Миссия
+                        |
+                        b Harwal Enterprises
+                        |
+                        | сделать технологии доступнее и&nbsp;удобнее и&nbsp;развить доверительные партнёрские отношения.
+            section.about-company-adv
+                .container
+                    ul
+                        li
+                            img(src="./images/become-partner/bp-1.webp", alt="")
+                            p
+                                b Harwal Enterprises —
+                                |
+                                | это первый в России завод группы компаний Harwal Group. Открыт 1 июня 2018 года.
+                        li
+                            img(src="./images/become-partner/bp-2.webp", alt="")
+                            p
+                                | Годовая конверсионная мощность 200&nbsp;000 метрических тонн пластика и&nbsp;20&nbsp;000 тонн алюминия и&nbsp;стали
+                        li
+                            img(src="./images/become-partner/bp-3.webp", alt="")
+                            p
+                                b Harwal Group
+                                |
+                                | имеет 28&nbsp;бизнес-единиц с&nbsp;производственными и&nbsp;торговыми объектами по&nbsp;всему миру.
+                        li
+                            img(src="./images/become-partner/bp-4.webp", alt="")
+                            p Ведет бизнес в&nbsp;40&nbsp;странах по&nbsp;всему Ближнему Востоку, Африке, Европе и&nbsp;США.
+                        li
+                            img(src="./images/become-partner/bp-5.webp", alt="")
+                            p
+                                b Harwal Group
+                                |
+                                | насчитывает более 60-ти лет опыта в&nbsp;различных процессах и&nbsp;технологиях.
+            section.about-company-history.grey-gradient
+                .about-company-history__container.container
+                    .about-company-history__body
+                        h4.h4.about-company-history__title История нашей компании
+                        ul.about-company-history__items
+                            li
+                                span 1938–2000
+                                p Основной бизнес Группы основан на преобразовании пластмасс, дерева и металла, производящих широкий ассортимент готовой продукции для различных отраслей промышленности.
+                            li
+                                span 2001–2010
+                                p Основной бизнес Группы основан на преобразовании пластмасс, дерева и металла, производящих широкий ассортимент готовой продукции для различных отраслей промышленности.
+                            li
+                                span 2010–2015
+                                p Основной бизнес Группы основан на преобразовании пластмасс, дерева и металла, производящих широкий ассортимент готовой продукции для различных отраслей промышленности. Harwal Group насчитывает более 60-ти лет опыта в различных процессах и технологиях.
+                            li.picture
+                                img(src="./images/skyscraper.webp", alt="")
+                            li
+                                span 2016–2024
+                                p Основной бизнес Группы основан на преобразовании пластмасс, дерева и металла, производящих широкий ассортимент готовой продукции для различных отраслей промышленности.
+                            li
+                                span Наши дни
+                                p Harwal Group насчитывает более 60-ти лет опыта в различных процессах и технологиях.

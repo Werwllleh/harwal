@@ -98,5 +98,62 @@
     @include tablet {
       margin-top: 3.2rem;
     }
+
+    .form {
+
+      &__body {
+        display: grid;
+        align-items: stretch;
+        grid-template-columns: 100%;
+        grid-template-areas: "name"
+                          "phone"
+                          "policy"
+                          "submit";
+        gap: 1.75rem 0;
+
+        @include semiDesktop {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          grid-template-areas: "name phone"
+                          "policy policy"
+                          "submit .";
+          gap: 2rem 1.5rem;
+        }
+
+        @include laptop {
+          grid-template-columns: repeat(6, minmax(0, 1fr));
+          grid-template-areas: "name name name phone phone phone"
+                          "submit submit policy policy policy policy";
+          gap: 3rem;
+        }
+      }
+
+      &__field {
+        display: flex;
+        align-items: center;
+        min-width: 0;
+
+        &:nth-child(1) {
+          grid-area: name;
+        }
+        &:nth-child(2) {
+          grid-area: phone;
+        }
+        &:nth-child(3) {
+          grid-area: submit;
+        }
+        &:nth-child(4) {
+          grid-area: policy;
+        }
+      }
+
+      &__submit {
+        width: 100%;
+        min-width: auto;
+
+        @include mobile {
+          max-width: 20.6rem;
+        }
+      }
+    }
   }
 }

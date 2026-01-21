@@ -1,0 +1,222 @@
+@use '../../app/scss/variables.scss' as *;
+@use '../../app/scss/mixins.scss' as *;
+
+// about-company
+.about-company {
+
+  .about-company-title {
+
+    h1 {
+
+      b {
+        color: $color-blue;
+      }
+    }
+  }
+
+  .about-company-adv {
+    margin-top: 14.5rem;
+
+    ul {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      align-items: stretch;
+      gap: 3rem;
+
+      li {
+        position: relative;
+        border-radius: 3.2rem;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 3rem 3.8rem 4.2rem 3.8rem;
+        background: linear-gradient(225deg, #7a8bb4 0%, #8b9abb 17.66%, #8f9ebd 28.04%, #50688e 100%);
+        min-height: 37.8rem;
+
+        &::before {
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          box-shadow: inset 0 0 2.8rem .8rem #a5aec4;
+          background: rgba(217, 217, 217, 0.01);
+          opacity: 0.8;
+          pointer-events: none;
+        }
+
+        img {
+          width: 15.2rem;
+          height: 15.2rem;
+        }
+
+        p {
+          font-weight: 500;
+          font-size: 1.8rem;
+          line-height: 1.55556;
+          letter-spacing: -0.02em;
+          color: #fff;
+          max-width: 35.5rem;
+
+          b {
+            font-weight: 700;
+          }
+        }
+      }
+    }
+  }
+
+  .about-company-history {
+    margin-top: 14.5rem;
+    padding-block: 4rem;
+    border-radius: 3.2rem;
+
+    &::before {
+      border-radius: 3.2rem;
+    }
+
+    @include tablet {
+      margin-inline: 2.5rem;
+      padding-block: 8rem 8rem;
+    }
+
+    @include w1250 {
+      margin-inline: 6rem;
+      padding-block: 12rem 14rem;
+    }
+
+    &__container {
+    }
+
+    &__body {
+    }
+
+    &__title {
+      color: $white;
+    }
+
+    &__items {
+      margin-top: 2.4rem;
+      display: grid;
+      grid-template-columns: 100%;
+      align-items: stretch;
+      gap: 1rem;
+
+      @include tablet {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 2rem;
+      }
+
+      @include desktop {
+        margin-top: 4rem;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      @include w1250 {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 3rem;
+      }
+
+      li {
+        border: 2px solid rgba(181, 214, 255, 0.2);
+        border-radius: 0.8rem;
+        padding-block: 2.3rem;
+        padding-inline: 1.8rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem 0;
+
+        @include tablet {
+          border-radius: 3.2rem;
+          min-height: 36.8rem;
+          padding-block: 4rem;
+          padding-inline: 3.4rem;
+          gap: 1.6rem 0;
+        }
+
+        &:first-child {
+
+          @include w1250 {
+            grid-area: 1/1/1/3;
+          }
+        }
+
+        &:last-child {
+
+          @include w1250 {
+            grid-area: 2 / 3 / 2 / 5;
+          }
+        }
+
+        &:first-child,
+        &:last-child {
+          background-color: $white;
+
+          @include w1250 {
+            padding-inline: 4rem;
+          }
+
+          span {
+            color: $color-idfsl;
+            font-weight: 600;
+
+            @include w1250 {
+              font-size: 7.2rem;
+            }
+          }
+
+          p {
+            color: $color-idfsl;
+          }
+        }
+
+        &.picture {
+          padding: 0;
+          display: none;
+
+          @include desktop {
+            display: block;
+          }
+
+          img {
+            border-radius: 3.2rem;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            pointer-events: none;
+          }
+        }
+
+        span {
+          font-weight: 600;
+          font-size: 3.2rem;
+          letter-spacing: -0.02em;
+          color: $white;
+
+          @include tablet {
+            font-size: 4rem;
+          }
+        }
+
+        p {
+          font-weight: 400;
+          font-size: 1.4rem;
+          line-height: 1.4;
+          letter-spacing: -0.02em;
+          color: $white;
+
+          @include tablet {
+            font-size: 1.6rem;
+            line-height: 1.5;
+          }
+        }
+
+        img {
+
+        }
+      }
+    }
+  }
+}

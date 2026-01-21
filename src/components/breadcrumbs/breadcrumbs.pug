@@ -16,4 +16,5 @@ mixin breadcrumbs(items=[])
                           span.breadcrumbs__current= item
                       else
                           a(href="#" title=item).breadcrumbs__link= item
-                          .breadcrumbs__devider
+                          span.breadcrumbs__devider
+                            +svg("arrow-crumbs")
