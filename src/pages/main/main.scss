@@ -159,6 +159,10 @@
     margin-top: 5.6rem;
 
     @include tablet {
+      margin-top: 10rem;
+    }
+
+    @include desktop {
       margin-top: 16rem;
     }
 
@@ -177,7 +181,11 @@
   .services {
     margin-top: 5.6rem;
 
-    @include semiDesktop {
+    @include tablet {
+      margin-top: 10rem;
+    }
+
+    @include desktop {
       margin-top: 16rem;
     }
   }
@@ -186,6 +194,10 @@
     margin-top: 5.6rem;
 
     @include tablet {
+      margin-top: 10rem;
+    }
+
+    @include desktop {
       margin-top: 16rem;
     }
 
@@ -198,6 +210,10 @@
     margin-top: 5.6rem;
 
     @include tablet {
+      margin-top: 10rem;
+    }
+
+    @include desktop {
       margin-top: 16rem;
     }
   }
@@ -206,6 +222,10 @@
     margin-top: 5.6rem;
 
     @include tablet {
+      margin-top: 10rem;
+    }
+
+    @include desktop {
       margin-top: 16rem;
     }
 
@@ -250,6 +270,10 @@
     margin-top: 5.6rem;
 
     @include tablet {
+      margin-top: 10rem;
+    }
+
+    @include desktop {
       margin-top: 16rem;
     }
   }
@@ -258,6 +282,10 @@
     margin-top: 5.6rem;
 
     @include tablet {
+      margin-top: 10rem;
+    }
+
+    @include desktop {
       margin-top: 16rem;
     }
   }
