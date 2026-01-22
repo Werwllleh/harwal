@@ -15,9 +15,9 @@
 
 }
 
-.page-products-categories {
+.products-categories {
 
-  ul {
+  &__list {
     display: flex;
     flex-direction: column;
     gap: 2rem 0;
@@ -84,6 +84,29 @@
           font-size: 7.2rem;
         }
       }
+    }
+  }
+
+  &__category {
+
+    &--title {
+
+    }
+
+    .products-list {
+      margin-top: 2.4rem;
+
+      @include tablet {
+        margin-top: 3rem;
+      }
+
+      @include desktop {
+        margin-top: 5.6rem;
+      }
+    }
+
+    & + & {
+      margin-top: 16rem;
     }
   }
 }

@@ -1,4 +1,4 @@
-extends ../../app/pug/layouts/base.pug
+extends ../../app/pug/layouts/secondary.pug
 
 append vars
   - title = "Разводящая страница"
@@ -6,20 +6,40 @@ append vars
 
 append content
 
-    .page-index
-        .page__container.container
-            .page__content
-                h1.h1 Список страниц
-                ul.page-index__list
-                    li
-                        a(href="./ui.html", target="_blank") UI
-                    li
-                        a(href="./main.html", target="_blank") Главная
-                    li
-                        a(href="./about-company.html", target="_blank") О компании
-                    li
-                        a(href="./contacts.html", target="_blank") Контакты
-                    li
-                        a(href="./news.html", target="_blank") Новости
-                    li
-                        a(href="./products.html", target="_blank") Продукция
+    .page__header
+        .page__breadcrumbs
+            .container
+                +breadcrumbs(['Главная'])
+        .page__title
+            .container
+                p Главная
+        .page__header--bg
+            img(src="./images/header-bg.webp", alt="")
+    .page__content
+        .page-index
+            .page__container.container
+                .page__content
+                    h1.h1 Список страниц
+                    ul.page-index__list
+                        li
+                            a(href="./ui.html", target="_blank") UI
+                        li
+                            a(href="./main.html", target="_blank") Главная
+                        li
+                            a(href="./about-company.html", target="_blank") О компании
+                        li
+                            a(href="./contacts.html", target="_blank") Контакты
+                        li
+                            a(href="./news.html", target="_blank") Новости
+                        li
+                            a(href="./products.html", target="_blank") Продукция
+                        li
+                            a(href="./products2.html", target="_blank") Продукция 2
+                        li
+                            a(href="./products3.html", target="_blank") Продукция - Обработка стекла
+                        li
+                            a(href="./products4.html", target="_blank") Продукция - Алюминиевые светопрозрачные конструкции
+                        li
+                            a(href="./products5.html", target="_blank") Продукция - Огнестойкие панели
+                        li
+                            a(href="./products6.html", target="_blank") Продукция - Металлические конструкции
