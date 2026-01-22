@@ -37,6 +37,7 @@
 
   &__image {
     height: 19rem;
+    transition: height $transition;
 
     @include mobile {
       height: 36.5rem;

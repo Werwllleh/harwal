@@ -1,0 +1,114 @@
+@use '../../app/scss/variables.scss' as *;
+@use '../../app/scss/mixins.scss' as *;
+
+// projects
+.page-projects {
+  padding-bottom: 5rem;
+
+  @include tablet {
+    padding-bottom: 10rem;
+  }
+
+  @include desktop {
+    padding-bottom: 16rem;
+  }
+}
+
+.projects-types {
+
+  &__tabs {
+    display: flex;
+    align-items: center;
+    gap: 0 1.2rem;
+    padding-bottom: 2.4rem;
+    border-bottom: 1px solid rgba(181, 214, 255, 0.2);
+    overflow-y: auto;
+    margin-inline: -1.8rem;
+    padding-inline: 1.8rem;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    @include desktop {
+      gap: 0 2.2rem;
+      padding-bottom: 5rem;
+    }
+
+    button {
+
+    }
+  }
+
+  &__categories {
+    margin-top: 2.4rem;
+
+    @include desktop {
+      margin-top: 5rem;
+    }
+  }
+
+  &__category {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(5rem);
+    transition: opacity $transition, transform $transition, visibility $transition;
+
+    &.active {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    ul {
+      display: grid;
+      grid-template-columns: 100%;
+      align-items: stretch;
+      gap: 3rem;
+
+      @include mobile {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 4.8rem 3rem;
+      }
+    }
+  }
+
+  .project-card {
+
+    &__body {
+      box-shadow: none;
+      backdrop-filter: none;
+      background: none;
+      border-radius: 1.6rem 1.6rem 0 0;
+
+      @include mobile {
+        border-radius: 3.2rem 3.2rem 0 0;
+      }
+    }
+
+    &__image {
+      height: 20rem;
+
+      @include tablet {
+        height: 30rem;
+      }
+
+      @include desktop {
+        height: 35.1rem;
+      }
+    }
+
+    &__info {
+      border: none;
+      padding-inline: 0;
+      padding-top: 2.2rem;
+      padding-bottom: 0;
+      border-radius: 0;
+    }
+
+    &__name {
+      max-width: none;
+    }
+  }
+}

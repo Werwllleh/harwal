@@ -17,24 +17,49 @@
 
 .products-categories {
 
-  &__list {
+  &__category {
+
+    &--title {
+
+    }
+
+    .products-list {
+      margin-top: 2.4rem;
+
+      @include tablet {
+        margin-top: 3rem;
+      }
+
+      @include desktop {
+        margin-top: 5.6rem;
+      }
+    }
+
+    & + & {
+      margin-top: 16rem;
+    }
+  }
+}
+
+.list-links {
+
+  ul {
     display: flex;
     flex-direction: column;
-    gap: 2rem 0;
-
-    @include tablet {
-      gap: 3rem 0;
-    }
-
-    @include semiDesktop {
-      gap: 5rem 0;
-    }
-
-    @include desktop {
-      gap: 11.2rem 0;
-    }
 
     li {
+
+      &:first-child {
+        a {
+          padding-top: 0;
+        }
+      }
+
+      &:not(:last-child) {
+        a {
+          border-bottom: 1px solid rgba(181, 214, 255, 0.2);
+        }
+      }
 
       a {
         display: flex;
@@ -46,6 +71,8 @@
         line-height: 1.45;
         letter-spacing: -0.02em;
         color: $color-idfsl;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
 
         &:hover {
           color: $color-blue;
@@ -73,40 +100,26 @@
 
         @include tablet {
           font-size: 4rem;
+          padding-top: 2.4rem;
+          padding-bottom: 2.4rem;
+        }
+
+        @include semiDesktop {
+          padding-top: 3rem;
+          padding-bottom: 3rem;
         }
 
         @include desktop {
           font-size: 5rem;
           line-height: 1.14;
+          padding-top: 5.6rem;
+          padding-bottom: 5.6rem;
         }
 
         @include w1250 {
           font-size: 7.2rem;
         }
       }
-    }
-  }
-
-  &__category {
-
-    &--title {
-
-    }
-
-    .products-list {
-      margin-top: 2.4rem;
-
-      @include tablet {
-        margin-top: 3rem;
-      }
-
-      @include desktop {
-        margin-top: 5.6rem;
-      }
-    }
-
-    & + & {
-      margin-top: 16rem;
     }
   }
 }

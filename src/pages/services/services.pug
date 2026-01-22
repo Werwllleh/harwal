@@ -1,0 +1,46 @@
+extends ../../app/pug/layouts/secondary.pug
+
+append vars
+  - title = "Услуги"
+  - description = "Описание страницы услуг"
+
+append content
+
+    .page__header
+        .page__breadcrumbs
+            .container
+                +breadcrumbs(['Главная', 'Услуги'])
+        .page__title
+            .container
+                p Услуги
+        .page__header--bg
+            img(src="./images/header-bg.webp", alt="")
+    .page__content
+        .page-services
+            .container
+                nav.list-links
+                    ul
+                        li
+                            a(href="#")
+                                | Проектирование
+                                +svg("arrow-right-link")
+                        li
+                            a(href="#")
+                                | Производство
+                                +svg("arrow-right-link")
+                        li
+                            a(href="#")
+                                | Монтаж
+                                +svg("arrow-right-link")
+                        li
+                            a(href="#")
+                                | Гарантийное обслуживание
+                                +svg("arrow-right-link")
+                        li
+                            a(href="#")
+                                | Частным клиентам
+                                +svg("arrow-right-link")
+                        li
+                            a(href="#")
+                                | Партнерам
+                                +svg("arrow-right-link")

@@ -1,0 +1,92 @@
+extends ../../app/pug/layouts/base.pug
+
+append vars
+  - title = "Проекты"
+  - description = "Описание страницы проекты"
+
+append content
+
+    .page__header
+        .page__breadcrumbs
+            .container
+                +breadcrumbs(['Главная', 'О компании', 'Проекты'])
+        .page__title
+            .container
+                p Проекты
+        .page__header--bg
+            img(src="./images/header-bg.webp", alt="")
+    .page__content
+        .page-projects
+            .container
+                .projects-types
+                    .projects-types__tabs
+                        button(type="button", data-project-tab="public").btn.light Общественные
+                        button(type="button", data-project-tab="state").btn.light Государственные
+                        button(type="button", data-project-tab="international").btn.light Международные
+                    .projects-types__categories
+                        .projects-types__category.active(data-project-category="public")
+                            ul
+                                li
+                                    +projectCard('Жилой комплекс Лефорт', '1.webp')
+                                li
+                                    +projectCard('Жилой комплекс ILOVE', '2.webp')
+                                li
+                                    +projectCard('Жилой комплекс ЖК Форест', '3.webp')
+                                li
+                                    +projectCard('Жилой комплекс Грин Парк', '4.webp')
+                                li
+                                    +projectCard('Жилой комплекс Лефорт', '1.webp')
+                                li
+                                    +projectCard('Жилой комплекс ILOVE', '2.webp')
+                                li
+                                    +projectCard('Жилой комплекс ЖК Форест', '3.webp')
+                                li
+                                    +projectCard('Жилой комплекс Грин Парк', '4.webp')
+                                li
+                                    +projectCard('Жилой комплекс Лефорт', '1.webp')
+                                li
+                                    +projectCard('Жилой комплекс ILOVE', '2.webp')
+                        .projects-types__category(data-project-category="state")
+                            ul
+                                li
+                                    +projectCard('Жилой комплекс Лефорт', '1.webp')
+                                li
+                                    +projectCard('Жилой комплекс ILOVE', '2.webp')
+                                li
+                                    +projectCard('Жилой комплекс ЖК Форест', '3.webp')
+                                li
+                                    +projectCard('Жилой комплекс Грин Парк', '4.webp')
+                                li
+                                    +projectCard('Жилой комплекс Лефорт', '1.webp')
+                                li
+                                    +projectCard('Жилой комплекс ILOVE', '2.webp')
+                                li
+                                    +projectCard('Жилой комплекс ЖК Форест', '3.webp')
+                                li
+                                    +projectCard('Жилой комплекс Грин Парк', '4.webp')
+                                li
+                                    +projectCard('Жилой комплекс Лефорт', '1.webp')
+                                li
+                                    +projectCard('Жилой комплекс ILOVE', '2.webp')
+                        .projects-types__category(data-project-category="international")
+                            ul
+                                li
+                                    +projectCard('Жилой комплекс Лефорт', '1.webp')
+                                li
+                                    +projectCard('Жилой комплекс ILOVE', '2.webp')
+                                li
+                                    +projectCard('Жилой комплекс ЖК Форест', '3.webp')
+                                li
+                                    +projectCard('Жилой комплекс Грин Парк', '4.webp')
+                                li
+                                    +projectCard('Жилой комплекс Лефорт', '1.webp')
+                                li
+                                    +projectCard('Жилой комплекс ILOVE', '2.webp')
+                                li
+                                    +projectCard('Жилой комплекс ЖК Форест', '3.webp')
+                                li
+                                    +projectCard('Жилой комплекс Грин Парк', '4.webp')
+                                li
+                                    +projectCard('Жилой комплекс Лефорт', '1.webp')
+                                li
+                                    +projectCard('Жилой комплекс ILOVE', '2.webp')

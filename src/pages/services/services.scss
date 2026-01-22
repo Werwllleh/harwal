@@ -1,0 +1,15 @@
+@use '../../app/scss/variables.scss' as *;
+@use '../../app/scss/mixins.scss' as *;
+
+// services
+.page-services {
+  padding-bottom: 5rem;
+
+  @include tablet {
+    padding-bottom: 10rem;
+  }
+
+  @include desktop {
+    padding-bottom: 16rem;
+  }
+}
