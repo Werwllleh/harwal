@@ -270,3 +270,32 @@ body {
         pointer-events: none;
     }
 }
+
+.figure {
+
+    @include tablet {
+        margin-inline: 2.5rem;
+    }
+
+    @include w1250 {
+        margin-inline: 6rem;
+    }
+
+    img {
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+        border: 2px solid rgba(181, 214, 255, 0.2);
+        border-radius: 3.2rem;
+    }
+
+    figcaption {
+        margin-top: 3rem;
+        font-weight: 400;
+        font-size: 1.4rem;
+        letter-spacing: -0.02em;
+        line-height: 1.25;
+        color: $color;
+        max-width: 56rem;
+    }
+}

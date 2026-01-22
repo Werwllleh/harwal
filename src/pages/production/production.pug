@@ -1,0 +1,88 @@
+extends ../../app/pug/layouts/base.pug
+
+append vars
+  - title = "Production"
+  - description = "Описание Production"
+
+append content
+
+    .page__header
+        .page__breadcrumbs
+            .container
+                +breadcrumbs(['Главная', 'О компании', 'Производство'])
+        .page__title
+            .container
+                p Наше производство
+        .page__header--bg
+            img(src="./images/header-bg.webp", alt="")
+    .page__content
+        .page-production
+            .production-info
+                .production-info__container.container
+                    .production-info__body
+                        h1.h1.production-info__title
+                            | Современный завод в&nbsp;России по&nbsp;производству изделий из&nbsp;листового стекла и&nbsp;светопрозрачных алюминиевых конструкций.
+                        .production-info__grid
+                            .production-info__grid--col
+                                p Международная компания Нarwal Group приняла решение открыть завод Нarwal Enterprise в&nbsp;России, основная сфера деятельности которого&nbsp;&mdash; производство изделий из&nbsp;листового стекла и&nbsp;светопрозрачных алюминиевых конструкций.
+                                p Несмотря на&nbsp;то, что продукция Harwal Enterprises появилась на&nbsp;отечественном рынке недавно, она пользуется высоким спросом и&nbsp;уже получила заслуженное признание среди российских потребителей.
+                            .production-info__grid--col
+                                p Harwal Enterprises находится в&nbsp;черте города Солнечногорска, в&nbsp;45&nbsp;километрах от&nbsp;МКАД по&nbsp;Ленинградскому шоссе.
+                                .production-info__address
+                                    p.production-info__address--text
+                                        span
+                                            +svg("map-point")
+                                        | Солнечногорск, Бутырский тупик, 2а
+                                    a(href="https://yandex.ru/maps/-/CLhBEVjJ" target="_blank" rel="noopener noreferrer").production-info__address--link.btn.primary Посмотреть на карте
+            figure.figure
+                img(src="./images/photo3.webp", alt="Завод Harwal Enterprises")
+                .container
+                    figcaption
+                        | Торжественное открытие завода Harwal Enterprises состоялось 1 июня 2018 года. Комплекс производственных помещений расположен на площади в 13 000 м². Все цеха нашего предприятия оснащены высокотехнологичным современным оборудованием.
+            .production-services
+                .production-services__container.container
+                    p.h4.production-services__title
+                        | Harwal Enterprises предлагает полный спектр услуг от&nbsp;проектирования до&nbsp;монтажа:
+                    .production-services__items
+                        ul
+                            li
+                                span
+                                    +svg("pencil")
+                                p Консультация и замер
+                            li
+                                span
+                                    +svg("pencil")
+                                p Тестирование (контроль качества)
+                            li
+                                span
+                                    +svg("pencil")
+                                p Гарантийное обслуживание
+                        ul
+                            li
+                                span
+                                    +svg("pencil")
+                                p Проектирования изделия
+                            li
+                                span
+                                    +svg("pencil")
+                                p Удобная логистика (быстрая доставка изделий)
+                        ul
+                            li
+                                span
+                                    +svg("pencil")
+                                p Производство
+                            li
+                                span
+                                    +svg("pencil")
+                                p Услуги монтажа
+            .production-info
+                .production-info__container.container
+                    .production-info__body
+                        .production-info__grid
+                            .production-info__grid--col
+                                p На&nbsp;территории завода совместно работает большое количество квалифицированных специалистов из&nbsp;ОАЭ и&nbsp;России&nbsp;&mdash; это проектировщики, инженеры, мастера, операторы и&nbsp;монтажники. Тесное взаимодействие со&nbsp;специалистами главной компании Нarwal Group дает возможность сотрудникам российского подразделения перенимать накопленный зарубежный опыт и&nbsp;технологии.
+
+                                p Harwal Enterprises&nbsp;&mdash; это широкий ассортимент высококачественной продукции, которая адаптирована к&nbsp;требованиям российского потребителя, и&nbsp;отвечает высоким требованиям в&nbsp;сфере технологий, теплоизоляции, энергосбережении и&nbsp;эстетики.
+                            .production-info__grid--col
+                                p Мы&nbsp;поможем Вам решить различные архитектурные задачи&nbsp;&mdash; от&nbsp;простых окон до&nbsp;входных групп и&nbsp;фасадных систем. Основными принципами работы нашей компании являются&nbsp;&mdash; качество, короткие сроки выполнения работ и&nbsp;индивидуальный подход к&nbsp;каждому клиенту.
+                                button(type="button", data-modal="consultation").btn.primary Начать сотрудничество
