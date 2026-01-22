@@ -1,0 +1,38 @@
+extends ../../app/pug/layouts/secondary.pug
+
+append vars
+  - title = "Products"
+  - description = "Описание Products"
+
+append content
+
+    .page__header
+        .page__breadcrumbs
+            .container
+                +breadcrumbs(['Главная', 'Продукция'])
+        .page__title
+            .container
+                p Продукция
+        .page__header--bg
+            img(src="./images/header-bg.webp", alt="")
+    .page__content
+        .page-products
+            .page-products-categories
+                .container
+                    ul
+                        li
+                            a(href="#")
+                                | Обработка стекла
+                                +svg("arrow-right-link")
+                        li
+                            a(href="#")
+                                | Алюминиевые светопрозрачные конструкции
+                                +svg("arrow-right-link")
+                        li
+                            a(href="#")
+                                | Огнестойкие панели
+                                +svg("arrow-right-link")
+                        li
+                            a(href="#")
+                                | Металлические конструкции
+                                +svg("arrow-right-link")
