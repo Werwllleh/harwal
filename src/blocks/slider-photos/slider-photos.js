@@ -22,7 +22,10 @@ if (sliderPhotosBlocks.length) {
       // allowMediaOverlap: true,
       toggleThumb: true,
       thumbnail: true,
-      selector: '.swiper-slide a'
+      selector: '.swiper-slide a',
+      mobileSettings: {
+        showCloseIcon: true
+      }
     });
   })
 }

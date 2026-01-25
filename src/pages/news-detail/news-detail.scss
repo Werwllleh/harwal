@@ -1,0 +1,169 @@
+@use '../../app/scss/variables.scss' as *;
+@use '../../app/scss/mixins.scss' as *;
+
+// news-detail
+.news-detail {
+  padding-bottom: 5rem;
+
+  @include tablet {
+    padding-bottom: 10rem;
+  }
+
+  @include desktop {
+    padding-bottom: 16rem;
+  }
+
+  .figure {
+    margin-top: 3rem;
+
+    @include tablet {
+      margin-top: 5.6rem;
+    }
+
+    @include desktop {
+      margin-top: 7.2rem;
+    }
+
+    figcaption {
+      margin-top: 0;
+    }
+  }
+
+  .news-detail-textblock {
+    margin-top: 5.6rem;
+
+    @include tablet {
+      margin-top: 10rem;
+    }
+
+    @include desktop {
+      margin-top: 12.8rem;
+    }
+
+    &__body {
+      max-width: 91.5rem;
+    }
+
+    &__title {
+      p.h4 {
+
+        @include desktop {
+          font-size: 4rem;
+        }
+      }
+    }
+  }
+
+  .article-services {
+    margin-top: 3rem;
+
+    @include tablet {
+      margin-top: 4rem;
+    }
+
+    @include desktop {
+      margin-top: 7.2rem;
+    }
+
+    &__title {
+      max-width: 91.5rem;
+
+      @include desktop {
+        font-size: 4rem;
+      }
+    }
+
+    & + .production-info {
+      margin-top: 6.4rem;
+
+      .production-info__grid {
+        margin-top: 0;
+      }
+    }
+  }
+
+  .news-detail-photos {
+    margin-top: 5.6rem;
+
+    @include tablet {
+      margin-top: 10rem;
+    }
+
+    @include desktop {
+      margin-top: 16rem;
+    }
+  }
+}
+
+.news-detail-photos {
+
+  &__title {
+
+    p.h4 {
+
+      @include desktop {
+        font-size: 4rem;
+      }
+    }
+  }
+
+  &__photos {
+  }
+
+  &__title + &__photos {
+    margin-top: 3rem;
+
+    @include desktop {
+      margin-top: 4.2rem;
+    }
+  }
+}
+
+.news-detail-textblock {
+
+
+  &__container {
+  }
+
+  &__body {
+  }
+
+  &__title {
+
+  }
+
+  &__text {
+
+    p {
+      font-weight: 400;
+      font-size: 1.6rem;
+      line-height: 1.6;
+      letter-spacing: -0.02em;
+      color: #788492;
+
+      @include mobile {
+        font-size: 1.8rem;
+      }
+
+      @include desktop {
+        font-size: 2rem;
+      }
+    }
+
+    p + p {
+      margin-top: 1.8rem;
+
+      @include mobile {
+        margin-top: 2.2rem;
+      }
+    }
+  }
+
+  &__title + &__text {
+    margin-top: 3rem;
+
+    @include desktop {
+      margin-top: 4.8rem;
+    }
+  }
+}
