@@ -1,0 +1,58 @@
+@use '../../app/scss/variables.scss' as *;
+@use '../../app/scss/mixins.scss' as *;
+
+// slider-photos
+.slider-photos {
+
+  &.w324 {
+    .swiper-slide {
+      width: 25rem;
+
+      @include desktop {
+        width: 32.4rem;
+      }
+    }
+  }
+  &.w422 {
+    .swiper-slide {
+      width: 28rem;
+
+      @include desktop {
+        width: 42.2rem;
+      }
+    }
+  }
+
+  &__body {}
+
+  &__swiper {
+
+    .swiper-wrapper {
+      align-items: stretch;
+    }
+
+    .swiper-slide {
+      width: auto;
+      height: 35rem;
+
+      @include desktop {
+        height: 50rem;
+      }
+    }
+  }
+
+  &__card {
+    height: 100%;
+    border: 2px solid rgba(181, 214, 255, 0.2);
+    border-radius: 3.2rem;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+
+    }
+  }
+}

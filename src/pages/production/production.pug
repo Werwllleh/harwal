@@ -1,4 +1,4 @@
-extends ../../app/pug/layouts/base.pug
+extends ../../app/pug/layouts/secondary.pug
 
 append vars
   - title = "Production"
@@ -39,11 +39,11 @@ append content
                 .container
                     figcaption
                         | Торжественное открытие завода Harwal Enterprises состоялось 1 июня 2018 года. Комплекс производственных помещений расположен на площади в 13 000 м². Все цеха нашего предприятия оснащены высокотехнологичным современным оборудованием.
-            .production-services
-                .production-services__container.container
-                    p.h4.production-services__title
+            .article-services
+                .article-services__container.container
+                    p.h4.article-services__title
                         | Harwal Enterprises предлагает полный спектр услуг от&nbsp;проектирования до&nbsp;монтажа:
-                    .production-services__items
+                    .article-services__items
                         ul
                             li
                                 span
@@ -86,3 +86,5 @@ append content
                             .production-info__grid--col
                                 p Мы&nbsp;поможем Вам решить различные архитектурные задачи&nbsp;&mdash; от&nbsp;простых окон до&nbsp;входных групп и&nbsp;фасадных систем. Основными принципами работы нашей компании являются&nbsp;&mdash; качество, короткие сроки выполнения работ и&nbsp;индивидуальный подход к&nbsp;каждому клиенту.
                                 button(type="button", data-modal="consultation").btn.primary Начать сотрудничество
+            .production-photos
+                +sliderPhotos(["./images/production/1.webp", "./images/production/2.webp", "./images/production/3.webp", "./images/production/4.webp", "./images/production/5.webp", "./images/production/1.webp", "./images/production/2.webp", "./images/production/3.webp", "./images/production/4.webp", "./images/production/5.webp"], 324)

@@ -2,7 +2,8 @@
 
 .container {
     width: 100%;
-    max-width: 143.6rem;
+    //max-width: 143.6rem;
+    max-width: 150.6rem;
     margin: 0 auto;
     padding-left: 1.8rem;
     padding-right: 1.8rem;
@@ -10,5 +11,10 @@
     @include tablet {
         padding-left: 2.5rem;
         padding-right: 2.5rem;
+    }
+
+    @include w1250 {
+        padding-left: 6rem;
+        padding-right: 6rem;
     }
 }

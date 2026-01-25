@@ -1,0 +1,13 @@
+mixin sliderPhotos(images, slideWidth)
+
+    //slider-photos
+    .slider-photos(class=`w${slideWidth}`)&attributes(attributes)
+        .slider-photos__body
+            if images && images.length
+                .slider-photos__swiper.swiper
+                    .swiper-wrapper(data-lightgallery)
+                        each source in images
+                          .swiper-slide(data-src=source)
+                              .slider-photos__card
+                                  a(href=source)
+                                      img(src=source, alt="")
