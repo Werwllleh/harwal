@@ -1,0 +1,82 @@
+@use '../../app/scss/variables.scss' as *;
+@use '../../app/scss/mixins.scss' as *;
+
+// quality-policy
+.quality-policy {
+  padding-bottom: 3.4rem;
+
+  &__title + .figure {
+    margin-top: 5.6rem;
+
+    @include desktop {
+      margin-top: 8rem;
+    }
+  }
+
+  .figure + .textblock {
+    margin-top: 2.8rem;
+
+    @include tablet {
+      margin-top: 5.6rem;
+    }
+
+    @include desktop {
+      margin-top: 8rem;
+    }
+  }
+
+  .textblock {
+
+    &__body {
+      max-width: 91.5rem;
+    }
+  }
+
+  .textblock + .textblock {
+    margin-top: 2.8rem;
+
+    @include tablet {
+      margin-top: 5.6rem;
+    }
+
+    @include desktop {
+      margin-top: 8rem;
+    }
+  }
+
+  .quality-policy-adv {
+
+  }
+
+  .textblock + .quality-policy-adv {
+    margin-top: 5.6rem;
+
+    @include desktop {
+      margin-top: 8rem;
+    }
+  }
+
+  .quality-policy-adv + .textblock {
+    margin-top: 5.6rem;
+
+    @include tablet {
+      margin-top: 10rem;
+    }
+
+    @include desktop {
+      margin-top: 16rem;
+    }
+  }
+
+  .quality-policy-form {
+    margin-top: 5.6rem;
+
+    @include tablet {
+      margin-top: 10rem;
+    }
+
+    @include desktop {
+      margin-top: 16rem;
+    }
+  }
+}
