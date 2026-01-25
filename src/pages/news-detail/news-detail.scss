@@ -24,6 +24,10 @@
       margin-top: 7.2rem;
     }
 
+    img {
+      max-height: 72rem;
+    }
+
     figcaption {
       margin-top: 0;
     }
@@ -92,30 +96,18 @@
     @include desktop {
       margin-top: 16rem;
     }
-  }
-}
 
-.news-detail-photos {
+    .slider-photos {
+      &__title {
+        p.h4 {
 
-  &__title {
-
-    p.h4 {
-
-      @include desktop {
-        font-size: 4rem;
+          @include desktop {
+            font-size: 4rem;
+          }
+        }
       }
     }
-  }
 
-  &__photos {
-  }
-
-  &__title + &__photos {
-    margin-top: 3rem;
-
-    @include desktop {
-      margin-top: 4.2rem;
-    }
   }
 }
 

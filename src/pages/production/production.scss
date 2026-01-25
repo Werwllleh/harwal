@@ -13,18 +13,23 @@
     padding-bottom: 16rem;
   }
 
-  .production-info {
+  .figure {
+    margin-top: 3rem;
 
-    & + .figure {
+    @include tablet {
       margin-top: 5.6rem;
+    }
 
-      @include tablet {
-        margin-top: 8rem;
-      }
+    @include desktop {
+      margin-top: 7.2rem;
+    }
 
-      @include desktop {
-        margin-top: 14rem;
-      }
+    img {
+      max-height: 72rem;
+    }
+
+    figcaption {
+      margin-top: 0;
     }
   }
 

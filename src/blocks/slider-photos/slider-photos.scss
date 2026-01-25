@@ -13,17 +13,21 @@
       }
     }
   }
-  &.w422 {
+  &.w442 {
     .swiper-slide {
       width: 28rem;
 
       @include desktop {
-        width: 42.2rem;
+        width: 44.2rem;
       }
     }
   }
 
   &__body {}
+
+  &__title {
+
+  }
 
   &__swiper {
 
@@ -41,11 +45,25 @@
     }
   }
 
+  &__title + &__swiper {
+    margin-top: 3rem;
+
+    @include desktop {
+      margin-top: 4.2rem;
+    }
+  }
+
   &__card {
     height: 100%;
     border: 2px solid rgba(181, 214, 255, 0.2);
     border-radius: 3.2rem;
     overflow: hidden;
+
+    a {
+      display: flex;
+      height: 100%;
+      width: 100%;
+    }
 
     img {
       width: 100%;

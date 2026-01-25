@@ -1,8 +1,12 @@
-mixin sliderPhotos(images, slideWidth)
+mixin sliderPhotos(images, slideWidth, title)
 
     //slider-photos
     .slider-photos(class=`w${slideWidth}`)&attributes(attributes)
         .slider-photos__body
+            if title
+                .slider-photos__title
+                    .container
+                        p.h4= title
             if images && images.length
                 .slider-photos__swiper.swiper
                     .swiper-wrapper(data-lightgallery)

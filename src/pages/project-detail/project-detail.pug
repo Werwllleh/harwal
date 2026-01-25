@@ -1,0 +1,58 @@
+extends ../../app/pug/layouts/secondary.pug
+
+append vars
+  - title = "Project-detail"
+  - description = "Описание Project-detail"
+
+append content
+
+    .page__header
+        .page__breadcrumbs
+            .container
+                +breadcrumbs(['Главная', 'Проекты', 'Дом правительства Московской области'])
+        .page__title
+            .container
+                p Проекты
+        .page__header--bg
+            img(src="./images/header-bg.webp", alt="")
+    .page__content
+        .project-detail
+            .project-detail__title
+                .container
+                    h1.h1 Дом правительства Московской области
+            figure.figure
+                img(src="./images/photo4.webp", alt="Дом правительства Московской области")
+            .project-detail-content
+                .project-detail-content__container.container
+                    .project-detail-content__body
+                        .project-detail-content__info
+                            .project-detail-content__info--block
+                                p.h4 О проекте
+                                p.text Современная авторская архитектура, продуманное благоустройство и&nbsp;удобный подземный паркинг, эргономичные планировки. Но&nbsp;новый семейный квартал ILOVE&nbsp;&mdash; это больше, чем комфорт и&nbsp;удобство в&nbsp;классическом исполнении.
+                            .project-detail-content__info--block
+                                p.h4 Для проекта изготовлено
+                                p.text
+                                    | Производство и монтаж 11000 м2 фасадов со встроенными окнами и дверями алюминиевых светопрозрачных конструкций включая
+                                    |
+                                    b фасадное остекление.
+                        .project-detail-content__contacts
+                            .contact-item
+                                a(href="#", target="_blank", rel="noreferrer noopener").contact-item__link
+                                .contact-item__body
+                                    .contact-item__info
+                                        p i-love.ru
+                                        span Сайт проекта
+                            .contact-item
+                                a(href="#", target="_blank", rel="noreferrer noopener").contact-item__link
+                                .contact-item__body
+                                    .contact-item__info
+                                        p KORTROS
+                                        span Застройщик
+                                    .contact-item__image
+                                        img(src="./images/kortros.png", alt="")
+
+
+            .project-detail-photos
+                +sliderPhotos(["./images/production/1.webp", "./images/production/2.webp", "./images/production/3.webp", "./images/production/4.webp", "./images/production/5.webp", "./images/production/1.webp", "./images/production/2.webp", "./images/production/3.webp", "./images/production/4.webp", "./images/production/5.webp"], 442, "Фотографии проекта")
+            .project-detail-form
+                +bannerForm(3)
