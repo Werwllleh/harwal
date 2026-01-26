@@ -1,279 +1,287 @@
 extends ../../app/pug/layouts/base.pug
 
 append vars
-  - title = "Main"
-  - description = "Описание Main"
+  - title = "Главная"
+  - description = "Описание страницы главная"
 
 append content
     .page__main
-        section.main
-            .main__container.container
-                .main__body
-                    .main__info
-                        h1.h1.main__title Современный завод России для стеклообработки
-                        h2.main__descriprion Наше производство позволяет нам за короткое время выполнять крупные заказы по обработке, декорированную и изготовлению всевозможных изделий из стекла.
-            .main__bg(style="background-image: url('./images/main-bg.webp');")
-                //img(src="./images/main-bg.webp")
-        section.products
-            .products__container.container
-                h4.h4.section-title
-                    | Продукция нашего завода
-                    a(href="#") Вся продукция
-                        +svg("arrow-right-link")
-                .products-list
-                    +productCard('Алюминиевые оконные системы', '1.webp')
-                    +productCard('Алюминиевые дверные системы', '2.webp')
-                    +productCard('Стеклянная кровля', '3.webp')
-                    +productCard('Фасадное остекление', '4.webp')
-                    +productCard('Стеклопакеты', '5.webp')
-                    +productCard('Стемалит и Эмалит', '6.webp')
-                    +productCard('Triplex', '7.webp')
-                    +productCard('Зенитные фонари', '8.webp')
-                    +productCard('Зимние сады', '9.webp')
-        section.services
-            .services__container.container
-                .services__body
-                    .services__info
-                        h4.h4.services__title Услуги
-                        p Мы&nbsp;соблюдаем условия договоров&sbquo; что позволяет клиентам получать грамотный проект в&nbsp;оговоренные сроки
-                    ul.services__links
-                        li
-                            a(href="#").active
-                                | Резка и обработка кромки
-                                +svg('arrow-right-link')
-                        li
-                            a(href="#")
-                                | Оклейка стекол пленкой
-                                +svg('arrow-right-link')
-                        li
-                            a(href="#")
-                                | Закалка
-                                +svg('arrow-right-link')
-                        li
-                            a(href="#")
-                                | Сверление, зенковка и фрезеровка
-                                +svg('arrow-right-link')
-                        li
-                            a(href="#")
-                                | Оклейка стекол пленкой
-                                +svg('arrow-right-link')
-                        li
-                            a(href="#")
-                                | Закалка
-                                +svg('arrow-right-link')
-                        li
-                            a(href="#")
-                                | Сверление, зенковка
-                                +svg('arrow-right-link')
-                    .services__content
-                        .services__item.active
-                            .services__item--image
-                                img(src="/images/services-content-img.webp")
-                            p.services__item--text
-                                | Резка и обработка кромки стекла — это процесс придания стеклу нужной формы и безопасных, эстетичных краев.
-                            .services__item--price
-                                span Стоимость работ
-                                p от 30 до 250 руб / п.м.
-                        .services__item
-                            .services__item--image
-                                img(src="/images/services-content-img.webp")
-                            p.services__item--text
-                                | Резка и обработка кромки стекла — это процесс придания стеклу нужной формы и безопасных, эстетичных краев.
-                            .services__item--price
-                                span Стоимость работ
-                                p от 30 до 251 руб / п.м.
-                        .services__item
-                            .services__item--image
-                                img(src="/images/services-content-img.webp")
-                            p.services__item--text
-                                | Резка и обработка кромки стекла — это процесс придания стеклу нужной формы и безопасных, эстетичных краев.
-                            .services__item--price
-                                span Стоимость работ
-                                p от 30 до 252 руб / п.м.
-                        .services__item
-                            .services__item--image
-                                img(src="/images/services-content-img.webp")
-                            p.services__item--text
-                                | Резка и обработка кромки стекла — это процесс придания стеклу нужной формы и безопасных, эстетичных краев.
-                            .services__item--price
-                                span Стоимость работ
-                                p от 30 до 253 руб / п.м.
-                        .services__item
-                            .services__item--image
-                                img(src="/images/services-content-img.webp")
-                            p.services__item--text
-                                | Резка и обработка кромки стекла — это процесс придания стеклу нужной формы и безопасных, эстетичных краев.
-                            .services__item--price
-                                span Стоимость работ
-                                p от 30 до 254 руб / п.м.
-                        .services__item
-                            .services__item--image
-                                img(src="/images/services-content-img.webp")
-                            p.services__item--text
-                                | Резка и обработка кромки стекла — это процесс придания стеклу нужной формы и безопасных, эстетичных краев.
-                            .services__item--price
-                                span Стоимость работ
-                                p от 30 до 255 руб / п.м.
-                        .services__item
-                            .services__item--image
-                                img(src="/images/services-content-img.webp")
-                            p.services__item--text
-                                | Резка и обработка кромки стекла — это процесс придания стеклу нужной формы и безопасных, эстетичных краев.
-                            .services__item--price
-                                span Стоимость работ
-                                p от 30 до 256 руб / п.м.
-        section.become-partner
-            .become-partner__container.container
-                .become-partner__body
-                    h4.h4.become-partner__section-title
-                        | Стать нашим партнером — просто
-                    ul.become-partner__steps
-                        li
-                            span
-                                +svg("pencil")
-                            p Отправляете заявку через форму
-                        li
-                            span
-                                +svg("case")
-                            p Присваиваем вам статус партнера
-                        li
-                            span
-                                +svg("check")
-                            p Получаете доступ к партнерским возможностям
-                    p.become-partner__slogan
-                        | Миссия
-                        |
-                        span Harwal Enterprises
-                        |
-                        | создавать инновации, выпускать высококачественные продукты с&nbsp;профессиональными услугами.
-                    ul.become-partner__advantages
-                        li
-                            span
-                                img(src="./images/become-partner/bp-1.webp", alt="")
-                            p
-                                b Harwal Enterprises —
-                                |
-                                | это первый в&nbsp;России завод группы компаний Harwal Group. Открыт 1&nbsp;июня 2018&nbsp;года.
-                        li
-                            span
-                                img(src="./images/become-partner/bp-2.webp", alt="")
-                            p
-                                b Harwal Group
-                                |
-                                | имеет 28&nbsp;бизнес-единиц с&nbsp;производственными и&nbsp;торговыми объектами по&nbsp;всему миру.
-                        li
-                            span
-                                img(src="./images/become-partner/bp-3.webp", alt="")
-                            p
-                                b Harwal Group
-                                |
-                                | насчитывает более 60-ти лет опыта в&nbsp;различных процессах и&nbsp;технологиях.
-                        li
-                            span
-                                img(src="./images/become-partner/bp-4.webp", alt="")
-                            p Годовая конверсионная мощность 200&nbsp;000 метрических тонн пластика и&nbsp;20&nbsp;000 тонн алюминия и&nbsp;стали
-                        li
-                            span
-                                img(src="./images/become-partner/bp-5.webp", alt="")
-                            p Ведет бизнес в&nbsp;40&nbsp;странах по&nbsp;всему Ближнему Востоку, Африке, Европе и&nbsp;США.
-        section.projects
-            .projects__container.container
-                h4.h4.section-title
-                    | 483 проекта, реализованных по всему миру
-                    a(href="#") Все проекты
-                        +svg("arrow-right-link")
-                .projects__list
-                    +projectCard('Жилой комплекс Лефорт', '1.webp')
-                    +projectCard('Жилой комплекс ILOVE', '2.webp', true)
-                    +projectCard('Жилой комплекс ЖК Форест', '3.webp', true)
-                    +projectCard('Жилой комплекс Грин Парк', '4.webp', true)
-        section.companies
-            .companies__container.container
-                .companies__body
-                    h4.h4.companies__title
-                        | Компания
-                        |
-                        span Harwal Enterprises
-                        |
-                        | использует современные технологии и&nbsp;оборудование от&nbsp;ведущих мировых компаний
-                    ul.companies__list
-                        li
-                            img(src="./images/companies/tamglass.webp", alt="")
-                        li
-                            img(src="./images/companies/alutech.webp", alt="")
-                        li
-                            img(src="./images/companies/bavelloni.webp", alt="")
-                        li
-                            img(src="./images/companies/elumatec.webp", alt="")
-                        li
-                            img(src="./images/companies/salavatsteklo.webp", alt="")
-                        li
-                            img(src="./images/companies/fapim.webp", alt="")
-                        li
-                            img(src="./images/companies/keraglass.webp", alt="")
-                        li
-                            img(src="./images/companies/fenzi.webp", alt="")
-                        li
-                            img(src="./images/companies/bystronic.webp", alt="")
-                        li
-                            img(src="./images/companies/schuco.webp", alt="")
-                        li
-                            img(src="./images/companies/realit.webp", alt="")
-                        li
-                            img(src="./images/companies/guardian-glass.webp", alt="")
-                        li
-                            img(src="./images/companies/agc.webp", alt="")
-                        li
-                            img(src="./images/companies/pilkington.webp", alt="")
-                        li
-                            img(src="./images/companies/sial.webp", alt="")
-        section.news
-            .news-bg-rectangle
-            .news__container.container
-                h4.h4.section-title
-                    | Новости
-                    a(href="#") Все новости
-                        +svg("arrow-right-link")
-                .news__body
-                    .news__list
-                        +newsCard('Смотрите новую видео-презентацию завода Нarwal Enterprise', '2.webp')
-                        +newsCard('Смотрите новую видео-презентацию завода Нarwal Enterprise', '3.webp')
-                        +newsCard('Смотрите новую видео-презентацию завода Нarwal Enterprise', '4.webp')
-                        +newsCard('Смотрите новую видео-презентацию завода Нarwal Enterprise', '2.webp')
-        section.contacts
-            .contacts__container.container
-                .contacts__body
-                    .contacts__info
-                        h4.h4.contacts__title Контакты
-                        p.contacts__description Цель нашей компании&nbsp;&mdash; сократить издержки, увеличить обороты и&nbsp;доходность вашего бизнеса.
-                    .contacts__content
-                        .contacts__address
-                            .contacts__address--body
-                                .contacts__address--top
-                                    span.contacts__address--section Главный офис и завод
-                                    a(href="https://yandex.ru/maps/-/CLhBEVjJ", rel="noopener noreferrer", target="_blank").contacts__address--text Московская область, Солнечногорск, Бутырский тупик, 2а
-                                    a(href="#").contacts__address--route
-                                        | Проложить маршрут
-                                        +svg("arrow-right-link")
-                                .contacts__address--bottom
-                                    .contacts__address--types
-                                        .contacts__address--phone
-                                            span.contacts__address--section Телефон
-                                            a(href="tel:+74954090050") +7 (495) 409-00-50
-                                        .contacts__address--email
-                                            span.contacts__address--section Email
-                                            a(href="mailto:info@harwal.ru") info@harwal.ru
-                                        ul.contacts__address--socials
-                                            li
-                                                a(href="#").phone
-                                                    +svg("phone")
-                                            li
-                                                a(href="#").telegram
-                                                    +svg("telegram")
-                                            li
-                                                a(href="#").youtube
-                                                    +svg("youtube")
-                                    button(type="button", data-modal="consultation").btn.primary.contacts__address--write-message Написать сообщение
+        section
+            .main
+                .main__container.container
+                    .main__body
+                        .main__info
+                            h1.h1.main__title Современный завод России для стеклообработки
+                            h2.main__descriprion Наше производство позволяет нам за короткое время выполнять крупные заказы по обработке, декорированную и изготовлению всевозможных изделий из стекла.
+                .main__bg(style="background-image: url('./images/main-bg.webp');")
+                    //img(src="./images/main-bg.webp")
+        section
+            .products
+                .products__container.container
+                    h4.h4.section-title
+                        | Продукция нашего завода
+                        a(href="#") Вся продукция
+                            +svg("arrow-right-link")
+                    .products-list
+                        +productCard('Алюминиевые оконные системы', '1.webp')
+                        +productCard('Алюминиевые дверные системы', '2.webp')
+                        +productCard('Стеклянная кровля', '3.webp')
+                        +productCard('Фасадное остекление', '4.webp')
+                        +productCard('Стеклопакеты', '5.webp')
+                        +productCard('Стемалит и Эмалит', '6.webp')
+                        +productCard('Triplex', '7.webp')
+                        +productCard('Зенитные фонари', '8.webp')
+                        +productCard('Зимние сады', '9.webp')
+        section
+            .services
+                .services__container.container
+                    .services__body
+                        .services__info
+                            h4.h4.services__title Услуги
+                            p Мы&nbsp;соблюдаем условия договоров&sbquo; что позволяет клиентам получать грамотный проект в&nbsp;оговоренные сроки
+                        ul.services__links
+                            li
+                                a(href="#").active
+                                    | Резка и обработка кромки
+                                    +svg('arrow-right-link')
+                            li
+                                a(href="#")
+                                    | Оклейка стекол пленкой
+                                    +svg('arrow-right-link')
+                            li
+                                a(href="#")
+                                    | Закалка
+                                    +svg('arrow-right-link')
+                            li
+                                a(href="#")
+                                    | Сверление, зенковка и фрезеровка
+                                    +svg('arrow-right-link')
+                            li
+                                a(href="#")
+                                    | Оклейка стекол пленкой
+                                    +svg('arrow-right-link')
+                            li
+                                a(href="#")
+                                    | Закалка
+                                    +svg('arrow-right-link')
+                            li
+                                a(href="#")
+                                    | Сверление, зенковка
+                                    +svg('arrow-right-link')
+                        .services__content
+                            .services__item.active
+                                .services__item--image
+                                    img(src="/images/services-content-img.webp")
+                                p.services__item--text
+                                    | Резка и обработка кромки стекла — это процесс придания стеклу нужной формы и безопасных, эстетичных краев.
+                                .services__item--price
+                                    span Стоимость работ
+                                    p от 30 до 250 руб / п.м.
+                            .services__item
+                                .services__item--image
+                                    img(src="/images/services-content-img.webp")
+                                p.services__item--text
+                                    | Резка и обработка кромки стекла — это процесс придания стеклу нужной формы и безопасных, эстетичных краев.
+                                .services__item--price
+                                    span Стоимость работ
+                                    p от 30 до 251 руб / п.м.
+                            .services__item
+                                .services__item--image
+                                    img(src="/images/services-content-img.webp")
+                                p.services__item--text
+                                    | Резка и обработка кромки стекла — это процесс придания стеклу нужной формы и безопасных, эстетичных краев.
+                                .services__item--price
+                                    span Стоимость работ
+                                    p от 30 до 252 руб / п.м.
+                            .services__item
+                                .services__item--image
+                                    img(src="/images/services-content-img.webp")
+                                p.services__item--text
+                                    | Резка и обработка кромки стекла — это процесс придания стеклу нужной формы и безопасных, эстетичных краев.
+                                .services__item--price
+                                    span Стоимость работ
+                                    p от 30 до 253 руб / п.м.
+                            .services__item
+                                .services__item--image
+                                    img(src="/images/services-content-img.webp")
+                                p.services__item--text
+                                    | Резка и обработка кромки стекла — это процесс придания стеклу нужной формы и безопасных, эстетичных краев.
+                                .services__item--price
+                                    span Стоимость работ
+                                    p от 30 до 254 руб / п.м.
+                            .services__item
+                                .services__item--image
+                                    img(src="/images/services-content-img.webp")
+                                p.services__item--text
+                                    | Резка и обработка кромки стекла — это процесс придания стеклу нужной формы и безопасных, эстетичных краев.
+                                .services__item--price
+                                    span Стоимость работ
+                                    p от 30 до 255 руб / п.м.
+                            .services__item
+                                .services__item--image
+                                    img(src="/images/services-content-img.webp")
+                                p.services__item--text
+                                    | Резка и обработка кромки стекла — это процесс придания стеклу нужной формы и безопасных, эстетичных краев.
+                                .services__item--price
+                                    span Стоимость работ
+                                    p от 30 до 256 руб / п.м.
+        section
+            .become-partner
+                .become-partner__container.container
+                    .become-partner__body
+                        h4.h4.become-partner__section-title
+                            | Стать нашим партнером — просто
+                        ul.become-partner__steps
+                            li
+                                span
+                                    +svg("pencil")
+                                p Отправляете заявку через форму
+                            li
+                                span
+                                    +svg("case")
+                                p Присваиваем вам статус партнера
+                            li
+                                span
+                                    +svg("check")
+                                p Получаете доступ к партнерским возможностям
+                        p.become-partner__slogan
+                            | Миссия
+                            |
+                            span Harwal Enterprises
+                            |
+                            | создавать инновации, выпускать высококачественные продукты с&nbsp;профессиональными услугами.
+                        ul.become-partner__advantages
+                            li
+                                span
+                                    img(src="./images/become-partner/bp-1.webp", alt="")
+                                p
+                                    b Harwal Enterprises —
+                                    |
+                                    | это первый в&nbsp;России завод группы компаний Harwal Group. Открыт 1&nbsp;июня 2018&nbsp;года.
+                            li
+                                span
+                                    img(src="./images/become-partner/bp-2.webp", alt="")
+                                p
+                                    b Harwal Group
+                                    |
+                                    | имеет 28&nbsp;бизнес-единиц с&nbsp;производственными и&nbsp;торговыми объектами по&nbsp;всему миру.
+                            li
+                                span
+                                    img(src="./images/become-partner/bp-3.webp", alt="")
+                                p
+                                    b Harwal Group
+                                    |
+                                    | насчитывает более 60-ти лет опыта в&nbsp;различных процессах и&nbsp;технологиях.
+                            li
+                                span
+                                    img(src="./images/become-partner/bp-4.webp", alt="")
+                                p Годовая конверсионная мощность 200&nbsp;000 метрических тонн пластика и&nbsp;20&nbsp;000 тонн алюминия и&nbsp;стали
+                            li
+                                span
+                                    img(src="./images/become-partner/bp-5.webp", alt="")
+                                p Ведет бизнес в&nbsp;40&nbsp;странах по&nbsp;всему Ближнему Востоку, Африке, Европе и&nbsp;США.
+        section
+            .projects
+                .projects__container.container
+                    h4.h4.section-title
+                        | 483 проекта, реализованных по всему миру
+                        a(href="#") Все проекты
+                            +svg("arrow-right-link")
+                    .projects__list
+                        +projectCard('Жилой комплекс Лефорт', '1.webp')
+                        +projectCard('Жилой комплекс ILOVE', '2.webp', true)
+                        +projectCard('Жилой комплекс ЖК Форест', '3.webp', true)
+                        +projectCard('Жилой комплекс Грин Парк', '4.webp', true)
+        section
+            .companies
+                .companies__container.container
+                    .companies__body
+                        h4.h4.companies__title
+                            | Компания
+                            |
+                            span Harwal Enterprises
+                            |
+                            | использует современные технологии и&nbsp;оборудование от&nbsp;ведущих мировых компаний
+                        ul.companies__list
+                            li
+                                img(src="./images/companies/tamglass.webp", alt="")
+                            li
+                                img(src="./images/companies/alutech.webp", alt="")
+                            li
+                                img(src="./images/companies/bavelloni.webp", alt="")
+                            li
+                                img(src="./images/companies/elumatec.webp", alt="")
+                            li
+                                img(src="./images/companies/salavatsteklo.webp", alt="")
+                            li
+                                img(src="./images/companies/fapim.webp", alt="")
+                            li
+                                img(src="./images/companies/keraglass.webp", alt="")
+                            li
+                                img(src="./images/companies/fenzi.webp", alt="")
+                            li
+                                img(src="./images/companies/bystronic.webp", alt="")
+                            li
+                                img(src="./images/companies/schuco.webp", alt="")
+                            li
+                                img(src="./images/companies/realit.webp", alt="")
+                            li
+                                img(src="./images/companies/guardian-glass.webp", alt="")
+                            li
+                                img(src="./images/companies/agc.webp", alt="")
+                            li
+                                img(src="./images/companies/pilkington.webp", alt="")
+                            li
+                                img(src="./images/companies/sial.webp", alt="")
+        section
+            .news
+                .news-bg-rectangle
+                .news__container.container
+                    h4.h4.section-title
+                        | Новости
+                        a(href="#") Все новости
+                            +svg("arrow-right-link")
+                    .news__body
+                        .news__list
+                            +newsCard('Смотрите новую видео-презентацию завода Нarwal Enterprise', '2.webp')
+                            +newsCard('Смотрите новую видео-презентацию завода Нarwal Enterprise', '3.webp')
+                            +newsCard('Смотрите новую видео-презентацию завода Нarwal Enterprise', '4.webp')
+                            +newsCard('Смотрите новую видео-презентацию завода Нarwal Enterprise', '2.webp')
+        section
+            .contacts
+                .contacts__container.container
+                    .contacts__body
+                        .contacts__info
+                            h4.h4.contacts__title Контакты
+                            p.contacts__description Цель нашей компании&nbsp;&mdash; сократить издержки, увеличить обороты и&nbsp;доходность вашего бизнеса.
+                        .contacts__content
+                            .contacts__address
+                                .contacts__address--body
+                                    .contacts__address--top
+                                        span.contacts__address--section Главный офис и завод
+                                        a(href="https://yandex.ru/maps/-/CLhBEVjJ", rel="noopener noreferrer", target="_blank").contacts__address--text Московская область, Солнечногорск, Бутырский тупик, 2а
+                                        a(href="#").contacts__address--route
+                                            | Проложить маршрут
+                                            +svg("arrow-right-link")
+                                    .contacts__address--bottom
+                                        .contacts__address--types
+                                            .contacts__address--phone
+                                                span.contacts__address--section Телефон
+                                                a(href="tel:+74954090050") +7 (495) 409-00-50
+                                            .contacts__address--email
+                                                span.contacts__address--section Email
+                                                a(href="mailto:info@harwal.ru") info@harwal.ru
+                                            ul.contacts__address--socials
+                                                li
+                                                    a(href="#").phone
+                                                        +svg("phone")
+                                                li
+                                                    a(href="#").telegram
+                                                        +svg("telegram")
+                                                li
+                                                    a(href="#").youtube
+                                                        +svg("youtube")
+                                        button(type="button", data-modal="consultation").btn.primary.contacts__address--write-message Написать сообщение
         section.main-banner-form
             +bannerForm(1)
 

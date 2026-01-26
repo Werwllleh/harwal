@@ -1,0 +1,16 @@
+mixin interestedForm(type)
+
+    //interested-form
+    .interested-form&attributes(attributes)
+        .interested-form__container.container
+            .interested-form__body
+                .interested-form__left
+                    if type === 1
+                        p.h4 Заинтересовала продукция?
+                        p.text Обсудим задачи, найдем оптимальное решение и&nbsp;запланируем работы. Будем на&nbsp;связи!
+                    if type === 2
+                        p.h4  Заинтересовала услуга?
+                        p.text Обсудим задачи, найдем оптимальное решение и&nbsp;запланируем работы. Будем на&nbsp;связи!
+                .interested-form__right
+                    .interested-form__form
+                        +form()

@@ -1,0 +1,108 @@
+@use '../../app/scss/variables.scss' as *;
+@use '../../app/scss/mixins.scss' as *;
+
+// products-detail
+.production-detail {
+  padding-bottom: 3.4rem;
+
+  &__title {
+
+    h1 {
+      max-width: 128.5rem;
+    }
+  }
+
+  .figure {
+    margin-top: 3rem;
+
+    @include tablet {
+      margin-top: 5.6rem;
+    }
+
+    @include desktop {
+      margin-top: 7.2rem;
+    }
+  }
+
+  .textblock {
+
+    &__body {
+      max-width: 91.5rem;
+    }
+  }
+
+  .figure + .interested-form {
+    margin-top: 3.4rem;
+  }
+
+  .interested-form + .textblock {
+    margin-top: 3rem;
+
+    @include tablet {
+      margin-top: 5.6rem;
+    }
+
+    @include desktop {
+      margin-top: 7.2rem;
+    }
+  }
+
+  .textblock + .subsections {
+    margin-top: 5.6rem;
+
+    @include tablet {
+      margin-top: 10rem;
+    }
+
+    @include desktop {
+      margin-top: 16rem;
+    }
+  }
+
+  .production-detail-adv,
+  .production-detail-photos,
+  .production-detail-companies,
+  .production-detail-qa,
+  .production-detail-banner-form {
+    margin-top: 5.6rem;
+
+    @include tablet {
+      margin-top: 10rem;
+    }
+
+    @include desktop {
+      margin-top: 16rem;
+    }
+
+  }
+
+  .production-detail-photos {
+    .slider-photos__title {
+      p.h4 {
+        @include desktop {
+          font-size: 4rem;
+        }
+      }
+    }
+  }
+}
+
+.production-detail-adv {
+
+  &__title {
+
+    p.h4 {
+      @include desktop {
+        font-size: 4rem;
+      }
+    }
+  }
+
+  &__title + .adv-list {
+    margin-top: 3rem;
+
+    @include mobile {
+      margin-top: 4.2rem;
+    }
+  }
+}

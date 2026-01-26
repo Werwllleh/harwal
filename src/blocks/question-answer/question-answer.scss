@@ -1,0 +1,69 @@
+@use '../../app/scss/variables.scss' as *;
+@use '../../app/scss/mixins.scss' as *;
+
+// question-answer
+.question-answer {
+  padding-block: 3rem;
+  border: 2px solid rgba(181, 214, 255, 0.2);
+  border-radius: 3.2rem;
+  backdrop-filter: blur(1.2rem);
+  box-shadow: inset 0 0 3.2rem 0 rgba(233, 243, 255, 0.7);
+  background: rgba(189, 218, 250, 0.1);
+
+  @include mobile {
+    padding-block: 5.6rem;
+  }
+
+  @include tablet {
+    margin-inline: 2.5rem;
+  }
+
+  @include desktop {
+    padding-block: 13rem 15rem;
+  }
+
+  @include w1250 {
+    margin-inline: 6rem;
+    padding-inline: 2rem;
+  }
+
+  &__container {}
+
+  &__body {}
+
+  &__title {
+
+    @include desktop {
+      font-size: 4rem;
+    }
+  }
+
+  &__description {
+    margin-top: 2.4rem;
+    font-weight: 400;
+    font-size: 2rem;
+    line-height: 1.6;
+    letter-spacing: -0.02em;
+    color: #788492;
+    max-width: 68rem;
+  }
+
+  &__asks {
+    margin-top: 3rem;
+
+    @include tablet {
+      margin-top: 4.8rem;
+    }
+
+    .collapse {
+      display: grid;
+      grid-template-columns: 100%;
+      align-items: flex-start;
+      gap: 1rem 3rem;
+
+      @include semiDesktop {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  }
+}

@@ -1,0 +1,112 @@
+extends ../../app/pug/layouts/secondary.pug
+
+append vars
+  - title = "Продукция детальная"
+  - description = "Описание страницы продукция детальная"
+
+append content
+
+    .page__header
+        .page__breadcrumbs
+            .container
+                +breadcrumbs(['Главная', 'Продукция', 'Обработка стекла'])
+        .page__title
+            .container
+                p Обработка стекла
+        .page__header--bg
+            img(src="./images/header-bg.webp", alt="")
+    .page__content
+        .production-detail
+            .production-detail__title
+                .container
+                    h1.h1 Резка и обработка кромки
+            figure.figure
+                img(src="./images/photo8.webp", alt="Резка и обработка кромки")
+                .figure__info
+                    .figure__info--container.container
+                        ul.advantages
+                            li
+                                span
+                                    +svg("check2")
+                                p Идеально ровная линия среза
+                            li
+                                span
+                                    +svg("check2")
+                                p Высокая скорость резки
+                            li
+                                span
+                                    +svg("check2")
+                                p Обработка больших и&nbsp;малых форматов
+            +interestedForm(1)
+            .textblock
+                .container
+                    .textblock__body
+                        p.h4.textblock__title Промышленная нарезка стекла выполняется по&nbsp;необходимым размерам, формам, эскизам и&nbsp;чертежам. Применяются станки с&nbsp;числовым программным управлением&nbsp;&mdash; ЧПУ.
+                        .textblock__text
+                            p Изготовление любого стеклоизделия начинается с&nbsp;резки и&nbsp;обработки кромки. Обработка кромки стекла в&nbsp;свою очередь, обеспечивает безопасность последующей работы со&nbsp;стеклом и&nbsp;защищает от&nbsp;возможных порезов, придает изделию привлекательный внешний вид.
+            +subsections()
+            .production-detail-adv
+                .container
+                    .production-detail-adv__title
+                        p.h4 Преимущества продукта
+                    ul.adv-list
+                        li
+                            .adv-card
+                                img(src="./images/become-partner/bp-4.webp", alt="")
+                                p
+                                    | Годовая конверсионная мощность 200&nbsp;000 метрических тонн пластика и&nbsp;20&nbsp;000 тонн алюминия и&nbsp;стали
+                        li
+                            .adv-card
+                                img(src="./images/become-partner/bp-4.webp", alt="")
+                                p
+                                    | Годовая конверсионная мощность 200&nbsp;000 метрических тонн пластика и&nbsp;20&nbsp;000 тонн алюминия и&nbsp;стали
+                        li
+                            .adv-card
+                                img(src="./images/become-partner/bp-4.webp", alt="")
+                                p
+                                    | Годовая конверсионная мощность 200&nbsp;000 метрических тонн пластика и&nbsp;20&nbsp;000 тонн алюминия и&nbsp;стали
+            .production-detail-photos
+                +sliderPhotos(["./images/production/1.webp", "./images/production/2.webp", "./images/production/3.webp", "./images/production/4.webp", "./images/production/5.webp", "./images/production/1.webp", "./images/production/2.webp", "./images/production/3.webp", "./images/production/4.webp", "./images/production/5.webp"], 442, "Фото галерея")
+            .production-detail-qa
+                +questionAnswer()
+            .production-detail-companies
+                .companies
+                    .companies__container.container
+                        .companies__body
+                            h4.h4.companies__title
+                                | Клиенты компании
+                                |
+                                span Harwal Enterprises
+                            ul.companies__list
+                                li
+                                    img(src="./images/companies/tamglass.webp", alt="")
+                                li
+                                    img(src="./images/companies/alutech.webp", alt="")
+                                li
+                                    img(src="./images/companies/bavelloni.webp", alt="")
+                                li
+                                    img(src="./images/companies/elumatec.webp", alt="")
+                                li
+                                    img(src="./images/companies/salavatsteklo.webp", alt="")
+                                li
+                                    img(src="./images/companies/fapim.webp", alt="")
+                                li
+                                    img(src="./images/companies/keraglass.webp", alt="")
+                                li
+                                    img(src="./images/companies/fenzi.webp", alt="")
+                                li
+                                    img(src="./images/companies/bystronic.webp", alt="")
+                                li
+                                    img(src="./images/companies/schuco.webp", alt="")
+                                li
+                                    img(src="./images/companies/realit.webp", alt="")
+                                li
+                                    img(src="./images/companies/guardian-glass.webp", alt="")
+                                li
+                                    img(src="./images/companies/agc.webp", alt="")
+                                li
+                                    img(src="./images/companies/pilkington.webp", alt="")
+                                li
+                                    img(src="./images/companies/sial.webp", alt="")
+            .production-detail-banner-form
+                +bannerForm(1)
