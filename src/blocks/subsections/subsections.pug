@@ -1,4 +1,4 @@
-mixin subsections()
+mixin subsections(list)
 
     //subsections
     .subsections&attributes(attributes)
@@ -6,45 +6,11 @@ mixin subsections()
             .subsections__body
                 .subsections__title
                     p.h4 Подразделы
-                ul.subsections__list
-                    li
-                        a(href="#")
-                            | Параметры продукции
-                            span
-                                +svg("arrow-right-link")
-                    li
-                        a(href="#")
-                            | Фотогалерея
-                            span
-                                +svg("arrow-right-link")
-                    li
-                        a(href="#")
-                            | Вопрос-ответ
-                            span
-                                +svg("arrow-right-link")
-                    li
-                        a(href="#")
-                            | Наши клиенты
-                            span
-                                +svg("arrow-right-link")
-                    li
-                        a(href="#")
-                            | Преимущества
-                            span
-                                +svg("arrow-right-link")
-                    li
-                        a(href="#")
-                            | Описание продукта
-                            span
-                                +svg("arrow-right-link")
-                    li
-                        a(href="#")
-                            | Благодарственные письма
-                            span
-                                +svg("arrow-right-link")
-                    li
-                        a(href="#")
-                            | Обратная связь
-                            span
-                                +svg("arrow-right-link")
-
+                if list && list.length
+                    ul.subsections__list
+                      each item in list
+                          li
+                              button(type="button", data-subsection=item.value)
+                                  =item.title
+                                  span
+                                      +svg("arrow-right-link")

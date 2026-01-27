@@ -1,0 +1,234 @@
+@use '../../app/scss/variables.scss' as *;
+@use '../../app/scss/mixins.scss' as *;
+
+// service-detail
+.service-detail {
+  padding-bottom: 3.4rem;
+
+  &__title {
+
+    h1 {
+      max-width: 128.5rem;
+    }
+  }
+
+  .figure {
+    margin-top: 3rem;
+
+    @include tablet {
+      margin-top: 5.6rem;
+    }
+
+    @include desktop {
+      margin-top: 7.2rem;
+    }
+  }
+
+  .textblock {
+
+    &__body {
+      max-width: 91.5rem;
+    }
+  }
+
+  .figure + .interested-form {
+    margin-top: 3.4rem;
+  }
+
+  .interested-form + .textblock {
+    margin-top: 3rem;
+
+    @include tablet {
+      margin-top: 5.6rem;
+    }
+
+    @include desktop {
+      margin-top: 7.2rem;
+    }
+  }
+
+  .textblock + .subsections {
+    margin-top: 5.6rem;
+
+    @include tablet {
+      margin-top: 10rem;
+    }
+
+    @include desktop {
+      margin-top: 16rem;
+    }
+  }
+
+  .service-detail-adv,
+  .service-detail-adv + .service-detail-letters,
+  .service-detail-photos,
+  .service-detail-companies,
+  .service-detail-qa,
+  .service-detail-banner-form,
+  .service-detail-price + .information {
+    margin-top: 5.6rem;
+
+    @include tablet {
+      margin-top: 10rem;
+    }
+
+    @include desktop {
+      margin-top: 16rem;
+    }
+
+  }
+
+  .service-detail-letters {
+    .thanks-letters__title {
+      @include desktop {
+        font-size: 4rem;
+      }
+    }
+  }
+
+  .service-detail-photos {
+    .slider-photos__title {
+      p.h4 {
+        @include desktop {
+          font-size: 4rem;
+        }
+      }
+    }
+  }
+
+  .subsections + .service-detail-price {
+    margin-top: 3.4rem;
+  }
+}
+
+.service-detail-adv {
+
+  &__title {
+
+    p.h4 {
+      @include desktop {
+        font-size: 4rem;
+      }
+    }
+  }
+
+  &__title + .adv-list {
+    margin-top: 3rem;
+
+    @include mobile {
+      margin-top: 4.2rem;
+    }
+  }
+}
+
+.service-detail-price {
+  padding-block: 3rem;
+  border-radius: 3.2rem;
+  position: relative;
+  background: linear-gradient(225deg, #7a8bb4 0%, #8b9abb 17.66%, #8f9ebd 28.04%, #50688e 100%);
+  border: 2px solid rgba(182, 207, 237, 0.5);
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: inset 0 0 28px 8px #a5aec4;
+    background: rgba(217, 217, 217, 0.01);
+    opacity: 0.8;
+    pointer-events: none;
+    border-radius: 3.2rem;
+  }
+
+  @include mobile {
+    padding-block: 5.6rem;
+  }
+
+  @include tablet {
+    margin-inline: 2.5rem;
+  }
+
+  @include desktop {
+    padding-block: 10rem;
+  }
+
+  @include w1250 {
+    margin-inline: 6rem;
+    padding-inline: 2rem;
+  }
+
+  &__container {}
+
+  &__body {}
+
+  &__title {}
+
+  &__list {
+
+    li {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 0 3rem;
+      padding-block: 2rem;
+      border-top: 1px solid #8d9ebd;
+
+      @include mobile {
+        align-items: center;
+      }
+
+      @include tablet {
+        padding-block: 2.4rem;
+        gap: 0 4rem;
+      }
+
+      @include desktop {
+        padding-block: 3rem;
+      }
+
+      p {
+        font-weight: 600;
+        font-size: 2.2rem;
+        line-height: 1.5;
+        letter-spacing: -0.02em;
+        color: #fff;
+
+        @include mobile {
+          font-size: 2.4rem;
+        }
+
+        @include tablet {
+          font-size: 3rem;
+        }
+
+        @include desktop {
+          font-size: 3.2rem;
+        }
+      }
+
+      span {
+        font-weight: 600;
+        font-size: 1.8rem;
+        line-height: 1.5;
+        letter-spacing: -0.02em;
+        text-align: right;
+        color: #fff;
+        white-space: nowrap;
+
+        @include mobile {
+          font-size: 2rem;
+        }
+
+        @include tablet {
+          font-size: 2.4rem;
+        }
+
+        @include desktop {
+          font-size: 3.2rem;
+        }
+      }
+    }
+  }
+}

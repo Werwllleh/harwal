@@ -2,9 +2,15 @@ mixin docCard(title, text, params)
 
     //doc-card
     .doc-card&attributes(attributes)
+        a(href="#", download).doc-card__download
         .doc-card__body
             .doc-card__top
-                .doc-card__title= `${title} ${params}`
+                p.doc-card__title
+                    =title
+                    |
+                    br
+                    |
+                    =params
                 span.doc-card__icon
                     +svg("arrow-down")
             .doc-card__footer

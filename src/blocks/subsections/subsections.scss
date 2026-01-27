@@ -67,7 +67,7 @@
 
     li {
 
-      a {
+      button {
         display: flex;
         align-items: flex-start;
         justify-content: space-between;
@@ -83,6 +83,8 @@
         padding-block: 1.6rem;
         padding-inline: 2.6rem;
         height: 100%;
+        width: 100%;
+        transition: all $transition-default;
 
         span {
           flex: 0 0 auto;

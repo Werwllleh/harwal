@@ -5,13 +5,19 @@
 .collapse {
 
   .collapse-item {
-    padding-block: 3rem;
-    padding-inline: 2.8rem;
-    border-radius: 2.4rem;
+    padding-block: 2.4rem;
+    padding-inline: 2rem;
+    border-radius: 1.8rem;
     background-color: $white;
     border: 2px solid rgba(181, 214, 255, 0.2);
     backdrop-filter: blur(1.2rem);
     cursor: pointer;
+
+    @include tablet {
+      padding-block: 3rem;
+      padding-inline: 2.8rem;
+      border-radius: 2.4rem;
+    }
 
     &:hover {
       .collapse-header svg {
@@ -41,10 +47,14 @@
 
     p {
       font-weight: 600;
-      font-size: 1.8rem;
+      font-size: 1.6rem;
       line-height: 1.22222;
       letter-spacing: -0.02em;
       color: $color-idfsl;
+
+      @include tablet {
+        font-size: 1.8rem;
+      }
     }
 
     span {
@@ -66,14 +76,23 @@
   }
 
   .collapse-data {
-    padding-top: 2rem;
+    padding-top: 1.5rem;
+
+    @include tablet {
+      padding-top: 2rem;
+    }
 
     p {
       font-weight: 400;
-      font-size: 1.6rem;
-      line-height: 1.5;
+      font-size: 1.4rem;
+      line-height: 1.6;
       letter-spacing: -0.02em;
       color: #788492;
+
+      @include tablet {
+        font-size: 1.6rem;
+        line-height: 1.5;
+      }
     }
   }
 }

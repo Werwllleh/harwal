@@ -1,49 +1,49 @@
 extends ../../app/pug/layouts/secondary.pug
 
 append vars
-  - title = "Продукция детальная"
-  - description = "Описание страницы продукция детальная"
+  - title = "Услуга детальная"
+  - description = "Описание страницы услуга детальная"
 
 append content
 
     .page__header
         .page__breadcrumbs
             .container
-                +breadcrumbs(['Главная', 'Продукция', 'Обработка стекла'])
+                +breadcrumbs(['Главная', 'Услуги', 'Проектирование'])
         .page__title
             .container
-                p Обработка стекла
+                p Услуги
         .page__header--bg
             img(src="./images/header-bg.webp", alt="")
     .page__content
-        .production-detail
-            .production-detail__title
+        .service-detail
+            .service-detail__title
                 .container
-                    h1.h1 Резка и обработка кромки
+                    h1.h1 Проектирование
             figure.figure
-                img(src="./images/photo8.webp", alt="Резка и обработка кромки")
+                img(src="./images/photo7.webp", alt="Резка и обработка кромки")
                 .figure__info
                     .figure__info--container.container
                         ul.advantages
                             li
                                 span
                                     +svg("check2")
-                                p Идеально ровная линия среза
+                                p Высокая квалификация инженеров
                             li
                                 span
                                     +svg("check2")
-                                p Высокая скорость резки
+                                p Высокая скорость работы
                             li
                                 span
                                     +svg("check2")
-                                p Обработка больших и&nbsp;малых форматов
-            +interestedForm(1)
+                                p Гарантия требований и&nbsp;стандартов
+            +interestedForm(2)
             .textblock
                 .container
                     .textblock__body
-                        p.h4.textblock__title Промышленная нарезка стекла выполняется по&nbsp;необходимым размерам, формам, эскизам и&nbsp;чертежам. Применяются станки с&nbsp;числовым программным управлением&nbsp;&mdash; ЧПУ.
+                        p.h4.textblock__title Ha&nbsp;заводе вы&nbsp;можете заказать проектирование любых светопрозрачных конструкций, от&nbsp;остекленных фасадов до&nbsp;балконных и&nbsp;лестничных ограждений.
                         .textblock__text
-                            p Изготовление любого стеклоизделия начинается с&nbsp;резки и&nbsp;обработки кромки. Обработка кромки стекла в&nbsp;свою очередь, обеспечивает безопасность последующей работы со&nbsp;стеклом и&nbsp;защищает от&nbsp;возможных порезов, придает изделию привлекательный внешний вид.
+                            p Мы&nbsp;соблюдаем условия договоров&sbquo; что позволяет клиентам получать грамотный, без ошибок и&nbsp;недочетов проект в&nbsp;оговоренные сроки.
             +subsections([
               {
                 title: "Параметры продукции",
@@ -78,28 +78,23 @@ append content
                 value: "feedback"
               }
             ])
-            .production-detail-adv(data-section="advantages")
-                .container
-                    .production-detail-adv__title
-                        p.h4 Преимущества продукта
-                    ul.adv-list
-                        li
-                            .adv-card
-                                img(src="./images/become-partner/bp-4.webp", alt="")
-                                p
-                                    | Годовая конверсионная мощность 200&nbsp;000 метрических тонн пластика и&nbsp;20&nbsp;000 тонн алюминия и&nbsp;стали
-                        li
-                            .adv-card
-                                img(src="./images/become-partner/bp-4.webp", alt="")
-                                p
-                                    | Годовая конверсионная мощность 200&nbsp;000 метрических тонн пластика и&nbsp;20&nbsp;000 тонн алюминия и&nbsp;стали
-                        li
-                            .adv-card
-                                img(src="./images/become-partner/bp-4.webp", alt="")
-                                p
-                                    | Годовая конверсионная мощность 200&nbsp;000 метрических тонн пластика и&nbsp;20&nbsp;000 тонн алюминия и&nbsp;стали
-            .production-detail-photos(data-section="photos")
-                +sliderPhotos(["./images/production/1.webp", "./images/production/2.webp", "./images/production/3.webp", "./images/production/4.webp", "./images/production/5.webp", "./images/production/1.webp", "./images/production/2.webp", "./images/production/3.webp", "./images/production/4.webp", "./images/production/5.webp"], 442, "Фото галерея")
+            .service-detail-price(data-section="params")
+                .service-detail-price__container.container
+                    .service-detail-price__body
+                        p.service-detail-price__title
+                        ul.service-detail-price__list
+                            li
+                                p Название услуги
+                                span 1000р/п.м.
+                            li
+                                p Название услуги
+                                span 1000р/п.м.
+                            li
+                                p Название услуги
+                                span 1000р/п.м.
+                            li
+                                p Название услуги
+                                span 1000р/п.м.
             .information(data-section="description")
                 .information__container.container
                     .information__body
@@ -137,11 +132,33 @@ append content
                         .information__right
                             +docCard("Презентация Harwal", "В презентации вы можете ознакомиться с более подробным описанием продукции и услуг, узнать про нашу компанию, оборудование и сертификаты.", "(9,7 Мб, pdf)")
                             button(type="button", data-modal="consultation").btn.primary Задать вопрос
-            .production-detail-qa(data-section="qa")
+            .service-detail-qa(data-section="qa")
                 +questionAnswer()
-            .production-detail-letters(data-section="thanks-letters")
+            .service-detail-photos(data-section="photos")
+                +sliderPhotos(["./images/production/1.webp", "./images/production/2.webp", "./images/production/3.webp", "./images/production/4.webp", "./images/production/5.webp", "./images/production/1.webp", "./images/production/2.webp", "./images/production/3.webp", "./images/production/4.webp", "./images/production/5.webp"], 442, "Фото галерея")
+            .service-detail-adv(data-section="advantages")
+                .container
+                    .service-detail-adv__title
+                        p.h4 Преимущества продукта
+                    ul.adv-list
+                        li
+                            .adv-card
+                                img(src="./images/become-partner/bp-4.webp", alt="")
+                                p
+                                    | Годовая конверсионная мощность 200&nbsp;000 метрических тонн пластика и&nbsp;20&nbsp;000 тонн алюминия и&nbsp;стали
+                        li
+                            .adv-card
+                                img(src="./images/become-partner/bp-4.webp", alt="")
+                                p
+                                    | Годовая конверсионная мощность 200&nbsp;000 метрических тонн пластика и&nbsp;20&nbsp;000 тонн алюминия и&nbsp;стали
+                        li
+                            .adv-card
+                                img(src="./images/become-partner/bp-4.webp", alt="")
+                                p
+                                    | Годовая конверсионная мощность 200&nbsp;000 метрических тонн пластика и&nbsp;20&nbsp;000 тонн алюминия и&nbsp;стали
+            .service-detail-letters(data-section="thanks-letters")
                 +thanksLetters("Благодарственные письма")
-            .production-detail-companies(data-section="clients")
+            .service-detail-companies(data-section="clients")
                 .companies
                     .companies__container.container
                         .companies__body
@@ -180,5 +197,5 @@ append content
                                     img(src="./images/companies/pilkington.webp", alt="")
                                 li
                                     img(src="./images/companies/sial.webp", alt="")
-            .production-detail-banner-form(data-section="feedback")
+            .service-detail-banner-form(data-section="feedback")
                 +bannerForm(1)
