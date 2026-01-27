@@ -1,0 +1,11 @@
+mixin docCard(title, text, params)
+
+    //doc-card
+    .doc-card&attributes(attributes)
+        .doc-card__body
+            .doc-card__top
+                .doc-card__title= `${title} ${params}`
+                span.doc-card__icon
+                    +svg("arrow-down")
+            .doc-card__footer
+                p= text

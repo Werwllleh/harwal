@@ -63,7 +63,8 @@
   .production-detail-photos,
   .production-detail-companies,
   .production-detail-qa,
-  .production-detail-banner-form {
+  .production-detail-banner-form,
+  .production-detail-photos + .information {
     margin-top: 5.6rem;
 
     @include tablet {
@@ -95,6 +96,10 @@
       }
     }
   }
+
+  .production-detail-photos + .information {
+
+  }
 }
 
 .production-detail-adv {
@@ -115,4 +120,14 @@
       margin-top: 4.2rem;
     }
   }
+}
+
+.information {
+
+  &__container {
+  }
+
+  &__left {}
+
+  &__right {}
 }
