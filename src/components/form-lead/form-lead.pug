@@ -1,0 +1,28 @@
+mixin formLead(title, data)
+
+    //form-lead
+    .form-lead&attributes(attributes)
+        .form-lead__container.container
+            .form-lead__body
+                p.form-lead__title= title
+                form.form-lead__form
+                    fieldset.form-lead__fieldset
+                      each item in data
+                          .form-lead-field
+                              p.form-lead-field__title= item.question
+                              .form-lead-field__values
+                                each answer in item.answers
+                                    label.form-lead-label
+                                        input(name=item.name, type=item.input, value=answer.text, autocomplete="off", required="required").form-lead-label__input
+                                        .form-lead-label__inner
+                                            span.form-lead-label__header
+                                                span.form-lead-label__text= answer.text
+                                                if item.type === 'color'
+                                                    span(style=`background-color:${answer.color};`).form-lead-label__color
+                                                else
+                                                    span.form-lead-label__icon
+                                                        +svg("check2")
+                                            if answer.image && answer.image !== ''
+                                                span.form-lead-label__image
+                                                    img(src=answer.image, alt=answer.text)
+

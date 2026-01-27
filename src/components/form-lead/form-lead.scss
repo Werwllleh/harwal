@@ -1,0 +1,243 @@
+@use '../../app/scss/variables.scss' as *;
+@use '../../app/scss/mixins.scss' as *;
+
+// form-lead
+.form-lead {
+  padding-block: 3rem;
+  border-radius: 3.2rem;
+  position: relative;
+  background: linear-gradient(225deg, #7a8bb4 0%, #8b9abb 17.66%, #8f9ebd 28.04%, #50688e 100%);
+  border: 2px solid rgba(182, 207, 237, 0.5);
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: inset 0 0 28px 8px #a5aec4;
+    background: rgba(217, 217, 217, 0.01);
+    opacity: 0.8;
+    pointer-events: none;
+    border-radius: 3.2rem;
+  }
+
+  @include mobile {
+    padding-block: 5.6rem;
+  }
+
+  @include tablet {
+    margin-inline: 2.5rem;
+  }
+
+  @include desktop {
+    padding-block: 10rem;
+  }
+
+  @include w1250 {
+    margin-inline: 6rem;
+    padding-inline: 2rem;
+  }
+
+  &__container {}
+
+  &__body {}
+
+  &__title {
+    font-weight: 600;
+    font-size: 3.2rem;
+    line-height: 0.85714;
+    letter-spacing: -0.02em;
+    color: #fff;
+
+    @include mobile {
+      font-size: 3.5rem;
+    }
+
+    @include tablet {
+      font-size: 4.5rem;
+    }
+
+    @include desktop {
+      font-size: 5.6rem;
+    }
+  }
+
+  &__title + &__form {
+    margin-top: 4rem;
+
+    @include tablet {
+      margin-top: 6.5rem;
+    }
+  }
+
+  &__form {
+
+  }
+
+  &__fieldset {
+    display: flex;
+    flex-direction: column;
+
+    .form-lead-field + .form-lead-field {
+      margin-top: 3rem;
+
+      @include tablet {
+        margin-top: 4.5rem;
+      }
+    }
+  }
+
+  .form-lead-field {
+    border-top: 1px solid rgba(#8d9ebd, .5);
+    padding-top: 2.4rem;
+
+    @include tablet {
+      padding-top: 4.3rem;
+    }
+
+
+    &__title {
+      font-weight: 600;
+      font-size: 2.4rem;
+      line-height: 1.33333;
+      letter-spacing: -0.02em;
+      color: #fff;
+    }
+
+    &__values {
+      margin-top: 2rem;
+      display: grid;
+      grid-template-columns: 100%;
+      gap: 1.5rem 0;
+
+      @include tablet {
+        margin-top: 2.2rem;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+      }
+
+      @include laptop {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem 3rem;
+      }
+    }
+  }
+
+  .form-lead-label {
+    position: relative;
+
+    .form-lead-label__inner:hover {
+      border-color: $color-blue;
+    }
+
+    &__input {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .form-lead-label__input:checked + .form-lead-label__inner {
+      border-color: $color-blue;
+      background-color: $white;
+
+      .form-lead-label__text {
+        color: #788492;
+      }
+
+      .form-lead-label__icon svg {
+        color: $color-blue;
+      }
+    }
+
+    &__inner {
+      border-radius: 3.2rem;
+      background-color: rgba(255, 255, 255, 0.2);
+      border: 2px solid #b5d6ff;
+      backdrop-filter: blur(1.2rem);
+      box-shadow: inset 0 0 2.4rem 0 rgba(233, 243, 255, 0.7);
+      display: flex;
+      flex-direction: column;
+      padding-top: 2.2rem;
+      padding-bottom: 2.4rem;
+      padding-inline: 2rem;
+      transition: border-color $transition-default, background-color $transition-default;
+
+      @include tablet {
+        padding-inline: 2.4rem;
+      }
+
+      @include semiDesktop {
+        padding-top: 2.4rem;
+        padding-inline: 2.8rem;
+        padding-bottom: 2.8rem;
+      }
+    }
+
+    &__header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0 2rem;
+    }
+
+    &__text {
+      font-weight: 400;
+      font-size: 1.8rem;
+      line-height: 1.77778;
+      letter-spacing: -0.02em;
+      color: #fff;
+      transition: color $transition-default;
+    }
+
+    &__color {
+      display: flex;
+      border: 2px solid #acbdd8;
+      border-radius: 2.4rem;
+      width: 4rem;
+      height: 4rem;
+      backdrop-filter: blur(1.2rem);
+      background: $color-idfsl;
+    }
+
+    &__icon {
+      flex: 0 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      svg {
+        width: 2rem;
+        height: 1.3rem;
+        color: $color-bg;
+      }
+    }
+
+    &__image {
+      margin-top: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid rgba(172, 189, 216, 0.3);
+      border-radius: 0 0 1.6rem 1.6rem;
+      width: 100%;
+      height: 15rem;
+      overflow: hidden;
+
+      @include tablet {
+        margin-top: 2.4rem;
+        height: 14.8rem;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+  }
+}

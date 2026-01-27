@@ -78,6 +78,111 @@ append content
                 value: "feedback"
               }
             ])
+            .production-detail-form(data-section="params")
+                +formLead("Параметры продукции", [
+                  {
+                    type: '',
+                    input: 'radio',
+                    name: 'profile-type',
+                    question: 'Вид алюминиевого профиля',
+                    answers: [
+                      {
+                        text: "Круглый",
+                        image: "./images/form-image.jpg",
+                        color: "",
+                      },
+                      {
+                        text: "Овальный",
+                        image: "./images/form-image.jpg",
+                        color: "",
+                      },
+                      {
+                        text: "Квадрат",
+                        image: "./images/form-image.jpg",
+                        color: "",
+                      }
+                    ]
+                  },
+                  {
+                    type: 'color',
+                    input: 'checkbox',
+                    name: 'profile-color',
+                    question: 'Цвет алюминиевого профиля',
+                    answers: [
+                      {
+                        text: "Белый",
+                        image: "",
+                        color: "#fff",
+                      },
+                      {
+                        text: "Черный",
+                        image: "",
+                        color: "#2C3138",
+                      },
+                      {
+                        text: "Красный",
+                        image: "",
+                        color: "#ff0c0c",
+                      },
+                      {
+                        text: "Желтый",
+                        image: "",
+                        color: "#f7db3f",
+                      },
+                      {
+                        text: "Зеленый",
+                        image: "",
+                        color: "#1fc71f",
+                      },
+                      {
+                        text: "Серый",
+                        image: "",
+                        color: "#838383",
+                      }
+                    ]
+                  },
+                  {
+                    type: '',
+                    input: 'radio',
+                    name: 'filling-option',
+                    question: 'Вариант заполнения',
+                    answers: [
+                      {
+                        text: "Вертикальное",
+                        image: "",
+                        color: "",
+                      },
+                      {
+                        text: "Горизонтальное",
+                        image: "",
+                        color: "",
+                      },
+                    ]
+                  },
+                  {
+                    type: '',
+                    input: 'radio',
+                    name: 'glass-type',
+                    question: 'Вид стекла',
+                    answers: [
+                      {
+                        text: "Стандартное",
+                        image: "./images/form-image.jpg",
+                        color: "",
+                      },
+                      {
+                        text: "Закаленное",
+                        image: "./images/form-image.jpg",
+                        color: "",
+                      },
+                      {
+                        text: "Многослойное Триплекс",
+                        image: "./images/form-image.jpg",
+                        color: "",
+                      }
+                    ]
+                  },
+                ])
             .production-detail-adv(data-section="advantages")
                 .container
                     .production-detail-adv__title

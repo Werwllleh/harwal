@@ -12,7 +12,7 @@ if (subsectionsBlocks.length) {
 
         if (!sectionName || !section) return;
 
-        section.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'nearest' });
+        section.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
       })
     })
 
