@@ -76,6 +76,16 @@
 
   }
 
+  .production-detail-letters {
+    margin-top: 3.4rem;
+
+    .thanks-letters__title {
+      @include desktop {
+        font-size: 4rem;
+      }
+    }
+  }
+
   .production-detail-photos {
     .slider-photos__title {
       p.h4 {

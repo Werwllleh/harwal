@@ -1,0 +1,43 @@
+mixin thanksLetters(title)
+
+    //thanks-letters
+    .thanks-letters&attributes(attributes)
+        .thanks-letters__container.container
+            .thanks-letters__body
+                if title
+                    p.h4.thanks-letters__title= title
+                .thanks-letters__slider
+                    .swiper
+                        .swiper-wrapper(data-lightgallery)
+                            .swiper-slide(data-src="./images/thanks-letter.webp")
+                                .thanks-letters__card
+                                    a(href="./images/thanks-letter.webp")
+                                        img(src="./images/thanks-letter.webp" alt="Благодарственное письмо")
+                            .swiper-slide(data-src="./images/thanks-letter.webp")
+                                .thanks-letters__card
+                                    a(href="./images/thanks-letter.webp")
+                                        img(src="./images/thanks-letter.webp" alt="Благодарственное письмо")
+                            .swiper-slide(data-src="./images/thanks-letter.webp")
+                                .thanks-letters__card
+                                    a(href="./images/thanks-letter.webp")
+                                        img(src="./images/thanks-letter.webp" alt="Благодарственное письмо")
+                            .swiper-slide(data-src="./images/thanks-letter.webp")
+                                .thanks-letters__card
+                                    a(href="./images/thanks-letter.webp")
+                                        img(src="./images/thanks-letter.webp" alt="Благодарственное письмо")
+                            .swiper-slide(data-src="./images/thanks-letter.webp")
+                                .thanks-letters__card
+                                    a(href="./images/thanks-letter.webp")
+                                        img(src="./images/thanks-letter.webp" alt="Благодарственное письмо")
+                            .swiper-slide(data-src="./images/thanks-letter.webp")
+                                .thanks-letters__card
+                                    a(href="./images/thanks-letter.webp")
+                                        img(src="./images/thanks-letter.webp" alt="Благодарственное письмо")
+                            .swiper-slide(data-src="./images/skyscraper.webp")
+                                .thanks-letters__card
+                                    a(href="./images/thanks-letter.webp")
+                                        img(src="./images/thanks-letter.webp" alt="Благодарственное письмо")
+                            .swiper-slide(data-src="./images/thanks-letter.webp")
+                                .thanks-letters__card
+                                    a(href="./images/thanks-letter.webp")
+                                        img(src="./images/thanks-letter.webp" alt="Благодарственное письмо")
