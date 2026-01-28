@@ -23,7 +23,7 @@ function startValidation(form) {
 
   const submitButton = form.querySelector('button[type="submit"]');
 
-  const inputList = Array.from(form.querySelectorAll('input:not([hidden]):not([type="checkbox"]):not([data-input="segmented"])'));
+  const inputList = Array.from(form.querySelectorAll('input:not([hidden]):not([type="checkbox"]):not([type="radio"]):not([data-input="segmented"])'));
   const checkboxList = Array.from(form.querySelectorAll('input[type="checkbox"][required]:not([hidden])'));
 
   if (!inputList.length || !submitButton) return;
@@ -32,8 +32,11 @@ function startValidation(form) {
 
   form.addEventListener('submit', (event) => {
     event.preventDefault()
+
+    const formData = new FormData(form);
+
     if (hasInvalidInput()) {
-      formError(form,true)
+      formError(form, true)
       inputList.forEach((inputElement) => {
         checkInputValidity(inputElement)
       })
@@ -41,6 +44,7 @@ function startValidation(form) {
         checkInputValidity(checkboxElement)
       })
     } else {
+      console.log(Array.from(formData))
       resetForm(form);
     }
   })
@@ -50,7 +54,7 @@ function startValidation(form) {
       if (inputElement.value.length) {
         inputElement.classList.add('filled')
       }
-      formError(form,false)
+      formError(form, false)
       checkInputValidity(inputElement)
       toggleButton()
     })
@@ -64,7 +68,7 @@ function startValidation(form) {
       toggleButton()
     })
     inputElement.addEventListener('focus', () => {
-      formError(form,false)
+      formError(form, false)
       inputElement.classList.add('focus');
       checkInputValidity(inputElement)
       toggleButton()
@@ -79,7 +83,7 @@ function startValidation(form) {
   })
 
   function checkInputValidity(inputElement) {
-    const type = inputElement.dataset.input
+    const type = inputElement.dataset.input;
 
     if (!type) return;
 
@@ -121,6 +125,9 @@ function startValidation(form) {
           toggleInputError(inputElement, 'Некорректный номер')
         }
         break
+      case 'param':
+        inputElement.setAttribute('valid', true)
+        break
       /*case 'email':
         if (value.trim() === '') {
           toggleInputError(inputElement, false)
@@ -148,7 +155,6 @@ function startValidation(form) {
         toggleInputError(inputElement, '')
         inputElement.removeAttribute('valid')
     }
-
   }
 
   function hasInvalidInput() {
@@ -186,6 +192,7 @@ function startValidation(form) {
   }
 
   function toggleButton() {
+
     if (hasInvalidInput()) {
       submitButton.setAttribute('disabled', '');
       // formError(true)

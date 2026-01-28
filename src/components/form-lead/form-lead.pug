@@ -7,22 +7,59 @@ mixin formLead(title, data)
                 p.form-lead__title= title
                 form.form-lead__form
                     fieldset.form-lead__fieldset
-                      each item in data
-                          .form-lead-field
-                              p.form-lead-field__title= item.question
-                              .form-lead-field__values
-                                each answer in item.answers
-                                    label.form-lead-label
-                                        input(name=item.name, type=item.input, value=answer.text, autocomplete="off", required="required").form-lead-label__input
-                                        .form-lead-label__inner
-                                            span.form-lead-label__header
-                                                span.form-lead-label__text= answer.text
-                                                if item.type === 'color'
-                                                    span(style=`background-color:${answer.color};`).form-lead-label__color
-                                                else
-                                                    span.form-lead-label__icon
-                                                        +svg("check2")
-                                            if answer.image && answer.image !== ''
-                                                span.form-lead-label__image
-                                                    img(src=answer.image, alt=answer.text)
+                        .form-lead__fields
+                            each item in data
+                              .form-lead-field
+                                  p.form-lead-field__title= item.question
+                                  .form-lead-field__values
+                                    each answer in item.answers
+                                        label.form-lead-label
+                                            input(name=item.name, type=item.input, value=answer.text, autocomplete="off", data-input="param").form-lead-label__input
+                                            .form-lead-label__inner
+                                                span.form-lead-label__header
+                                                    span.form-lead-label__text= answer.text
+                                                    if item.type === 'color'
+                                                        span(style=`background-color:${answer.color};`).form-lead-label__color
+                                                    else
+                                                        span.form-lead-label__icon
+                                                            +svg("check2")
+                                                if answer.image && answer.image !== ''
+                                                    span.form-lead-label__image
+                                                        img(src=answer.image, alt=answer.text)
+                        .form-lead__footer
+                            .form-lead__footer--left
+                                p Введите данные, чтобы получить цену
+                            .form-lead__footer--right
+                                .form-lead-user
+                                    .form-lead-user__row
+                                        .form-lead-user__field
+                                            label.input-field
+                                                input(name="name", type="text", autocomplete="on", required="required", data-input="name")
+                                                span.input-field__placeholder
+                                                    | Имя
+                                                    |
+                                                    span *
+                                                span(data-input-error="name").input-field__error
+                                                    | Некорректное имя
+                                        .form-lead-user__field
+                                            label.input-field
+                                                input(name="phone", type="text", inputmode="tel", autocomplete="on", required="required", data-input="phone").input--phone
+                                                span.input-field__placeholder
+                                                    | Телефон
+                                                    |
+                                                    span *
+                                                span(data-input-error="phone").input-field__error
+                                                    | Некорректный номер
+                                    .form-lead-user__row
+                                        .form-lead-user__field
+                                            button(type="submit").btn.secondary.form__submit Оставить заявку
+                                        .form-lead-user__field
+                                            label.checkbox
+                                                input.checkbox__input(type="checkbox", name="agree", value="agree", required=true)
+                                                span.checkbox__label
+                                                    | Я согласен(а) с 
+                                                    |
+                                                    a(href="#" target="_blank") политикой обработки персональных данных
+                                                    |
+                                                    | в соответствии с Федеральным законом № 152-ФЗ
 

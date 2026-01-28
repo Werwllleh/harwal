@@ -1,0 +1,214 @@
+extends ../../app/pug/layouts/secondary.pug
+
+append vars
+  - title = "Устойчивое развитие"
+  - description = "Описание страницы устойчивое развитие"
+
+append content
+
+    .page__header
+        .page__breadcrumbs
+            .container
+                +breadcrumbs(['Главная', 'О компании', 'Устойчивое развитие'])
+        .page__title
+            .container
+                p Устойчивое развитие
+        .page__header--bg
+            img(src="./images/header-bg.webp", alt="")
+    .page__content
+        .stable-dev
+            .stable-dev__title
+                .container
+                    h1.h1 Мы&nbsp;преданы идее социальной ответственности и&nbsp;принимаем различные инициативы, направленные на&nbsp;обеспечение устойчивости
+            .textblock
+                .container
+                    .textblock__body
+                        p.h4.textblock__title Социальная ответственность
+                        .textblock__text
+                            p Процессы производства и продукция Harwal являются экологически чистыми. Все материалы, оставшиеся в процессе производства перерабатываются на наших предприятиях по переработке алюминия и пластика.
+            .textblock
+                .container
+                    .textblock__body
+                        p.h4.textblock__title Окружающая среда
+                        .textblock__text
+                            p Наша продукция подвергается биологическому разложению. Разрабатывая продукты для замены древесины, мы сохраняем наши леса. За счет повторного использования мы сохраняем воду. Модернизируя наше оборудования и повышая эффективность, мы экономим энергию. Наши холодильные продукты, включая холодильные камеры, коммерческие холодильники и рефрижераторы, не содержат хлорфторуглеродов (ХФУ).
+            figure.figure
+                img(src="./images/photo6.webp", alt="Устойчивое развитие")
+            .stable-dev-ecofriendly
+                .container
+                    p.h4.stable-dev-ecofriendly__title Все наши компании – ECO-friendly
+                    ul
+                        li
+                            span
+                                +svg("check2")
+                            p Мы&nbsp;производим биоразлагаемые пластиковые пакеты для холодильной продукции, холодильников без хлорфторуглеродов (ХФУ).
+                        li
+                            span
+                                +svg("check2")
+                            p Мы&nbsp;сохраняем леса, разрабатывая продукты для замены древесины.
+                        li
+                            span
+                                +svg("check2")
+                            p Мы&nbsp;сохраняем воду, благодаря повторному использованию.
+                        li
+                            span
+                                +svg("check2")
+                            p Мы&nbsp;экономим энергию, повышая нашу эффективность
+            .stable-dev-companies
+                .container
+                    p.h4.stable-dev-companies__title Российский завод Harwal Enterprises придерживается политики минимизации негативного воздействия на&nbsp;окружающую среду, поэтому использует нетоксичные материалы, соответствующие стандартам производства.
+                    ul.stable-dev-companies__list
+                        li
+                            .stable-dev-companies__card
+                                .image
+                                    img(src="./images/stable-dev/c1.png", alt="")
+                                p Одна из&nbsp;ведущих компаний по&nbsp;вторичной переработке алюминия в&nbsp;ОАЭ.
+                        li
+                            .stable-dev-companies__card
+                                .image
+                                    img(src="./images/stable-dev/c2.png", alt="")
+                                p Имеются крупные отделы контроля качества производства.
+                        li
+                            .stable-dev-companies__card
+                                .image
+                                    img(src="./images/stable-dev/c3.png", alt="")
+                                p Используют нетоксичный полиэтиленовый термопласт в&nbsp;производстве.
+                        li
+                            .stable-dev-companies__card
+                                .image
+                                    img(src="./images/stable-dev/c4.png", alt="")
+                                p Поставляемы продукты соответствуют различным международным стандартам разработки и&nbsp;производства.
+                        li
+                            .stable-dev-companies__card
+                                .image
+                                    img(src="./images/stable-dev/c5.png", alt="")
+                                p Продукты компании одобрены сторонними сертификационными агентствами.
+                        li
+                            .stable-dev-companies__card
+                                .image
+                                    img(src="./images/stable-dev/c6.png", alt="")
+                                p Оборудован современными лабораториями по&nbsp;контролю качества.
+            .stable-dev-environment
+                .container
+                    p.h4.stable-dev-environment__title Мы&nbsp;заботимся об&nbsp;окружающей среде
+                    ul.stable-dev-environment__list
+                        li
+                            .stable-dev-environment__card
+                                .image
+                                    img(src="./images/become-partner/bp-4.webp", alt="")
+                                p Непрерывно совершенствуемся. Регулярно осуществляем анализ воздействия деятельности компании на&nbsp;окружающую среду.
+                        li
+                            .stable-dev-environment__card
+                                .image
+                                    img(src="./images/become-partner/bp-6.webp", alt="")
+                                p Соответствуем требованиям российского законодательства об&nbsp;охране окружающей среды. Отслеживаем природоохранные требования и&nbsp;своевременно реагируем на&nbsp;их&nbsp;изменения.
+                        li
+                            .stable-dev-environment__card
+                                .image
+                                    img(src="./images/become-partner/bp-8.webp", alt="")
+                                p Разделяем мусор во&nbsp;избежание смешения разных видов отходов и&nbsp;загрязнения окружающей среды.
+                        li
+                            .stable-dev-environment__card
+                                .image
+                                    img(src="./images/become-partner/bp-9.webp", alt="")
+                                p Собираем отработанные элементы питания, токсичные вещества, которых могут нанести большой вред окружающей среде
+            .textblock
+                .container
+                    .textblock__body
+                        p.h4.textblock__title Современному миру просто необходима защита окружающей среды
+                        .textblock__text
+                            p Мы проявляем ответственность по отношению к окружающей среде и нашим клиентам. Поэтому постоянно обращаем всё больше внимания на важность экологии. Группа компаний «Harwal» бережно относится к экологии и внедряет на своих предприятиях экологически устойчивые операции, с тем, чтобы минимизировать, либо исключить вред для природы и природных ресурсов России. Мы стремимся к экологическому балансу в работе наших предприятий. Наша операционная стратегия направлена на улучшение качества продукции и обслуживания клиентов при соблюдении и улучшении показателей экологических норм.
+            .textblock
+                .container
+                    .textblock__body
+                        p.h4.textblock__title Компания по переработке алюминия
+                        .textblock__text
+                            p Emirates Recycling LLC, член Harwal Group, является одной из ведущих компаний по вторичной переработке алюминия в ОАЭ с годовой производственной мощностью, превышающей 18 000 тонн. Мы поставляем высококачественный вторичный слиток из алюминиевого сплава и используем новейшую современную технологию LOTUS для плавки лома и производства кованых и литейных сплавов в одном месте.
+                            p Компания Emirates Recycling поставляет слитки ведущим производителям листового алюминиевого проката и экструдированной продукции для использования в аэрокосмической, строительной, автомобильной, распределительной и транспортной отраслях. ERL производит 1 тонну легированных слитков, литые блоки весом 500 кг и слитки весом 7 кг в соответствии с международными стандартами.
+                            p ERL использует ротационную печь и печь для плавления емкостью 25 метрических тонн. ERL использует новейшую в мире технологию насоса VORTEX и систему плавления LOTUS, которая в основном используется для плавки лома легкого калибра, такого как UBC (использованные банки для напитков). У компании также есть лаборатория с спектрометром и литейной машиной ARL.
+            .stable-dev-recycling
+                .container
+                    ul
+                        li
+                            span 25 тонн
+                            p Компания использует печь для плавления емкостью 25&nbsp;метрических тонн
+                        li
+                            span 18 000 тонн
+                            p Годовая производственная мощь алюминиевых слитков&nbsp;&mdash; 18&nbsp;000 тонн
+                        li
+                            span 1 тонна
+                            p Производим легированные слитки весом 1&nbsp;тонну для внутреннего и&nbsp;экспортного рынка
+            .information
+                .information__container.container
+                    .information__body
+                        .information__left
+                            .information-textblock
+                                p.h4.information-textblock__title Алюминий
+                                .information-textblock__text
+                                    p Уникальный потенциал переработки алюминия и его собственная ценность означают, что алюминий является наиболее экономичным материалом для переработки. Рынок использованного алюминия неуклонно растет. Чем больше алюминия содержится в продукте, тем больше шансов на его переработку. Алюминиевая промышленность развивает и совершенствует процессы переработки. Это гарантирует, что алюминий сохраняет свою позицию как наиболее ценный материал, который может быть переработан. Emirates Recycling исследует все экономические и экологические факторы, чтобы найти лучшие варианты утилизации.
+                                    p Использованный алюминий является важным ресурсом, который очень ценен: при переработке качество алюминия не ухудшается и его можно использовать повторно. Рециркуляция алюминия экономит энергию: переплавка использованного алюминия экономит до 95% энергии, необходимой для производства первичного продукта.
+                        .information__right
+                            +docCard("95%", "Переплавка использованного алюминия экономит до 95% энергии, необходимой для производства первичного продукта.", "", false)
+            .waste-types
+                .container
+                    p.h4.waste-types__title
+                        | Компания закупает и&nbsp;перерабатывает следующие виды алюминиевых отходов:
+                    ul
+                        li
+                            .waste-types__card
+                                .waste-types__card--image
+                                    img(src="./images/stable-dev/wt1.webp", alt="")
+                                .waste-types__card--title
+                                    p Жестяные банки
+                        li
+                            .waste-types__card
+                                .waste-types__card--image
+                                    img(src="./images/stable-dev/wt2.webp", alt="")
+                                .waste-types__card--title
+                                    p TENS
+                        li
+                            .waste-types__card
+                                .waste-types__card--image
+                                    img(src="./images/stable-dev/wt3.webp", alt="")
+                                .waste-types__card--title
+                                    p TAINT
+                        li
+                            .waste-types__card
+                                .waste-types__card--image
+                                    img(src="./images/stable-dev/wt4.webp", alt="")
+                                .waste-types__card--title
+                                    p EXTRUSION
+            .recycling-process
+                .container
+                    p.h4.recycling-process__title Процесс переработки
+                    ul
+                        li
+                            .recycling-process__card
+                                .recycling-process__card--image
+                                    img(src="./images/stable-dev/rp.webp", alt="")
+                                .recycling-process__card--footer
+                                    p Плавление
+                                    p Отобранный алюминиевый лом измельчают, удаляют покрытие и&nbsp;расплавляют с&nbsp;помощью насоса VORTEX в&nbsp;боковой скважинной печи LOTUSS.
+                        li
+                            .recycling-process__card
+                                .recycling-process__card--image
+                                    img(src="./images/stable-dev/rp.webp", alt="")
+                                .recycling-process__card--footer
+                                    p Легирование
+                                    p Расплавленный металл подается в&nbsp;загрузочную печь (конвертер), и&nbsp;производится очистка с&nbsp;использованием коррекции заряда, добавления легирующих элементов и&nbsp;процессов обработки металла.
+                        li
+                            .recycling-process__card
+                                .recycling-process__card--image
+                                    img(src="./images/stable-dev/rp.webp", alt="")
+                                .recycling-process__card--footer
+                                    p Отливка
+                                    p Расплавленный алюминий отливается в&nbsp;слитки в&nbsp;соответствии с&nbsp;конкретными требованиями заказчика в&nbsp;машине непрерывного литья заготовок T-masters U.K.Quality.
+                        li
+                            .recycling-process__card
+                                .recycling-process__card--image
+                                    img(src="./images/stable-dev/rp.webp", alt="")
+                                .recycling-process__card--footer
+                                    p Отливка
+                                    p Каждый отдельный заряд печи испытывается в&nbsp;лаборатории с&nbsp;использованием современного аналитического технологического оборудования с&nbsp;компьютерным управлением&nbsp;&mdash; спектрометра ARL.
+            .stable-dev-form
+                +bannerForm(2)

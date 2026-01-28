@@ -1,17 +1,22 @@
-mixin docCard(title, text, params)
+mixin docCard(title, text, params, link)
 
     //doc-card
     .doc-card&attributes(attributes)
-        a(href="#", download).doc-card__download
+        if link
+            a(href="#", download).doc-card__download
         .doc-card__body
             .doc-card__top
                 p.doc-card__title
-                    =title
-                    |
-                    br
-                    |
-                    =params
-                span.doc-card__icon
-                    +svg("arrow-down")
+                    if params
+                        =title
+                        |
+                        br
+                        |
+                        =params
+                    else
+                        =title
+                if link
+                    span.doc-card__icon
+                        +svg("arrow-down")
             .doc-card__footer
                 p= text
