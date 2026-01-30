@@ -161,33 +161,71 @@
     padding-inline: 2rem;
   }
 
+  @include w1650 {
+    padding-block: 16rem;
+  }
+
   &__container {}
 
   &__body {}
 
-  &__title {}
+  &__title {
+    font-weight: 600;
+    font-size: 5.6rem;
+    line-height: 0.85714;
+    letter-spacing: -0.02em;
+    color: #fff;
+  }
 
   &__list {
+    margin-top: 6.6rem;
 
     li {
       display: flex;
       align-items: flex-start;
       justify-content: space-between;
       gap: 0 3rem;
-      padding-block: 2rem;
-      border-top: 1px solid #8d9ebd;
+
+      &:not(:first-child) {
+        border-top: 1px solid #8d9ebd;
+      }
+
+      &:not(:last-child) {
+        padding-block: 2rem;
+      }
+
+      &:last-child {
+        padding-block: 2rem 0;
+      }
+
 
       @include mobile {
         align-items: center;
       }
 
       @include tablet {
-        padding-block: 2.4rem;
+
+        &:not(:last-child) {
+          padding-block: 2.4rem;
+        }
+
+        &:last-child {
+          padding-block: 2.4rem 0;
+        }
+
         gap: 0 4rem;
       }
 
       @include desktop {
         padding-block: 3rem;
+
+        &:not(:last-child) {
+          padding-block: 3rem;
+        }
+
+        &:last-child {
+          padding-block: 3rem 0;
+        }
       }
 
       p {
