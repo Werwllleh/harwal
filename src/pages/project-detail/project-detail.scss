@@ -8,7 +8,9 @@
   &__title {
 
     h1 {
-      max-width: 130rem;
+      @include semiDesktop {
+        max-width: 80%;
+      }
     }
   }
 

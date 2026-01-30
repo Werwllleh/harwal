@@ -42,7 +42,7 @@
         margin-top: 10rem;
       }
 
-      @include desktop {
+      @include w1650 {
         margin-top: 16rem;
       }
     }
@@ -96,7 +96,7 @@
             height: 5rem;
           }
 
-          @include desktop {
+          @include w1650 {
             width: 8rem;
             height: 8rem;
           }
@@ -120,12 +120,12 @@
         @include desktop {
           font-size: 5rem;
           line-height: 1.14;
-          padding-top: 5.6rem;
-          padding-bottom: 5.6rem;
         }
 
-        @include w1250 {
+        @include w1650 {
           font-size: 7.2rem;
+          padding-top: 5.6rem;
+          padding-bottom: 5.6rem;
         }
       }
     }

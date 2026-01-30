@@ -13,6 +13,15 @@
     padding-bottom: 16rem;
   }
 
+  &__title {
+
+    h1 {
+      @include semiDesktop {
+        max-width: 80%;
+      }
+    }
+  }
+
   .figure {
     margin-top: 3rem;
 

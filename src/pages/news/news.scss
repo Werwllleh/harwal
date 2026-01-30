@@ -13,7 +13,13 @@
     padding-bottom: 16rem;
   }
 
-  .page-news-title {
+  &__title {
+
+    h1 {
+      @include semiDesktop {
+        max-width: 80%;
+      }
+    }
   }
 
   .news-list {

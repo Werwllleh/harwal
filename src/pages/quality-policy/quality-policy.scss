@@ -5,6 +5,15 @@
 .quality-policy {
   padding-bottom: 3.4rem;
 
+  &__title {
+
+    h1 {
+      @include semiDesktop {
+        max-width: 80%;
+      }
+    }
+  }
+
   &__title + .figure {
     margin-top: 5.6rem;
 

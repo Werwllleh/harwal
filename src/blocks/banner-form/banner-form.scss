@@ -62,17 +62,18 @@
     box-shadow: inset 0 0 3.2rem 0 rgba(233, 243, 255, 0.7);
     background: rgba(189, 218, 250, 0.1);
 
-    @include semiDesktop {
-      padding-block: 12rem;
+    @include desktop {
+      padding-block: 8rem;
       padding-inline: 6rem;
     }
 
-    @include w1250 {
-      padding-block: 18.9rem;
+    @include laptop {
+      padding-block: 12rem;
       padding-inline: 8rem;
     }
 
     @include w1650 {
+      padding-block: 18.9rem;
       padding-inline: 11.8rem;
     }
   }

@@ -294,6 +294,14 @@ body {
     @include tablet {
       border-radius: 3.2rem;
     }
+
+    @include desktop {
+      max-height: 50rem;
+    }
+
+    @include w1650 {
+      max-height: 72rem;
+    }
   }
 
   &__figcaption {

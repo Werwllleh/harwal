@@ -5,6 +5,12 @@
 .project-card {
   position: relative;
 
+  &:hover {
+    .project-card__image img {
+      transform: scale(1.05);
+    }
+  }
+
   &__site {
     position: absolute;
     width: auto;
@@ -38,6 +44,7 @@
   &__image {
     height: 19rem;
     transition: height $transition;
+    overflow: hidden;
 
     @include mobile {
       height: 36.5rem;
@@ -48,6 +55,7 @@
       height: 100%;
       object-fit: cover;
       pointer-events: none;
+      transition: transform $transition-default;
     }
   }
 

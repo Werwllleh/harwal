@@ -16,10 +16,14 @@ button, input, textarea {
   }
 
   @include tablet {
-    font-size: 5.2rem;
+    font-size: 4.5rem;
   }
 
   @include desktop {
+    font-size: 5.2rem;
+  }
+
+  @include w1650 {
     font-size: 7.2rem;
   }
 }
@@ -31,10 +35,15 @@ button, input, textarea {
   line-height: 1.23;
 
   @include tablet {
-    font-size: 3.2rem;
+    font-size: 3rem;
   }
 
   @include desktop {
+    font-size: 3.6rem;
+  }
+
+  @include w1650 {
     font-size: 4.8rem;
   }
+
 }
