@@ -21,6 +21,8 @@ function startValidation(form) {
 
   const onlyWords = /^[a-zA-Zа-яА-ЯёЁ"'«».,\s]+$/;
 
+  const fieldset = form.querySelector('fieldset');
+
   const submitButton = form.querySelector('button[type="submit"]');
 
   const inputList = Array.from(form.querySelectorAll('input:not([hidden]):not([type="checkbox"]):not([type="radio"]):not([data-input="segmented"])'));
@@ -33,6 +35,10 @@ function startValidation(form) {
   form.addEventListener('submit', (event) => {
     event.preventDefault()
 
+    if (fieldset) {
+      fieldset.setAttribute('disabled', '')
+    }
+
     const formData = new FormData(form);
 
     if (hasInvalidInput()) {
@@ -43,9 +49,24 @@ function startValidation(form) {
       checkboxList?.forEach((checkboxElement) => {
         checkInputValidity(checkboxElement)
       })
+      fieldset.removeAttribute('disabled')
     } else {
+
       console.log(Array.from(formData))
+
+      if (formType === 'consultation') {
+
+        closeModalByName('consultation')
+
+        setTimeout(() => {
+          showModal('success')
+        }, 300)
+
+      }
+
+      fieldset.removeAttribute('disabled')
       resetForm(form);
+
     }
   })
 

@@ -3,7 +3,7 @@ mixin form(type)
     +regLibrary(false, 'input-mask/input-mask.js')
 
     //form
-    form.form&attributes(attributes)
+    form(data-form="consultation").form&attributes(attributes)
         fieldset.form__fieldset
             .form__body
                 .form__field

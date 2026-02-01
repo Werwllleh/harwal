@@ -1,0 +1,64 @@
+@use '../../app/scss/variables.scss' as *;
+@use '../../app/scss/mixins.scss' as *;
+
+// modal-success
+.modal-success-inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  &__body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding-block: 5rem;
+    padding-inline: 2rem;
+
+    @include mobile {
+      padding-inline: 4.5rem;
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 2.4rem;
+    line-height: 1.11;
+    letter-spacing: -0.02em;
+    color: $color-idfsl;
+    max-width: 97%;
+
+    @include tablet {
+      font-size: 3.6rem;
+    }
+  }
+
+  &__text {
+    margin-top: 1.8rem;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 1.5;
+    letter-spacing: -0.02em;
+    color: $color;
+    max-width: 97%;
+
+    @include tablet {
+      font-size: 1.6rem;
+    }
+  }
+
+  &__close {
+    margin-top: auto;
+    width: 100%;
+
+    @include mobile {
+      margin-top: 3.4rem;
+    }
+  }
+}
+
+.modal-success {
+
+  &__content {
+    height: 100%;
+  }
+}

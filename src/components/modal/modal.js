@@ -3,14 +3,32 @@ const modalList = document.querySelectorAll('.modal')
 if (modalList.length) {
 
   modalList.forEach((modal) => {
-    const closeBtn = modal.querySelector('.modal__close')
-    closeBtn.addEventListener('click', () => closeModal(modal))
+    const closeBtns = modal.querySelectorAll('.modal--close');
 
-    modal.addEventListener('click', (evt) => {
+    let mouseDownInside = false;
+
+    modal.addEventListener('mousedown', (evt) => {
+      mouseDownInside = !!evt.target.closest('.modal__window');
+    });
+    modal.addEventListener('mouseup', (evt) => {
+      const mouseUpInside = !!evt.target.closest('.modal__window');
+
+      if (!mouseDownInside && !mouseUpInside) {
+        closeModal(modal);
+      }
+    });
+
+    if (closeBtns.length) {
+      closeBtns.forEach((closeBtn) => {
+        closeBtn.addEventListener('click', () => closeModal(modal))
+      })
+    }
+
+    /*modal.addEventListener('click', (evt) => {
       if (!evt.target.closest('.modal__window')) {
         closeModal(modal)
       }
-    })
+    })*/
   })
 
   const triggerList = document.querySelectorAll('*[data-modal]')
