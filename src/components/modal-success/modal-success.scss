@@ -11,10 +11,12 @@
     flex: 1;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     padding-block: 5rem;
     padding-inline: 2rem;
 
     @include mobile {
+      justify-content: flex-start;
       padding-inline: 4.5rem;
     }
   }
@@ -26,6 +28,11 @@
     letter-spacing: -0.02em;
     color: $color-idfsl;
     max-width: 97%;
+    text-align: center;
+
+    @include mobile {
+      text-align: left;
+    }
 
     @include tablet {
       font-size: 3.6rem;
@@ -40,6 +47,11 @@
     letter-spacing: -0.02em;
     color: $color;
     max-width: 97%;
+    text-align: center;
+
+    @include mobile {
+      text-align: left;
+    }
 
     @include tablet {
       font-size: 1.6rem;
@@ -47,7 +59,7 @@
   }
 
   &__close {
-    margin-top: auto;
+    margin-top: 10rem;
     width: 100%;
 
     @include mobile {
@@ -58,7 +70,7 @@
 
 .modal-success {
 
-  &__content {
+  .modal__content {
     height: 100%;
   }
 }

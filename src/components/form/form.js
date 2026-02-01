@@ -1,232 +1,239 @@
 initForms();
 
 function initForms() {
-
   const forms = document.querySelectorAll('form');
   if (!forms.length) return;
 
-  forms.forEach(form => {
-
-    form.setAttribute('novalidate', '')
-
-    startValidation(form)
-
+  forms.forEach((form) => {
+    form.setAttribute('novalidate', '');
+    startValidation(form);
   });
-
 }
 
 function startValidation(form) {
-
   const formType = form.dataset.form;
 
-  const onlyWords = /^[a-zA-Zа-яА-ЯёЁ"'«».,\s]+$/;
-
   const fieldset = form.querySelector('fieldset');
+  const onlyWords = /^[a-zA-Zа-яА-ЯёЁ"'«».,\s-]+$/;
 
-  const submitButton = form.querySelector('button[type="submit"]');
+  const inputList = Array.from(
+    form.querySelectorAll(
+      'input:not([hidden]):not([type="checkbox"]):not([type="radio"]):not([data-input="segmented"])'
+    )
+  );
 
-  const inputList = Array.from(form.querySelectorAll('input:not([hidden]):not([type="checkbox"]):not([type="radio"]):not([data-input="segmented"])'));
-  const checkboxList = Array.from(form.querySelectorAll('input[type="checkbox"][required]:not([hidden])'));
+  const checkboxList = Array.from(
+    form.querySelectorAll('input[type="checkbox"][required]:not([hidden])')
+  );
 
-  if (!inputList.length || !submitButton) return;
-
-  toggleButton()
+  if (!inputList.length) return;
 
   form.addEventListener('submit', (event) => {
-    event.preventDefault()
+    event.preventDefault();
 
-    if (fieldset) {
-      fieldset.setAttribute('disabled', '')
+    const ok = validateAll({ showErrors: true, requiredOnly: true });
+
+    if (!ok) {
+      formError(form, true);
+      if (fieldset) fieldset.removeAttribute('disabled');
+      return;
     }
+
+    formError(form, false);
 
     const formData = new FormData(form);
+    console.log(Array.from(formData));
 
-    if (hasInvalidInput()) {
-      formError(form, true)
-      inputList.forEach((inputElement) => {
-        checkInputValidity(inputElement)
-      })
-      checkboxList?.forEach((checkboxElement) => {
-        checkInputValidity(checkboxElement)
-      })
-      fieldset.removeAttribute('disabled')
+    if (fieldset) fieldset.setAttribute('disabled', '');
+
+    if (formType === 'consultation') {
+      closeModalByName?.('consultation');
+    }
+
+    setTimeout(() => {
+      fieldset?.removeAttribute('disabled');
+      showModal?.('success');
+    }, 300);
+
+    resetForm(form);
+  });
+
+  form.addEventListener('input', (e) => {
+    const el = e.target;
+    if (!(el instanceof HTMLInputElement)) return;
+
+    if (el.type !== 'checkbox') {
+      el.classList.toggle('filled', !!el.value.length);
+      formError(form, false);
+
+      if (el.required || el.value.trim().length) {
+        validateOne(el, { showError: false });
+      } else {
+        clearOne(el);
+      }
     } else {
-
-      console.log(Array.from(formData))
-
-      if (formType === 'consultation') {
-
-        closeModalByName('consultation')
-
-        setTimeout(() => {
-          showModal('success')
-        }, 300)
-
+      if (el.required) {
+        if (el.checked) el.setAttribute('valid', 'true');
+        else el.removeAttribute('valid');
       }
-
-      fieldset.removeAttribute('disabled')
-      resetForm(form);
-
     }
-  })
+  });
 
-  inputList.forEach((inputElement) => {
-    inputElement.addEventListener('input', () => {
-      if (inputElement.value.length) {
-        inputElement.classList.add('filled')
+  form.addEventListener('focusin', (e) => {
+    const el = e.target;
+    if (!(el instanceof HTMLInputElement)) return;
+    if (el.type === 'checkbox') return;
+
+    el.classList.add('focus');
+    el.classList.remove('error');
+    formError(form, false);
+  });
+
+  form.addEventListener('focusout', (e) => {
+    const el = e.target;
+    if (!(el instanceof HTMLInputElement)) return;
+    if (el.type === 'checkbox') return;
+
+    el.classList.remove('focus');
+
+    if (!el.value.length) {
+      el.classList.remove('filled');
+
+      if (!el.required) {
+        clearOne(el);
+        return;
       }
-      formError(form, false)
-      checkInputValidity(inputElement)
-      toggleButton()
-    })
-    inputElement.addEventListener('blur', () => {
-      inputElement.classList.remove('focus');
-      if (!inputElement.value.length) {
-        inputElement.classList.remove('filled')
-        inputElement.classList.remove('error')
-      }
-      checkInputValidity(inputElement)
-      toggleButton()
-    })
-    inputElement.addEventListener('focus', () => {
-      formError(form, false)
-      inputElement.classList.add('focus');
-      checkInputValidity(inputElement)
-      toggleButton()
-    })
-  })
-
-  checkboxList?.forEach((checkboxElement) => {
-    checkboxElement.addEventListener('change', () => {
-      checkboxElement.toggleAttribute('valid', checkboxElement.checked)
-      toggleButton()
-    })
-  })
-
-  function checkInputValidity(inputElement) {
-    const type = inputElement.dataset.input;
-
-    if (!type) return;
-
-    const label = inputElement.closest('.input-field');
-    const errorElement = label.querySelector(`[data-input-error="${type}"]`);
-    if (errorElement) {
-      errorElement.textContent = "Некорректное значение";
     }
 
-    const value = inputElement.value
+    validateOne(el, { showError: false });
+  });
+
+  function validateAll({ showErrors, requiredOnly }) {
+    let ok = true;
+
+    // inputs
+    inputList.forEach((input) => {
+      if (isHidden(input)) return;
+
+      if (requiredOnly && !input.required) {
+        if (!input.value.trim().length) clearOne(input);
+        return;
+      }
+
+      const v = validateOne(input, { showError: showErrors });
+      if (!v) ok = false;
+    });
+
+    checkboxList.forEach((cb) => {
+      if (isHidden(cb)) return;
+
+      if (cb.checked) {
+        cb.setAttribute('valid', 'true');
+        cb.classList.remove('error');
+      } else {
+        cb.removeAttribute('valid');
+        if (showErrors) cb.classList.add('error');
+        ok = false;
+      }
+    });
+
+    return ok;
+  }
+
+  function validateOne(input, { showError }) {
+    const type = input.dataset.input;
+    if (!type) return true;
+
+    const value = (input.value || '').trim();
+
+    if (input.required && value === '') {
+      setInvalid(input, showError ? 'Заполните поле' : '');
+      return false;
+    }
+
+    if (!input.required && value === '') {
+      clearOne(input);
+      return true;
+    }
+
+    let result = { valid: true, message: '' };
 
     switch (type) {
-      case 'name':
-        if (value.trim() === '') {
-          toggleInputError(inputElement, false)
-          inputElement.removeAttribute('valid')
-          return;
+      case 'name': {
+        if (!onlyWords.test(value) || value.length < 3) {
+          result = { valid: false, message: 'Некорректное имя' };
         }
+        break;
+      }
 
-        if (!onlyWords.test(value.trim()) || value.trim().length <= 2) {
-          toggleInputError(inputElement, 'Некорректное имя')
-          inputElement.removeAttribute('valid')
-        } else {
-          toggleInputError(inputElement, false)
-          inputElement.setAttribute('valid', true)
+      case 'phone': {
+        const digits = value.replace(/\D/g, '');
+
+        if (digits.length !== 11) {
+          result = { valid: false, message: 'Некорректный номер' };
         }
-        break
-      case 'phone':
-        const cleanedPhone = value.replace(/\D/g, '').replace(/^7/, '7');
+        break;
+      }
 
-        if (cleanedPhone.trim() === '7' || cleanedPhone.trim().length === 0) {
-          toggleInputError(inputElement, '')
-          inputElement.removeAttribute('valid')
-        } else if (cleanedPhone.length === 11) {
-          inputElement.setAttribute('valid', true)
-          toggleInputError(inputElement, '')
-        } else {
-          inputElement.removeAttribute('valid')
-          toggleInputError(inputElement, 'Некорректный номер')
-        }
-        break
-      case 'param':
-        inputElement.setAttribute('valid', true)
-        break
-      /*case 'email':
-        if (value.trim() === '') {
-          toggleInputError(inputElement, false)
-          inputElement.removeAttribute('valid')
-          return;
-        }
+      case 'param': {
+        result = { valid: true, message: '' };
+        break;
+      }
 
-        const atIncluded = value.includes('@');
-        const dotIncluded = value.includes('.');
-        const lastDotIndex = value.lastIndexOf('.');
-        const domainPartLength = value.length - lastDotIndex - 1;
-
-        const validEmail = atIncluded && dotIncluded && domainPartLength >= 2;
-
-        if (!validEmail) {
-          toggleInputError(inputElement, 'Некорректное значение')
-          inputElement.removeAttribute('valid')
-        } else {
-          toggleInputError(inputElement, false)
-          inputElement.setAttribute('valid', true)
-        }
-
-        break;*/
-      default:
-        toggleInputError(inputElement, '')
-        inputElement.removeAttribute('valid')
+      default: {
+        result = { valid: false, message: 'Некорректное значение' };
+      }
     }
+
+    if (!result.valid) {
+      setInvalid(input, showError ? result.message : '');
+      return false;
+    }
+
+    setValid(input);
+    return true;
   }
 
-  function hasInvalidInput() {
+  function isHidden(el) {
+    return !!el.closest('.hide');
+  }
 
-    if (checkboxList.length) {
-      return (
-        inputList.filter(input => !input.closest('.hide')).some(input => !input.hasAttribute('valid'))
-        ||
-        checkboxList?.filter(input => !input.closest('.hide')).some(cb => !cb.hasAttribute('valid'))
-      );
+  function setValid(input) {
+    input.classList.remove('error');
+    input.setAttribute('valid', 'true');
+    setErrorText(input, '');
+  }
+
+  function setInvalid(input, message) {
+    input.removeAttribute('valid');
+
+    if (message) {
+      input.classList.add('error');
+      setErrorText(input, message);
     } else {
-      return (
-        inputList.filter(input => !input.closest('.hide')).some(input => !input.hasAttribute('valid'))
-      );
+      input.classList.remove('error');
+      setErrorText(input, '');
     }
   }
 
-  function toggleInputError(inputElement, errorMessage) {
-    const type = inputElement.dataset.input
+  function clearOne(input) {
+    input.classList.remove('error');
+    input.removeAttribute('valid');
+    setErrorText(input, '');
+  }
 
+  function setErrorText(input, text) {
+    const type = input.dataset.input;
     if (!type) return;
 
-    const label = inputElement.closest('.input-field');
-    const errorElement = label.querySelector(`[data-input-error="${type}"]`)
-
-    if (errorMessage) {
-      inputElement.classList.add('error')
-      errorElement.textContent = errorMessage
-      // label.style.marginBottom = '30px'
-    } else {
-      inputElement.classList.remove('error')
-      errorElement.textContent = ''
-      // label.style.marginBottom = ''
-    }
-  }
-
-  function toggleButton() {
-
-    if (hasInvalidInput()) {
-      submitButton.setAttribute('disabled', '');
-      // formError(true)
-    } else {
-      submitButton.removeAttribute('disabled')
-      // formError(false)
-    }
+    const label = input.closest('.input-field');
+    const errorEl = label?.querySelector(`[data-input-error="${type}"]`);
+    if (errorEl) errorEl.textContent = text || '';
   }
 }
 
 function formError(form, active) {
   const formErrorField = form.querySelector('[data-form-error]');
-
   if (!formErrorField) return;
 
   if (!active) {
@@ -239,51 +246,29 @@ function formError(form, active) {
 
 function resetForm(form) {
   setTimeout(() => {
-    form.reset()
+    form.reset();
 
     const inputs = form.querySelectorAll('input:not([type="checkbox"])');
-    if (inputs.length) {
-      inputs.forEach(input => {
-        input.classList.remove('focus', 'filled', 'error')
-        input.removeAttribute('valid')
-      })
-    }
+    inputs.forEach((input) => {
+      input.classList.remove('focus', 'filled', 'error');
+      input.removeAttribute('valid');
+
+      const type = input.dataset.input;
+      if (!type) return;
+
+      const label = input.closest('.input-field');
+      const errorEl = label?.querySelector(`[data-input-error="${type}"]`);
+      if (errorEl) errorEl.textContent = '';
+    });
 
     const checkboxes = form.querySelectorAll('input[type="checkbox"]');
-    if (checkboxes.length) {
-      checkboxes.forEach(checkbox => {
-        checkbox.checked = false
-        checkbox.removeAttribute('valid')
-      });
-    }
+    checkboxes.forEach((checkbox) => {
+      checkbox.checked = false;
+      checkbox.removeAttribute('valid');
+      checkbox.classList.remove('error');
+    });
 
-
-  }, 300)
+    formError(form, false);
+  }, 300);
 }
 
-function revalidateForm(form) {
-
-  let noValidate = false;
-
-  const inputList = Array.from(form.querySelectorAll('input:not([hidden]):not([type="checkbox"]):not([data-input="segmented"])'));
-  const checkboxList = Array.from(form.querySelectorAll('input[type="checkbox"][required]:not([hidden])'));
-  const submitButton = form.querySelector('button[type="submit"]');
-
-  if (!inputList.length || !submitButton) return;
-
-  if (checkboxList.length) {
-
-    noValidate = inputList.filter(input => !input.closest('.hide')).some(input => !input.hasAttribute('valid'))
-      || checkboxList.filter(input => !input.closest('.hide')).some(cb => !cb.hasAttribute('valid'))
-  } else {
-    noValidate = inputList.filter(input => !input.closest('.hide')).some(input => !input.hasAttribute('valid'))
-  }
-
-  if (noValidate) {
-    submitButton.setAttribute('disabled', '');
-  } else {
-    submitButton.removeAttribute('disabled');
-    formError(form, false)
-  }
-
-}
