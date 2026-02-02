@@ -19,7 +19,7 @@
     padding-block: 1.7rem;
     padding-inline: 2rem;
     min-width: 20rem;
-    transition: background-color $transition-default, border-color $transition-default, color $transition-default;
+    transition: background-color $transition-default, border-color $transition-default, color $transition-default, box-shadow $transition-default;
 
     &.primary {
         background: $color-blue;
@@ -41,9 +41,17 @@
     }
 
     &.transparent {
+        padding-block: 1.8rem;
+        border: none;
         background: rgba(217, 217, 217, 0.01);
         color: $white;
         box-shadow: inset 0 0 28px 4px #a5aec4;
+
+        &:hover {
+            background: $white;
+            color: $color-idfsl;
+            box-shadow: inset 0 0 0 0 transparent;
+        }
     }
 
     &.light {

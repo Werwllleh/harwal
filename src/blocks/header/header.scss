@@ -58,11 +58,33 @@
 
       li {
         a {
+          position: relative;
+          display: flex;
           font-weight: 400;
           font-size: 1.4rem;
           letter-spacing: -0.02em;
           color: $white;
           white-space: nowrap;
+          max-width: max-content;
+
+          &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -.6rem;
+            width: 102%;
+            height: .2rem;
+            background-color: $white;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity $transition-default;
+          }
+
+          &:hover {
+            &::before {
+              opacity: .5;
+            }
+          }
 
           @include w1250 {
             font-size: 1.6rem;
