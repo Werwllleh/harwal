@@ -41,17 +41,61 @@ if (header) {
     })
   }
 
+  const mobileLinks = gsap.utils.toArray('.header-mobile__nav ul li a');
+
+  function setStairs() {
+    [...mobileLinks].reverse().forEach((el, idx) => {
+      gsap.set(el, {
+        opacity: 0,
+        x: 200 + idx * 8,
+      });
+    });
+  }
+
+  function animateMobileNavMenu() {
+    gsap.killTweensOf(mobileLinks);
+
+    gsap.to(mobileLinks, {
+      opacity: 1,
+      x: 0,               // выравниваем в одну линию
+      duration: 0.2,
+      ease: "none",
+      stagger: 0.08,      // мягкая последовательность
+      clearProps: 'transform', // чтобы не висели inline стили (опционально)
+    });
+  }
+
+  function disanimateMobileNavMenu() {
+    gsap.killTweensOf(mobileLinks);
+
+    [...mobileLinks].reverse().forEach((el, idx) => {
+      gsap.to(el, {
+        opacity: 0,
+        ease: "none",
+        x: 200 + idx * 8,
+        duration: 0.25,
+      });
+    });
+  }
+
+  setStairs();
+
   const burgerButton = header.querySelector('.header__burger');
   if (burgerButton) {
     burgerButton.addEventListener('click', () => {
+
+      if (window.innerWidth >= 1024) return;
+
       burgerButton.classList.toggle('active');
 
       blockWrap(burgerButton.classList.contains('active'))
 
       if (burgerButton.classList.contains('active')) {
+        animateMobileNavMenu()
         header.classList.add('mobile-active');
       } else {
         header.classList.remove('mobile-active');
+        disanimateMobileNavMenu()
       }
     })
 
@@ -61,6 +105,7 @@ if (header) {
           blockWrap(false)
           burgerButton.classList.remove('active');
           header.classList.remove('mobile-active');
+          disanimateMobileNavMenu()
         }
       }
     })

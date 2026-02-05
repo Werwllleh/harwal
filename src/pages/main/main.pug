@@ -6,7 +6,7 @@ append vars
 
 append content
     .page__main
-        section
+        section.anim-show
             .main
                 .main__container.container
                     .main__body
@@ -15,7 +15,7 @@ append content
                             h2.main__descriprion Наше производство позволяет нам за короткое время выполнять крупные заказы по обработке, декорированную и изготовлению всевозможных изделий из стекла.
                 .main__bg
                     img(src="./images/main-bg.webp")
-        section
+        section.anim-show
             .products
                 .products__container.container
                     h4.h4.section-title
@@ -32,7 +32,7 @@ append content
                         +productCard('Triplex', '7.webp')
                         +productCard('Зенитные фонари', '8.webp')
                         +productCard('Зимние сады', '9.webp')
-        section
+        section.anim-show
             .services
                 .services__container.container
                     .services__body
@@ -125,7 +125,7 @@ append content
                                 .services__item--price
                                     span Стоимость работ
                                     p от 30 до 256 руб / п.м.
-        section
+        section.anim-show
             .become-partner
                 .become-partner__container.container
                     .become-partner__body
@@ -180,7 +180,7 @@ append content
                                 span
                                     img(src="./images/become-partner/bp-5.webp", alt="")
                                 p Ведет бизнес в&nbsp;40&nbsp;странах по&nbsp;всему Ближнему Востоку, Африке, Европе и&nbsp;США.
-        section
+        section.anim-show
             .projects
                 .projects__container.container
                     h4.h4.section-title
@@ -192,7 +192,7 @@ append content
                         +projectCard('Жилой комплекс ILOVE', '2.webp', true)
                         +projectCard('Жилой комплекс ЖК Форест', '3.webp', true)
                         +projectCard('Жилой комплекс Грин Парк', '4.webp', true)
-        section
+        section.anim-show
             .news
                 .news-bg-rectangle
                 .news__container.container
@@ -206,7 +206,7 @@ append content
                             +newsCard('Смотрите новую видео-презентацию завода Нarwal Enterprise', '3.webp')
                             +newsCard('Смотрите новую видео-презентацию завода Нarwal Enterprise', '4.webp')
                             +newsCard('Смотрите новую видео-презентацию завода Нarwal Enterprise', '2.webp')
-        section
+        section.anim-show
             .companies
                 .companies__container.container
                     .companies__body
@@ -247,19 +247,6 @@ append content
                                 img(src="./images/companies/pilkington.webp", alt="")
                             li
                                 img(src="./images/companies/sial.webp", alt="")
-        section
-            .contacts
-                .contacts__container.container
-                    .contacts__body
-                        .contacts__info
-                            h4.h4.contacts__title Контакты
-                            p.contacts__description Цель нашей компании&nbsp;&mdash; сократить издержки, увеличить обороты и&nbsp;доходность вашего бизнеса.
-                        .contacts__content
-                            +contactCard(
-                              "Главный офис и завод",
-                              ["https://yandex.ru/maps/-/CLhBEVjJ", "Московская область, Солнечногорск, Бутырский тупик, 2а"],
-                              ["tel:+74954090050", "+7 (495) 409-00-50"],
-                              ["mailto:info@harwal.ru", "info@harwal.ru"])
-        section.main-banner-form
+        section.main-banner-form.anim-show
             +bannerForm(1)
 
