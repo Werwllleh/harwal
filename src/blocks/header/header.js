@@ -1,3 +1,5 @@
+const overlay = document.querySelector('.overlay');
+
 const header = document.querySelector('.header');
 if (header) {
   const headerContacts = header.querySelector('.header-contacts');
@@ -19,23 +21,29 @@ if (header) {
 
   const headerNavItems = header.querySelectorAll('.header-nav__list--item');
   if (headerNavItems.length) {
+
+    let timer;
+
     headerNavItems.forEach(navItem => {
 
       const subList = navItem.querySelector('.header-nav__sublist');
 
       if (!subList) return;
 
-      let timer;
 
       navItem.addEventListener('mouseenter', () => {
         clearTimeout(timer);
+        navItem.style.zIndex = 11;
         navItem.classList.add('active');
+        overlay?.classList.add('active');
       });
 
       navItem.addEventListener('mouseleave', () => {
         clearTimeout(timer);
+        navItem.style.zIndex = '';
         timer = setTimeout(() => {
           navItem.classList.remove('active');
+          overlay?.classList.remove('active');
         }, 100);
       });
     })

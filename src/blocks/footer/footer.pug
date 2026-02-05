@@ -95,11 +95,15 @@ mixin footer()
                                     li
                                         a(href="#").youtube
                                             +svg("youtube")
+                                    li
+                                        a(href="#").ya
+                                            +svg("map-point2")
                 .footer__bottom
                     .footer__bottom--items
                         span.footer__bottom--rights
                             | © 2025 Harwal Enterprises
                         a(href="#", target="_blank").footer__bottom--policy Политика конфиденциальности
 
+    .overlay
     +modal('consultation', 'consultation')
     +modal('success', 'success')

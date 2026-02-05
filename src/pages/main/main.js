@@ -26,19 +26,19 @@ if (animShowSections.length) {
   gsap.utils.toArray('.anim-show').forEach((section) => {
     gsap.fromTo(
       section,
-      {
-        opacity: 0,
-        // y: 30,
-      },
+      { opacity: 0 },
       {
         opacity: 1,
-        // y: 0,
-        duration: 1.5,
+        duration: 0.8,
         ease: 'power2.out',
         scrollTrigger: {
           trigger: section,
-          start: 'top 80%', // когда верх секции дошёл до 80% экрана
-          toggleActions: 'play none none none',
+          start: 'top 80%',
+          end: 'bottom 20%',
+          onEnter: () => gsap.to(section, { opacity: 1, duration: 0.6 }),
+          onLeave: () => gsap.to(section, { opacity: 0, duration: 0.4 }),
+          onEnterBack: () => gsap.to(section, { opacity: 1, duration: 0.6 }),
+          onLeaveBack: () => gsap.to(section, { opacity: 0, duration: 0.4 }),
         },
       }
     )

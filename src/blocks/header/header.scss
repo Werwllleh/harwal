@@ -126,6 +126,7 @@
       opacity: 0;
       visibility: hidden;
       pointer-events: none;
+      z-index: 11;
       transition: opacity $transition-default, visibility $transition-default;
 
       li {
