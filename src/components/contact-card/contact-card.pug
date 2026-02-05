@@ -1,0 +1,30 @@
+mixin contactCard(title, address, phone, email)
+
+    //contact-card
+    .contact-card&attributes(attributes)
+        .contact-card__body
+            .contact-card__top
+                span.contact-card__name= title
+                a(href=address[0], rel="noopener noreferrer", target="_blank").contact-card__address= address[1]
+                a(href="#").contact-card__route
+                    | Проложить маршрут
+                    +svg("arrow-right-link")
+            .contact-card__bottom
+                .contact-card__types
+                    .contact-card__phone
+                        span.contact-card__name Телефон
+                        a(href=phone[0])= phone[1]
+                    .contact-card__email
+                        span.contact-card__name Email
+                        a(href=email[0])= email[1]
+                    ul.contact-card__socials
+                        li
+                            a(href="#").phone
+                                +svg("phone")
+                        li
+                            a(href="#").telegram
+                                +svg("telegram")
+                        li
+                            a(href="#").youtube
+                                +svg("youtube")
+                button(type="button", data-modal="consultation").btn.primary.contact-card__message Написать сообщение

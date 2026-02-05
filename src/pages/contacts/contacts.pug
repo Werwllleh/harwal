@@ -17,27 +17,40 @@ append content
             img(src="./images/header-bg.webp", alt="")
     .page__content
         .page-contacts
-            section.page-contacts-title
+            .page-contacts__title
                 .container
                     h1.h1 Россия
-            section.contacts-addresses
-                .contacts-addresses__container.container
-                    .contacts-addresses__items
-                        .contacts-addresses__item
-                            ul
-                                li
-                                    span Главный офис и завод
-                                    a(href="https://yandex.ru/maps/-/CLhBEVjJ", target="_blank", rel="noreferrer noopener") Московская область, Солнечногорск, Бутырский тупик, 2а
-                                li
-                                    span Телефон
-                                    a(href="tel:+74954090050") +7 (495) 409-00-50
-                        .contacts-addresses__item
-                            ul
-                                li
-                                    span Московский офис
-                                    a(href="https://yandex.ru/maps/-/CLhBIR89", target="_blank", rel="noreferrer noopener") Москва, Шарикоподшипниковская, д.1 (БЦ «Прогресс Плаза»)
-                                li
-                                    span Телефон
-                                    a(href="tel:+74950551333") +7 (495) 055-13-33
+            .page-contacts-items
+                .page-contacts-items__container.container
+                    .contacts-items
+                        +contactCard(
+                          "Главный офис и завод",
+                          ["https://yandex.ru/maps/-/CLhBEVjJ", "Московская область, Солнечногорск, Бутырский тупик, 2а"],
+                          ["tel:+74954090050", "+7 (495) 409-00-50"],
+                          ["mailto:info@harwal.ru", "info@harwal.ru"])
+                        +contactCard(
+                          "Московский офис",
+                          ["https://yandex.ru/maps/-/CLhBIR89", "Москва, Шарикоподшипниковская, д.1 (БЦ «Прогресс Плаза»)"],
+                          ["tel:+74950551333", "+7 (495) 055-13-33"],
+                          ["mailto:info@harwal.ru", "info@harwal.ru"])
+            //section.contacts-addresses
+            //    .contacts-addresses__container.container
+            //        .contacts-addresses__items
+            //            .contacts-addresses__item
+            //                ul
+            //                    li
+            //                        span Главный офис и завод
+            //                        a(href="https://yandex.ru/maps/-/CLhBEVjJ", target="_blank", rel="noreferrer noopener") Московская область, Солнечногорск, Бутырский тупик, 2а
+            //                    li
+            //                        span Телефон
+            //                        a(href="tel:+74954090050") +7 (495) 409-00-50
+            //            .contacts-addresses__item
+            //                ul
+            //                    li
+            //                        span Московский офис
+            //                        a(href="https://yandex.ru/maps/-/CLhBIR89", target="_blank", rel="noreferrer noopener") Москва, Шарикоподшипниковская, д.1 (БЦ «Прогресс Плаза»)
+            //                    li
+            //                        span Телефон
+            //                        a(href="tel:+74950551333") +7 (495) 055-13-33
             section.page-contacts-banner-form
                 +bannerForm(1)

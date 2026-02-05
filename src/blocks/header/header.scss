@@ -39,14 +39,14 @@
     }
   }
 
-  &__nav {
+  .header-nav {
     display: none;
 
     @include desktop {
       display: block;
     }
 
-    &--list {
+    &__list {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -56,38 +56,89 @@
         gap: 0 4.5rem;
       }
 
-      li {
-        a {
-          position: relative;
-          display: flex;
-          font-weight: 400;
-          font-size: 1.4rem;
-          letter-spacing: -0.02em;
-          color: $white;
-          white-space: nowrap;
-          max-width: max-content;
+      &--item {
+        position: relative;
 
-          &::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: -.6rem;
-            width: 102%;
-            height: .2rem;
-            background-color: $white;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity $transition-default;
-          }
-
-          &:hover {
+        &.active {
+          a.header-nav__list--link {
             &::before {
               opacity: .5;
             }
           }
 
-          @include w1250 {
-            font-size: 1.6rem;
+          .header-nav__sublist {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: all;
+          }
+        }
+      }
+
+      &--link {
+        position: relative;
+        display: flex;
+        font-weight: 400;
+        font-size: 1.4rem;
+        letter-spacing: -0.02em;
+        color: $white;
+        white-space: nowrap;
+        max-width: max-content;
+
+        &::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: -.6rem;
+          width: 102%;
+          height: .2rem;
+          background-color: $white;
+          opacity: 0;
+          pointer-events: none;
+          transition: opacity $transition-default;
+        }
+
+        &:hover {
+          &::before {
+            opacity: .5;
+          }
+        }
+
+        @include w1250 {
+          font-size: 1.6rem;
+        }
+      }
+    }
+
+    &__sublist {
+      position: absolute;
+      top: 180%;
+      left: 50%;
+      transform: translateX(-50%);
+      backdrop-filter: blur(2px);
+      background: #fff;
+      border: 1px solid rgba(181, 214, 255, 0.2);
+      border-radius: 1.6rem;
+      width: 21.5rem;
+      padding: 1.8rem 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: .8rem 0;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity $transition-default, visibility $transition-default;
+
+      li {
+
+        a {
+          font-weight: 600;
+          font-size: 1.4rem;
+          line-height: 1.28571;
+          letter-spacing: -0.02em;
+          color: $color-idfsl;
+
+          &:hover {
+            color: $color-blue;
           }
         }
       }

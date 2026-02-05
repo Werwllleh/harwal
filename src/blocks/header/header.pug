@@ -6,20 +6,30 @@ mixin header()
             .header__body
                 a(href="./").header__logo
                     +svg("harwal-logo")
-                nav.header__nav
-                    ul.header__nav--list
-                        li
-                            a(href="./main.html") Главная
-                        li
-                            a(href="./products.html") Продукция
-                        li
-                            a(href="./projects.html") Проекты
-                        li
-                            a(href="./services.html") Услуги
-                        li
-                            a(href="./about-company.html") О нас
-                        li
-                            a(href="./contacts.html") Контакты
+                nav.header-nav
+                    ul.header-nav__list
+                        li.header-nav__list--item
+                            a(href="./main.html").header-nav__list--link Главная
+                        li.header-nav__list--item
+                            a(href="./products.html").header-nav__list--link Продукция
+                            ul.header-nav__sublist
+                                li
+                                    a(href="./products3.html") Обработка стекла
+                                li
+                                    a(href="./products4.html") Алюминиевые светопрозрачные конструкции
+                        li.header-nav__list--item
+                            a(href="./projects.html").header-nav__list--link Проекты
+                        li.header-nav__list--item
+                            a(href="./services.html").header-nav__list--link Услуги
+                        li.header-nav__list--item
+                            a(href="./about-company.html").header-nav__list--link О нас
+                            ul.header-nav__sublist
+                                li
+                                    a(href="./quality-policy.html") Политика качества
+                                li
+                                    a(href="./production.html") Производство
+                        li.header-nav__list--item
+                            a(href="./contacts.html").header-nav__list--link Контакты
                 .header__info
                     .header-contacts
                         .header-contacts__preview

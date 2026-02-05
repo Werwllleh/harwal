@@ -17,6 +17,30 @@ if (header) {
     });
   }
 
+  const headerNavItems = header.querySelectorAll('.header-nav__list--item');
+  if (headerNavItems.length) {
+    headerNavItems.forEach(navItem => {
+
+      const subList = navItem.querySelector('.header-nav__sublist');
+
+      if (!subList) return;
+
+      let timer;
+
+      navItem.addEventListener('mouseenter', () => {
+        clearTimeout(timer);
+        navItem.classList.add('active');
+      });
+
+      navItem.addEventListener('mouseleave', () => {
+        clearTimeout(timer);
+        timer = setTimeout(() => {
+          navItem.classList.remove('active');
+        }, 100);
+      });
+    })
+  }
+
   const burgerButton = header.querySelector('.header__burger');
   if (burgerButton) {
     burgerButton.addEventListener('click', () => {

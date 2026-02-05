@@ -5,9 +5,9 @@
 .page-contacts {
   padding-bottom: 3.4rem;
 
-  .page-contacts-title {}
+  .page-contacts__title {}
 
-  .contacts-addresses {
+  .page-contacts-items {
     margin-top: 2.8rem;
 
     @include desktop {
@@ -109,5 +109,16 @@
         }
       }
     }
+  }
+}
+
+.contacts-items {
+  display: grid;
+  grid-template-columns: 100%;
+  align-items: stretch;
+  gap: 3rem;
+
+  @include mobile {
+    grid-template-columns: repeat(auto-fill, minmax(45rem, 1fr));
   }
 }

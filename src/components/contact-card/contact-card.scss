@@ -1,0 +1,215 @@
+@use '../../app/scss/variables.scss' as *;
+@use '../../app/scss/mixins.scss' as *;
+
+// contact-card
+.contact-card {
+  backdrop-filter: blur(1.2rem);
+  box-shadow: inset 0 0 3.2rem 0 rgba(233, 243, 255, 0.7);
+  background: $white;
+  padding: 2.1rem 1.8rem 2.7rem;
+  border: 2px solid rgba(181, 214, 255, 0.2);
+  border-radius: 1.6rem;
+  width: 100%;
+
+  @include tablet {
+    border-radius: 2.4rem;
+    padding: 2.2rem 4rem;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: 2.1rem 0;
+
+    @include mobile {
+      gap: 3.2rem 0;
+    }
+  }
+
+  &__top {
+    flex: 0 1 45%;
+    display: flex;
+    flex-direction: column;
+
+    gap: .6rem 0;
+
+    @include mobile {
+      gap: 1rem 0;
+    }
+  }
+
+  &__name {
+    display: block;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 2;
+    letter-spacing: -0.02em;
+    color: $color;
+  }
+
+  &__address {
+    display: block;
+    font-weight: 600;
+    font-size: 1.6rem;
+    line-height: 1.15385;
+    letter-spacing: -0.02em;
+    color: $color-idfsl;
+    margin-bottom: 1.2rem;
+
+    &:hover {
+      color: $color-blue-hover;
+    }
+
+    @include mobile {
+      font-size: 2.6rem;
+      margin-bottom: 2.4rem;
+    }
+  }
+
+  &__route {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    gap: 0 1rem;
+    font-weight: 600;
+    font-size: 1.6rem;
+    letter-spacing: -0.02em;
+    text-align: center;
+    color: $color-blue;
+    max-width: max-content;
+
+    &:hover {
+      svg {
+        transform: translateX(.5rem);
+      }
+    }
+
+    svg {
+      color: $color-blue;
+      width: 2.3rem;
+      height: 1.4rem;
+    }
+
+
+  }
+
+  &__bottom {
+    margin-top: auto;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(181, 214, 255, 0.2);
+
+    @include mobile {
+      padding-top: 1.8rem;
+    }
+  }
+
+  &__types {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem 3rem;
+
+    @include semiDesktop {
+      flex-direction: row;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    @include w1250 {
+      flex-wrap: nowrap;
+      justify-content: space-between;
+    }
+  }
+
+  &__phone,
+  &__email {
+    display: flex;
+    flex-direction: column;
+
+    span {
+    }
+
+    a {
+      font-weight: 600;
+      font-size: 1.6rem;
+      line-height: 1.75;
+      letter-spacing: -0.02em;
+      color: $color-idfsl;
+      white-space: nowrap;
+
+      &:hover {
+        color: $color-blue;
+      }
+    }
+  }
+
+  &__socials {
+    display: flex;
+    align-items: center;
+    gap: 0 .8rem;
+
+    @include mobile {
+      gap: 0 1.6rem;
+    }
+
+    li {
+
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        backdrop-filter: blur(1.2rem);
+        box-shadow: inset 0 0 3.2rem 0 rgba(233, 243, 255, 0.7);
+        background: rgba(189, 218, 250, 0.1);
+        border: 2px solid rgba(181, 214, 255, 0.2);
+        border-radius: 3.2rem;
+        width: 5.6rem;
+        height: 5.6rem;
+
+        svg {
+          color: $color-blue;
+        }
+
+        &.phone {
+          svg {
+            width: 1.8rem;
+            height: 1.8rem;
+          }
+        }
+
+        &.telegram {
+          svg {
+            width: 2.1rem;
+            height: 1.7rem;
+          }
+        }
+
+        &.youtube {
+          svg {
+            width: 2.1rem;
+            height: 1.5rem;
+          }
+        }
+
+        &:hover {
+          background: $color-blue-hover;
+          box-shadow: none;
+          border-color: $color-blue-hover;
+
+          svg {
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+
+  &__message {
+    margin-top: 3rem;
+    width: 100%;
+
+    @include mobile {
+      width: auto;
+    }
+  }
+}

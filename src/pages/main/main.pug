@@ -193,6 +193,20 @@ append content
                         +projectCard('Жилой комплекс ЖК Форест', '3.webp', true)
                         +projectCard('Жилой комплекс Грин Парк', '4.webp', true)
         section
+            .news
+                .news-bg-rectangle
+                .news__container.container
+                    h4.h4.section-title
+                        | Новости
+                        a(href="#") Все новости
+                            +svg("arrow-right-link")
+                    .news__body
+                        .news__list
+                            +newsCard('Смотрите новую видео-презентацию завода Нarwal Enterprise', '2.webp')
+                            +newsCard('Смотрите новую видео-презентацию завода Нarwal Enterprise', '3.webp')
+                            +newsCard('Смотрите новую видео-презентацию завода Нarwal Enterprise', '4.webp')
+                            +newsCard('Смотрите новую видео-презентацию завода Нarwal Enterprise', '2.webp')
+        section
             .companies
                 .companies__container.container
                     .companies__body
@@ -234,20 +248,6 @@ append content
                             li
                                 img(src="./images/companies/sial.webp", alt="")
         section
-            .news
-                .news-bg-rectangle
-                .news__container.container
-                    h4.h4.section-title
-                        | Новости
-                        a(href="#") Все новости
-                            +svg("arrow-right-link")
-                    .news__body
-                        .news__list
-                            +newsCard('Смотрите новую видео-презентацию завода Нarwal Enterprise', '2.webp')
-                            +newsCard('Смотрите новую видео-презентацию завода Нarwal Enterprise', '3.webp')
-                            +newsCard('Смотрите новую видео-презентацию завода Нarwal Enterprise', '4.webp')
-                            +newsCard('Смотрите новую видео-презентацию завода Нarwal Enterprise', '2.webp')
-        section
             .contacts
                 .contacts__container.container
                     .contacts__body
@@ -255,33 +255,11 @@ append content
                             h4.h4.contacts__title Контакты
                             p.contacts__description Цель нашей компании&nbsp;&mdash; сократить издержки, увеличить обороты и&nbsp;доходность вашего бизнеса.
                         .contacts__content
-                            .contacts__address
-                                .contacts__address--body
-                                    .contacts__address--top
-                                        span.contacts__address--section Главный офис и завод
-                                        a(href="https://yandex.ru/maps/-/CLhBEVjJ", rel="noopener noreferrer", target="_blank").contacts__address--text Московская область, Солнечногорск, Бутырский тупик, 2а
-                                        a(href="#").contacts__address--route
-                                            | Проложить маршрут
-                                            +svg("arrow-right-link")
-                                    .contacts__address--bottom
-                                        .contacts__address--types
-                                            .contacts__address--phone
-                                                span.contacts__address--section Телефон
-                                                a(href="tel:+74954090050") +7 (495) 409-00-50
-                                            .contacts__address--email
-                                                span.contacts__address--section Email
-                                                a(href="mailto:info@harwal.ru") info@harwal.ru
-                                            ul.contacts__address--socials
-                                                li
-                                                    a(href="#").phone
-                                                        +svg("phone")
-                                                li
-                                                    a(href="#").telegram
-                                                        +svg("telegram")
-                                                li
-                                                    a(href="#").youtube
-                                                        +svg("youtube")
-                                        button(type="button", data-modal="consultation").btn.primary.contacts__address--write-message Написать сообщение
+                            +contactCard(
+                              "Главный офис и завод",
+                              ["https://yandex.ru/maps/-/CLhBEVjJ", "Московская область, Солнечногорск, Бутырский тупик, 2а"],
+                              ["tel:+74954090050", "+7 (495) 409-00-50"],
+                              ["mailto:info@harwal.ru", "info@harwal.ru"])
         section.main-banner-form
             +bannerForm(1)
 
