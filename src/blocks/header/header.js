@@ -21,15 +21,12 @@ if (header) {
 
   const headerNavItems = header.querySelectorAll('.header-nav__list--item');
   if (headerNavItems.length) {
-
-    let timer;
-
     headerNavItems.forEach(navItem => {
-
       const subList = navItem.querySelector('.header-nav__sublist');
 
       if (!subList) return;
 
+      let timer;
 
       navItem.addEventListener('mouseenter', () => {
         clearTimeout(timer);
@@ -43,7 +40,10 @@ if (header) {
         navItem.style.zIndex = '';
         timer = setTimeout(() => {
           navItem.classList.remove('active');
-          overlay?.classList.remove('active');
+          // Закрываем overlay только если ни один пункт не активен
+          if (!header.querySelector('.header-nav__list--item.active')) {
+            overlay?.classList.remove('active');
+          }
         }, 100);
       });
     })
